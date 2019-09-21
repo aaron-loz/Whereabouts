@@ -1,106 +1,16 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-
-class SplashScreen extends React.Component  {
-
-  static navigationOptions = {
-    title: 'Splash Screen',
-  };
-  render() {
-    return (
-      <View style= {styles.container} >
-        <Text>Splish Splash!</Text>
-        <Button
-          title="Go to Login"
-          onPress={() => this.props.navigation.navigate('Login')}
-        />
-      </View>
-    );
-  }
-};
-
-class LoginScreen extends React.Component  {
-
-  static navigationOptions = {
-    title: 'Login Screen',
-  };
-  render() {
-    return (
-      <View style= {styles.container} >
-        <Text>Welcome!</Text>
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
-      </View>
-    );
-  }
-};
-
-class HomeScreen extends React.Component {
-
-  static navigationOptions = {
-    title: 'Home Screen',
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Go to Map"
-          onPress={() => this.props.navigation.navigate('Map')}
-        />
-      </View>
-    );
-  }
-};
-
-
-class MapScreen extends React.Component  {
-  static navigationOptions = {
-    title: 'Map Screen',
-  };
-  render() {
-    return (
-      <View style= {styles.container}>
-        <Text>This is a Map!</Text>
-      </View>
-    );
-  }
-};
-
-class MapListScreen extends React.Component  {
-  static navigationOptions = {
-    title: 'Map List Screen',
-  };
-  render() {
-    return (
-      <View style= {styles.container}>
-        <Text>List of Map Pin Data</Text>
-
-      </View>
-    );
-  }
-};
-
-class LikesListScreen extends React.Component  {
-  static navigationOptions = {
-    title: 'Likes List Screen',
-  };
-  render() {
-    return (
-      <View style= {styles.container}>
-        <Text>Here are all of your Likes!</Text>
-
-      </View>
-    );
-  }
-};
+import SplashScreen from './src/components/reactComponents/SplashScreen';
+import LoginScreen from './src/components/reactComponents/LoginScreen';
+import HomeScreen from './src/components/reactComponents/HomeScreen';
+import MapScreen from './src/components/reactComponents/MapScreen';
+import MapListScreen from './src/components/reactComponents/MapListScreen';
+import LikesListScreen from './src/components/reactComponents/LikesListScreen';
 
 const AppNavigator = createStackNavigator({
   Splash: SplashScreen,

@@ -6,8 +6,11 @@ let config = {
 };
 
 let acctdetails = twitter.auth(config, process.env.REACT_APP_CALLBACK);
-export const twitdetails = {
-    twitid = acctdetails.id,
-    user = acctdetails.name,
-    accesstok = acctdetails.accessToken
+class keepdeets {
+    constructor(acctdetails) {
+        this.twitid = acctdetails.id,
+            this.user = acctdetails.name,
+            this.accesstok = acctdetails.accessToken;
+    }
 };
+export const twitdetails = new keepdeets(acctdetails)

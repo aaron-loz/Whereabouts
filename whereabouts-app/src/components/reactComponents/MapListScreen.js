@@ -13,14 +13,11 @@ export default class MapListScreen extends React.Component  {
     static navigationOptions = {
       title: 'Map List Screen',
     };
-    
 
     state = {
       addAccountId: 'id1',
       addFriendsUserId: '',
-      addFriendsFriendId: '',
-      addLikesUserId: '',
-      addLikesLocationId: ''
+      addFriendsFriendId: ''
     };
 
     //AddAccounts
@@ -49,31 +46,17 @@ export default class MapListScreen extends React.Component  {
     };
 
     handleSubmitAddFriends = () => {
-      db.ref(`/friends/${this.state.addFriendsUserId}`).push({
+      db.ref("/friends/").push({
+        userId: this.state.addFriendsUserId,
         friendId: this.state.addFriendsFriendId
       });
       Alert.alert(`Friend ${this.state.addFriendsFriendId} saved successfully`);
     };
 
-    //AddLikes
-    handleChangeAddLikesUserId = e => {
-      this.setState({
-        addLikesUserId: e.nativeEvent.text
-      });
-    };
 
-    handleChangeAddLikesLocationId = e => {
-      this.setState({
-        addLikesLocationId: e.nativeEvent.text
-      });
-    };
 
-    handleSubmitAddLikes = () => {
-      db.ref(`/likes/${this.state.addLikesUserId}`).push({
-        locationId: this.state.addLikesLocationId
-      });
-      Alert.alert(`Like ${this.state.addLikesLocationId} saved successfully`);
-    };
+
+
 
     render() {
       return (
@@ -97,17 +80,6 @@ export default class MapListScreen extends React.Component  {
             <Text style={styles.buttonText}>Add</Text>
           </TouchableHighlight>
 
-          <Text>--------------------</Text>
-
-          <Text style={styles.title}>Add Likes</Text>
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesUserId} placeholder='UserId' />
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesLocationId} placeholder='Liked LocationId' />
-          <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddLikes} >
-            <Text style={styles.buttonText}>Add</Text>
-          </TouchableHighlight>
-
-          <Text>--------------------</Text>
-  
         </View>
       );
     }

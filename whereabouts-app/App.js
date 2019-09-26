@@ -5,7 +5,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import SplashScreen from './src/components/reactComponents/SplashScreen';
+//import SplashScreen from './src/components/reactComponents/SplashScreen';
 import LoginScreen from './src/components/reactComponents/LoginScreen';
 import HomeScreen from './src/components/reactComponents/HomeScreen';
 import MapScreen from './src/components/reactComponents/MapScreen';
@@ -13,7 +13,7 @@ import MapListScreen from './src/components/reactComponents/MapListScreen';
 import LikesListScreen from './src/components/reactComponents/LikesListScreen';
 
 const AppNavigator = createStackNavigator({
-  Splash: SplashScreen,
+
   Login: LoginScreen,
   Home: HomeScreen,
   Map: MapScreen,
@@ -21,10 +21,10 @@ const AppNavigator = createStackNavigator({
   Likes: LikesListScreen,
 },
   {
-    initialRouteName: 'Splash',
+    initialRouteName: 'Login',
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: '#49C9FF',
+        backgroundColor: '#191E80',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -74,11 +74,10 @@ const TabNavigation =  createBottomTabNavigator(
     },
   }
 )
-const AppContainer = createAppContainer(TabNavigation);
+const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
   render() {
-    //return <StartContainer />;
     return <AppContainer />;
   }
 }

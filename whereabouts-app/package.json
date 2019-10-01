@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "base-64": "^0.1.0",
+    "dimensions": "^0.1.0",
     "expo": "^34.0.1",
     "firebase": "^6.6.2",
     "react": "16.8.3",

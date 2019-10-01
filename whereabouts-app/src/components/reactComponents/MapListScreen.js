@@ -62,13 +62,13 @@ export default class MapListScreen extends React.Component  {
       return (
         <View style= {styles.main}>
           <Text style={styles.title}>List of Map Pin Data</Text>
-          
+
           <Text>--------------------</Text>
 
           <Text style={styles.title}>Add Account</Text>
           <TextInput style={styles.itemInput} onChange={this.handleChangeAddAccounts} placeholder='UserId' />
-          <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddAccounts} >
-            <Text style={styles.buttonText}>Add</Text>
+          <TouchableHighlight style={styles.L_button} underlayColor="white" onPress={this.handleSubmitAddAccounts} >
+            <Text style={styles.L_text}>Add</Text>
           </TouchableHighlight>
 
           <Text>--------------------</Text>
@@ -76,8 +76,8 @@ export default class MapListScreen extends React.Component  {
           <Text style={styles.title}>Add Friends</Text>
           <TextInput style={styles.itemInput} onChange={this.handleChangeAddFriendsUserId} placeholder='UserId' />
           <TextInput style={styles.itemInput} onChange={this.handleChangeAddFriendsFriendId} placeholder='His FriendId' />
-          <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddFriends} >
-            <Text style={styles.buttonText}>Add</Text>
+          <TouchableHighlight style={styles.L_button} underlayColor="white" onPress={this.handleSubmitAddFriends} >
+            <Text style={styles.L_text}>Add</Text>
           </TouchableHighlight>
 
         </View>

@@ -73,7 +73,7 @@ export default class LikesListScreen extends React.Component {
       <View style= {styles.main}>
         <Text>Here are all of your Likes!</Text>
 
-        
+
         <Text>--------------------</Text>
 
         {/* Renders current likes */}
@@ -100,8 +100,8 @@ export default class LikesListScreen extends React.Component {
         <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesLocationId} placeholder='Liked LocationId' />
         <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesLat} placeholder='Liked latitude' />
         <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesLong} placeholder='Liked longitude' />
-        <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddLikes} >
-          <Text style={styles.buttonText}>Add</Text>
+        <TouchableHighlight style={styles.L_button} underlayColor="white" onPress={this.handleSubmitAddLikes} >
+          <Text style={styles.L_text}>Add</Text>
         </TouchableHighlight>
 
 

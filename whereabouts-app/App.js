@@ -58,7 +58,7 @@ const TabNavigation =  createBottomTabNavigator(
       },
     }),
     tabBarOptions: {
-      activeTintColor: 'grey',
+      activeTintColor: '#8EC9FB',
       inactiveTintColor: 'white',
       labelStyle: {
         fontSize: 14,
@@ -66,7 +66,7 @@ const TabNavigation =  createBottomTabNavigator(
         textAlignVertical: 'top'
       },
       style: {
-        backgroundColor: 'blue',
+        backgroundColor: '#191E80',
       },
       tabStyle: {
         height: 49
@@ -74,7 +74,7 @@ const TabNavigation =  createBottomTabNavigator(
     },
   }
 )
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(TabNavigation);
 
 export default class App extends React.Component {
   render() {

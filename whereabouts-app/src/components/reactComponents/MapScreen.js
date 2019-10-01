@@ -11,13 +11,13 @@ export default class MapScreen extends React.Component  {
     static navigationOptions = {
       title: 'Map Screen'
     };
-  
+
     state = {
       accounts: [],
       friends: [],
       likes: []
     };
-  
+
     componentDidMount() {
       accountIdsRef.on('value', snapshot => {
         let data = snapshot.val();
@@ -31,10 +31,10 @@ export default class MapScreen extends React.Component  {
       });
 
     }
-  
+
     render() {
       return (
-        <View style= {styles.main}>
+        <View style= {{flex:1}}>
           <Text style={styles.title}>This is a Map!</Text>
           <MapView
             style={{ flex: 1 }}

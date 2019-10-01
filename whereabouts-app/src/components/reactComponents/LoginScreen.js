@@ -29,14 +29,3 @@ export default class LoginScreen extends React.Component  {
     );
   }
 };
-
-const styles = StyleSheet.create({
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#3BA3F8',
-    height: 40,
-    borderRadius: 20,
-    zIndex: 100,
-  },
-});

@@ -7,20 +7,19 @@ export default class TwitterLogin extends React.Component {
         await init("9YI7BfOoNqussSahkRjbdbWyu", "umOJG3JYaNX1EnMSWAbUTc8bh4fXwjU3vB2D41tCgWsfoByL5o");
         this.twitter =  await getToken();
     }
-    
-    doboth(latg, long){
-        geo = {
-            lat: latg,
-            lon: long,
-        }
-        //this.twitter.searchNearby(geo, this.twitter.token);
+    searchTweets(lat, long){
+        console.log('hiya');
+    }
+
+    SSOlogin(){
+
     }
     state = {twitdetails: ''}
     render() {
         return(
         <View style= {styles.container}>
             <Button
-            title="Twitter Login Button" onPress={this.doboth('40.730610', '-73.935242', this.twitter)}
+            title="Twitter Login Button" onPress={this.searchTweets('40.730610', '-73.935242')}
             />
         </View>
         )

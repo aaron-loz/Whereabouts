@@ -4,7 +4,7 @@ import { StyleSheet} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
+import TwitterLogin from './src/components/reactComponents/TwitterScreen';
 //import SplashScreen from './src/components/reactComponents/SplashScreen';
 import LoginScreen from './src/components/reactComponents/LoginScreen';
 import HomeScreen from './src/components/reactComponents/HomeScreen';
@@ -20,6 +20,7 @@ const AppNavigator = createStackNavigator({
   Map: MapScreen,
   MapList: MapListScreen,
   Likes: LikesListScreen,
+  Tweet: TwitterLogin,
 },
   {
     initialRouteName: 'Login',
@@ -41,6 +42,7 @@ const TabNavigation =  createBottomTabNavigator(
     MapList: MapListScreen,
     Likes: LikesListScreen,
     AddAccount: AddAccount,
+    Tweet: TwitterLogin,
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -53,6 +55,9 @@ const TabNavigation =  createBottomTabNavigator(
         } else if (routeName === 'MapListScreen') {
           iconName = 'ios-options';
         } else if (routeName === 'LikesListScreen') {
+          iconName = 'ion-md-heart';
+        }
+        else if(routeName === 'TwitterLogin'){
           iconName = 'ion-md-heart';
         }
         //You can return any component that you like here!

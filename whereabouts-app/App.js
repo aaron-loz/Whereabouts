@@ -11,6 +11,7 @@ import HomeScreen from './src/components/reactComponents/HomeScreen';
 import MapScreen from './src/components/reactComponents/MapScreen';
 import MapListScreen from './src/components/reactComponents/MapListScreen';
 import LikesListScreen from './src/components/reactComponents/LikesListScreen';
+import AddAccount from './src/components/reactComponents/AddAccount';
 
 const AppNavigator = createStackNavigator({
 
@@ -39,6 +40,7 @@ const TabNavigation =  createBottomTabNavigator(
     Map: MapScreen,
     MapList: MapListScreen,
     Likes: LikesListScreen,
+    AddAccount: AddAccount,
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

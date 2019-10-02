@@ -1,86 +1,108 @@
 import React from 'react';
-import { Text, TextInput, View, TouchableHighlight, Alert } from 'react-native';
+import { Alert, FlatList, Image, Text, TextInput, TouchableHighlight, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
+//import CustomRow from './CustomRow';
 import styles from './styles';
-
-let addAccountIds = item => {
-  db.ref('/accountIds').push({
-    id: item
-  });
-};
 
 export default class MapListScreen extends React.Component  {
     static navigationOptions = {
-      title: 'Map List Screen',
+      title: 'Map List',
     };
 
-    state = {
-      addAccountId: 'id1',
-      addFriendsUserId: '',
-      addFriendsFriendId: ''
-    };
-
-    //AddAccounts
-    handleChangeAddAccounts = e => {
-      this.setState({
-        addAccountId: e.nativeEvent.text
-      });
-    };
-
-    handleSubmitAddAccounts = () => {
-      addAccountIds(this.state.addAccountId);
-      Alert.alert(`Account ${this.state.addAccountId} saved successfully`);
-    };
-
-    //AddFriends
-    handleChangeAddFriendsUserId = e => {
-      this.setState({
-        addFriendsUserId: e.nativeEvent.text
-      });
-    };
-
-    handleChangeAddFriendsFriendId = e => {
-      this.setState({
-        addFriendsFriendId: e.nativeEvent.text
-      });
-    };
-
-    handleSubmitAddFriends = () => {
-      db.ref("/friends/").push({
-        userId: this.state.addFriendsUserId,
-        friendId: this.state.addFriendsFriendId
-      });
-      Alert.alert(`Friend ${this.state.addFriendsFriendId} saved successfully`);
-    };
-
-
-
-
-
+    //boilerplate data
+    getData() {
+      return [
+        {
+          key: 1, title: '@joetheguy',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png'
+        },
+        {
+          key: 2,
+          title: '@janethejane',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png'
+        },
+        {
+          key: 3, title: '@benjiiiii',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png'
+        },
+        {
+          key: 4,
+          title: '@ali123456',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png'
+        },
+        {
+          key: 5, title: '@markuslarkus',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png'
+        },
+        {
+          key: 6,
+          title: '@fridafrido',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png'
+        },
+        {
+          key: 1, title: '@joetheguy',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png'
+        },
+        {
+          key: 2,
+          title: '@janethejane',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png'
+        },
+        {
+          key: 3, title: '@benjiiiii',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png'
+        },
+        {
+          key: 4,
+          title: '@ali123456',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png'
+        },
+        {
+          key: 5, title: '@markuslarkus',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png'
+        },
+        {
+          key: 6,
+          title: '@fridafrido',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png'
+        },
+      ]
+    }
 
     render() {
       return (
-        <View style= {styles.main}>
-          <Text style={styles.title}>List of Map Pin Data</Text>
+        <View style={styles.list_container}>
+          <FlatList
+            data={this.getData()}
+            renderItem={({ item }) =>
+              <View style={styles.r_container}>
+                  <Image source={{ uri: item.image_url }} style={styles.r_photo} />
+                  <View style={styles.r_container_text}>
+                      <Text style={styles.r_title}>
+                          {item.title}
+                      </Text>
+                      <Text style={styles.r_description}>
+                          {item.description}
+                      </Text>
+                  </View>
 
-          <Text>--------------------</Text>
+              </View>
+            }
+          />
+      </View>
 
-          <Text style={styles.title}>Add Account</Text>
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddAccounts} placeholder='UserId' />
-          <TouchableHighlight style={styles.L_button} underlayColor="white" onPress={this.handleSubmitAddAccounts} >
-            <Text style={styles.L_text}>Add</Text>
-          </TouchableHighlight>
-
-          <Text>--------------------</Text>
-
-          <Text style={styles.title}>Add Friends</Text>
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddFriendsUserId} placeholder='UserId' />
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddFriendsFriendId} placeholder='His FriendId' />
-          <TouchableHighlight style={styles.L_button} underlayColor="white" onPress={this.handleSubmitAddFriends} >
-            <Text style={styles.L_text}>Add</Text>
-          </TouchableHighlight>
-
-        </View>
       );
     }
   };

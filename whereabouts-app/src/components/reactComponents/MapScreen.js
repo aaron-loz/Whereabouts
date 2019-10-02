@@ -9,7 +9,7 @@ let likesIdsRef = db.ref('/likes');
 
 export default class MapScreen extends React.Component  {
     static navigationOptions = {
-      title: 'Map Screen'
+      title: 'Map'
     };
 
     state = {

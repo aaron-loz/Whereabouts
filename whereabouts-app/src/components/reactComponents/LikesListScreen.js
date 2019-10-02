@@ -6,7 +6,7 @@ let likesIdsRef = db.ref('/likes');
 
 export default class LikesListScreen extends React.Component {
   static navigationOptions = {
-    title: 'Likes List Screen',
+    title: 'Likes',
   };
 
   state = {

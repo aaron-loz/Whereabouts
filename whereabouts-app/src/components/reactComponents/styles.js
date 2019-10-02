@@ -11,6 +11,10 @@ export default styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    list_container: {
+      flex: 1,
+      backgroundColor: '#D2EAFF'
+    },
     //This is a temporary stuff:
     main: {
       flex: 1,
@@ -144,5 +148,38 @@ export default styles = StyleSheet.create({
     L_image: {
       width: 24,
       height: 24,
+    },
+    //________________________________row style____________________________//
+    r_container: {
+        flex: 1,
+        flexDirection: 'row',
+        padding: 10,
+        marginLeft:16,
+        marginRight:16,
+        marginTop: 8,
+        marginBottom: 8,
+        borderRadius: 5,
+        backgroundColor: '#3BA3F8',
+        elevation: 2,
+    },
+    r_title: {
+        fontSize: 16,
+        color: '#FFF',
+        fontWeight: 'bold'
+    },
+    r_container_text: {
+        flex: 1,
+        color: '#FFF',
+        flexDirection: 'column',
+        marginLeft: 12,
+        justifyContent: 'center',
+    },
+    r_description: {
+        fontSize: 11,
+        fontStyle: 'italic',
+    },
+    r_photo: {
+        height: 50,
+        width: 50,
     },
   });

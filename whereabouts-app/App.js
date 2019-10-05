@@ -4,7 +4,7 @@ import { StyleSheet} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import TwitterLogin from './src/components/reactComponents/TwitterScreen';
+import TwitterLogin from './src/components/reactComponents/TwitterLogin';
 //import SplashScreen from './src/components/reactComponents/SplashScreen';
 import LoginScreen from './src/components/reactComponents/LoginScreen';
 import HomeScreen from './src/components/reactComponents/HomeScreen';

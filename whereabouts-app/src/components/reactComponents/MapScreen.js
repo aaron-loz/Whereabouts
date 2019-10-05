@@ -13,20 +13,29 @@ export default class MapScreen extends React.Component  {
     };
 
     state = {
-      accounts: [],
+      currentUserId: "007",
       friends: [],
       likes: []
     };
 
     componentDidMount() {
-      accountIdsRef.on('value', snapshot => {
+      friedsIdsRef.on('value', snapshot => {
         let data = snapshot.val();
-        let accounts = Object.values(data);
-        this.setState({ accounts });
+        let allFriends = Object.values(data);
+        let friends = [];
+        // Collect all friends of a given user
+        allFriends.forEach(pair => {
+          if (pair.userId == this.state.currentUserId){
+            friends.push(pair.friendId);
+          }
+        })
+        this.setState({ friends });
       });
       likesIdsRef.on('value', snapshot => {
         let data = snapshot.val();
-        let likes = Object.values(data);
+        let allLikes = Object.values(data);
+        //Filters likes that belong to the user's friends
+        let likes = allLikes.filter(like => this.state.friends.includes(like.userId));
         this.setState({ likes });
       });
 

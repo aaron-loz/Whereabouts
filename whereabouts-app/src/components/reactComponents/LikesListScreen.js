@@ -21,7 +21,6 @@ export default class LikesListScreen extends React.Component {
     likesIdsRef.on('value', snapshot => {
       let data = snapshot.val();
       let likes = Object.values(data);
-      console.log(likes);
       this.setState({ likes });
     });
   }

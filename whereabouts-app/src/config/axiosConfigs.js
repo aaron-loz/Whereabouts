@@ -2,6 +2,7 @@ import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import { Actions } from 'react-native-router-flux';
 import config from '../../config';
+import randomBytes from 'crypto-browserify'
     //! Separate axios configs from twitter requests.
 
 export function init(cuskey, seckey){
@@ -30,7 +31,8 @@ export function getTokeno2(){
     )
 }
 function generate_nonce(){
-    //TODO: Have to create token_nonce out of 32 bytes of random data into a btoa().
+    nonce = randomBytes(16).toString('base64')
+    return nonce;
 }
 function create_signature(){
     //TODO: create signature out of parameter values. 
@@ -38,7 +40,7 @@ function create_signature(){
 }
 export function getToken(){
     return axios.post('/oauth/request_token', 'oauth_callback=https://twitter.com/signin', {
-        oauth_nonce : '', //replace generate_nonce()
+        oauth_nonce :generate_nonce(),
         oauth_callback : 'https://twitter.com/signin',
         oauth_signature_method : "HMAC-SHA1",
         oauth_timestamp : Math.floor(Date.now()/1000),
@@ -73,7 +75,7 @@ export function test_search(oauthtoken){
         headers : {
             authorization : 'OAuth',
             oauth_consumer_key: config.TW_CUSTOMER_KEY,
-            oauth_nonce : ""
+            oauth_nonce : generate_nonce(),
         }
     })
     .then((response)=>{

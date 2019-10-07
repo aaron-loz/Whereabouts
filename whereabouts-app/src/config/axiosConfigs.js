@@ -2,18 +2,21 @@ import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import { Actions } from 'react-native-router-flux';
 import config from '../../config';
+import randomBytes from 'crypto-browserify'
     //! Separate axios configs from twitter requests.
 
 export function init(cuskey, seckey){
     axios.defaults.baseURL = 'https://api.twitter.com';
-    axios.defaults.headers.common['Authorization'] = 'Basic ' + btoa(cuskey + ':' + seckey);     //TODO: RFC 1738 this. 
-    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
     axios.defaults.headers.post['Accept-Encoding'] = 'gzip';
 
 }
 
 export function getTokeno2(){
     return axios.post('/oauth2/token', 'grant_type=client_credentials', {
+        headers: {
+        'Authorization': 'Basic ' + btoa(config.TW_CUSTOMER_KEY + ':' + config.TW_CUSTOMER_SECRET_KEY),
+        'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
         'User-Agent' : 'whereabouts dev',
         Accept : "*/*",
     })
@@ -28,7 +31,8 @@ export function getTokeno2(){
     )
 }
 function generate_nonce(){
-    //TODO: Have to create token_nonce out of 32 bytes of random data into a btoa().
+    nonce = randomBytes(16).toString('base64')
+    return nonce;
 }
 function create_signature(){
     //TODO: create signature out of parameter values. 
@@ -36,7 +40,7 @@ function create_signature(){
 }
 export function getToken(){
     return axios.post('/oauth/request_token', 'oauth_callback=https://twitter.com/signin', {
-        oauth_nonce : 'awdmaimsiojga8u24',
+        oauth_nonce :generate_nonce(),
         oauth_callback : 'https://twitter.com/signin',
         oauth_signature_method : "HMAC-SHA1",
         oauth_timestamp : Math.floor(Date.now()/1000),
@@ -53,9 +57,9 @@ export function getToken(){
         return error;
     })
 }
+
 export function twitsignin(oauthtoken){
     url = '/oauth/authenticate?oauthtoken='+ oauthtoken;
-    console.log(url);
     return axios.get(url)
     .then((response) => {
         console.log("response:\n"+response);
@@ -65,6 +69,24 @@ export function twitsignin(oauthtoken){
         console.log("error:\n" + error)
         return error
     })
+}
+export function test_search(oauthtoken){
+    axios.get('/1.1/search/tweets.json?q=food%20@nasa', {
+        headers : {
+            authorization : 'OAuth',
+            oauth_consumer_key: config.TW_CUSTOMER_KEY,
+            oauth_nonce : generate_nonce(),
+        }
+    })
+    .then((response)=>{
+        console.log("response:\n" + response);
+        return response;
+    })
+    .catch((error) =>{
+        console.log("error:\n" + error);
+        return error;
+    })
+    
 }
 /*searchNearby(geocode, token){
     axios.get('/1.1/search/tweets.json', {
@@ -82,6 +104,7 @@ export function twitsignin(oauthtoken){
 signIn(){
     return;
 }
+
 getRequest(){
     axios.get('https://api.twitter.com/oauth/access_token')
         .then(function (response){

@@ -14,7 +14,7 @@ export default class TwitterLogin extends React.Component {
     }
     async searchTweets(lat, long){
     }
-    
+
     async SSOlogin(oauthtoken){
     //! TODO: Finish setting up axios nonces.
         /*console.log(oauthtoken);

@@ -5,16 +5,10 @@ import config from '../../config';
 import randomBytes from '../utility/randomBytes'
     //! Separate axios configs from twitter requests.
 
-function generate_nonce(){
-    //nonce = randombytes(16).toString('base64');
-    nonce = randomBytes(16, false).toString('base64');
-    return nonce;
-}
 
 export function init(cuskey, seckey){
     axios.defaults.baseURL = 'https://api.twitter.com';
     axios.defaults.headers.post['Accept-Encoding'] = 'gzip';
-    generate_nonce();
 }
 
 export function getTokeno2(){
@@ -35,6 +29,11 @@ export function getTokeno2(){
         return error;
     }
     )
+}
+function generate_nonce(){
+    //nonce = randombytes(16).toString('base64');
+    nonce = randomBytes(16, false).toString('base64');
+    return nonce;
 }
 
 function create_signature(){

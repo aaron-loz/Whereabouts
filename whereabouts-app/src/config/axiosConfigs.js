@@ -2,13 +2,13 @@ import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import { Actions } from 'react-native-router-flux';
 import config from '../../config';
-import randombytes from 'crypto-browserify';
+import randomBytes from '../utility/randomBytes'
     //! Separate axios configs from twitter requests.
+
 
 export function init(cuskey, seckey){
     axios.defaults.baseURL = 'https://api.twitter.com';
     axios.defaults.headers.post['Accept-Encoding'] = 'gzip';
-
 }
 
 export function getTokeno2(){
@@ -31,9 +31,11 @@ export function getTokeno2(){
     )
 }
 function generate_nonce(){
-    nonce = randombytes(16).toString('base64');
+    //nonce = randombytes(16).toString('base64');
+    nonce = randomBytes(16, false).toString('base64');
     return nonce;
 }
+
 function create_signature(){
     //TODO: create signature out of parameter values. 
 

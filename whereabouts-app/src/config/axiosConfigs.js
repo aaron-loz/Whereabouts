@@ -10,10 +10,6 @@ import oauthSignature from 'oauth-signature';
 export function init(){
     axios.defaults.baseURL = 'https://api.twitter.com';
     axios.defaults.headers.post['Accept-Encoding'] = 'gzip';
-    a = getToken();
-    console.log("getToken():");
-    console.log(a);
-    testwithExpo();
 }
 
 export function getTokeno2(){

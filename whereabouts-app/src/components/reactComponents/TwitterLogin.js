@@ -1,11 +1,10 @@
-import {init, twitsignin, getTokeno2,test_search, getToken} from '../../config/axiosConfigs';
+import {init, getTokeno2,test_search} from '../../config/axiosConfigs';
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import Config from '../../../config';
 
 export default class TwitterLogin extends React.Component {
     async componentDidMount(){
-        await init(Config.TW_CUSTOMER_KEY, Config.TW_CUSTOMER_SECRET_KEY);
+        await init();
         this.twitter =  await getTokeno2();
         this.state.twittoken = await this.twitter.access_token;
     }

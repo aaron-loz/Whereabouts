@@ -1,8 +1,9 @@
 import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
-import { Actions } from 'react-native-router-flux';
 import config from '../../config';
-import randomBytes from '../utility/randomBytes'
+import CryptoJS from 'crypto-js';
+import oauthSignature from 'oauth-signature';
+
     //! Separate axios configs from twitter requests.
 
 
@@ -31,25 +32,23 @@ export function getTokeno2(){
     )
 }
 function generate_nonce(){
-    //nonce = randombytes(16).toString('base64');
-    nonce = randomBytes(16, false).toString('base64');
+    nonce = CryptoJS.lib.WordArray.random(16);
     return nonce;
 }
 
-function create_signature(){
-    //TODO: create signature out of parameter values. 
-
+function create_signature(url, parameters){
+    return oauthSignature.generate('post', url, parameters, config.TW_CUSTOMER_SECRET_KEY);
 }
 export function getToken(){
-    return axios.post('/oauth/request_token', 'oauth_callback=https://twitter.com/signin', {
-        oauth_nonce :generate_nonce(),
-        oauth_callback : 'https://twitter.com/signin',
+    parameters = {
+        oauth_consumer_key : config.TW_CUSTOMER_KEY,
         oauth_signature_method : "HMAC-SHA1",
         oauth_timestamp : Math.floor(Date.now()/1000),
-        oauth_consumer_key : config.TW_CUSTOMER_KEY,
-        oauth_signature : create_signature(),//!Must pass values of parameters to this.
-        oauth_version :"1.0",        
-    })
+        oauth_nonce :generate_nonce(),
+        oauth_callback : 'https://twitter.com/signin',
+    };
+    signature = create_signature("https://api.twitter.com/oauth/request_token", parameters);//!Must pass values of parameters to this.
+    return axios.post('/oauth/request_token', 'oauth_callback=https://twitter.com/signin', parameters, signature)
     .then((response) =>{
         console.log('response:\n' + response);
         return response;

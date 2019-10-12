@@ -2,7 +2,7 @@ import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import config from '../../config';
 import CryptoJS from 'crypto-js';
-import oauthSignature from 'oauth-signature';
+import {oauthSignature, SignatureBaseString, HmacSha1Signature, Rfc3986, HmacSha1} from 'oauth-signature';
 
     //! Separate axios configs from twitter requests.
 
@@ -40,6 +40,14 @@ function create_signature(url, parameters){
     return oauthSignature.generate('post', url, parameters, config.TW_CUSTOMER_SECRET_KEY);
 }
 
+//I assumed that we don't have OAuth token secret, only Consumer secret.
+function create_signatureNEW(method, url, parameters, consumerSecret){
+    var signatureBaseString = new SignatureBaseString(method, url, parameters).generate();
+    //This is 'Getting a signing key' from : https://developer.twitter.com/en/docs/basics/authentication/guides/creating-a-signature
+    var key = new Rfc3986().encode(consumerSecret) + '&';
+    var result = new HmacSha1(signatureBaseString, key).getBase64EncodedHash();
+    return result;
+}
 
 export function twitsignin(oauthtoken){
     url = '/oauth/authenticate?oauthtoken='+ oauthtoken;
@@ -54,12 +62,33 @@ export function twitsignin(oauthtoken){
         return error
     })
 }
+
 export function test_search(oauthtoken){
+    let nonce = generate_nonce();
+    let timestamp = Math.floor((new Date()).getTime() / 1000);
+    var httpMethod = 'GET';
+    var url = 'https://api.twitter.com/1.1/search/tweets.json?q=food%20@nasa';
+    var parameters = {
+        oauth_consumer_key:	config.TW_CUSTOMER_KEY,
+        oauth_nonce: nonce,
+        oauth_signature_method:	"HMAC-SHA1",
+        oauth_timestamp: toString(timestamp),
+        oauth_token: oauthtoken,
+        oauth_version: "1.0"
+    };
+
+    let signature = create_signatureNEW(httpMethod, url, parameters, config.TW_CUSTOMER_SECRET_KEY);
+
     axios.get('/1.1/search/tweets.json?q=food%20@nasa', {
-        headers : {
+        headers : { 
             authorization : 'OAuth',
             oauth_consumer_key: config.TW_CUSTOMER_KEY,
-            oauth_nonce : generate_nonce(),
+            oauth_nonce : nonce,
+            oauth_signature : signature, 
+            oauth_signature_method : "HMAC-SHA1", 
+            oauth_timestamp : toString(timestamp), 
+            oauth_token : oauthtoken, 
+            oauth_version : "1.0"
         },
     })
     .then((response)=>{

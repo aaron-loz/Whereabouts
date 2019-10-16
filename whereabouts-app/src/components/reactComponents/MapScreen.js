@@ -1,16 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Modal, Text, TouchableHighlight, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import BottomDrawer from 'rn-bottom-drawer';
 import styles from './styles';
 let accountIdsRef = db.ref('/accountIds');
 let friedsIdsRef = db.ref('/friends');
 let likesIdsRef = db.ref('/likes');
 
 export default class MapScreen extends React.Component  {
-    static navigationOptions = {
-      title: 'Map'
-    };
+    // static navigationOptions = {
+    //   title: 'Map'
+    // };
 
     state = {
       currentUserId: "007",
@@ -44,7 +45,6 @@ export default class MapScreen extends React.Component  {
     render() {
       return (
         <View style= {{flex:1}}>
-          <Text style={styles.title}>This is a Map!</Text>
           <MapView
             style={{flex:1} }
             customMapStyle={mapStyle}
@@ -69,6 +69,11 @@ export default class MapScreen extends React.Component  {
               )
             })}
           </MapView>
+
+          <BottomDrawer containerHeight={100} offset={8}>
+            <Text>Hi!  i'm a drawer!!!</Text>
+          </BottomDrawer>
+
         </View>
       );
     }

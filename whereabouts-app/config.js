@@ -3,3 +3,23 @@ I.E. const TW_CUSTOMER_SECRET KEY = {key here};
 export config = {
   TW_CUSTOMER_SECRET_KEY,
   }*/
+
+
+  const FB_KEY="AIzaSyCddBt_SpJJpi9g6-fZbxHm-fLCFuEys4A";
+  const FB_AUTH_DOMAIN="whereabouts-c71c4.firebaseapp.com";
+  const FB_URL="https://whereabouts-c71c4.firebaseio.com";
+  const FB_PROJECT_ID="whereabouts-c71c4";
+  const FB_SENDER_ID="903899891718";
+  const FB_APP_ID="1:903899891718:web:00f28ce648d0580cd75b875";
+  const TW_CUSTOMER_KEY = "9YI7BfOoNqussSahkRjbdbWyu";
+  const TW_CUSTOMER_SECRET_KEY = "umOJG3JYaNX1EnMSWAbUTc8bh4fXwjU3vB2D41tCgWsfoByL5o";
+  export default {
+     FB_KEY,
+     FB_AUTH_DOMAIN,
+     FB_URL,
+     FB_PROJECT_ID,
+     FB_SENDER_ID,
+     FB_APP_ID,
+     TW_CUSTOMER_KEY,
+     TW_CUSTOMER_SECRET_KEY
+  };

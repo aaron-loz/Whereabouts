@@ -63,6 +63,8 @@ export default class MapScreen extends React.Component  {
                   key = {index}
                   coordinate={obj.location.coordinates}
                   title={obj.userId}
+                  //description=should be tagged location
+                  pinColor="#EC1561"
                 />
               )
             })}

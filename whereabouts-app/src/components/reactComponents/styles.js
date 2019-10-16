@@ -182,4 +182,13 @@ export default styles = StyleSheet.create({
         height: 50,
         width: 50,
     },
+    r_location: {
+      fontSize: 16,
+      color: '#EC1561',
+      fontWeight: 'bold'
+    },
+    r_like:{
+      height: 50,
+      width: 50,
+    }
   });

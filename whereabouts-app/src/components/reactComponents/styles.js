@@ -13,7 +13,7 @@ export default styles = StyleSheet.create({
     },
     list_container: {
       flex: 1,
-      backgroundColor: '#D2EAFF'
+      backgroundColor: '#8EC9FB'
     },
     //This is a temporary stuff:
     main: {
@@ -164,7 +164,7 @@ export default styles = StyleSheet.create({
     },
     r_title: {
         fontSize: 16,
-        color: '#FFF',
+        color: '#191E80',
         fontWeight: 'bold'
     },
     r_container_text: {
@@ -175,8 +175,8 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
     },
     r_description: {
-        fontSize: 11,
-        fontStyle: 'italic',
+        fontSize: 14,
+        color: '#FFF',
     },
     r_photo: {
         height: 50,
@@ -184,8 +184,7 @@ export default styles = StyleSheet.create({
     },
     r_location: {
       fontSize: 16,
-      color: '#EC1561',
-      fontWeight: 'bold'
+      color: '#191E80',
     },
     r_like:{
       height: 50,

@@ -94,6 +94,7 @@ export default class MapListScreen extends React.Component  {
       ]
     }
 
+    
     render() {
       return (
         <View style={styles.list_container}>

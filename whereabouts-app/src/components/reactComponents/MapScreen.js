@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Text, TouchableHighlight, View } from 'react-native';
+import { Image, Modal, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import BottomDrawer from 'rn-bottom-drawer';
@@ -7,6 +7,18 @@ import styles from './styles';
 let accountIdsRef = db.ref('/accountIds');
 let friedsIdsRef = db.ref('/friends');
 let likesIdsRef = db.ref('/likes');
+
+import likeimg from '../images/like.png';
+
+// TO DO:
+//  link data from map to map list
+//     ( move boiler plate data to separate file, import to map, import to
+//      map list until data can be generated from twitter )
+//  stylize BottomDrawer
+//  create icon for bottom drawer when inactive
+//  only activate bottom drawer when location is clicked
+//  
+
 
 export default class MapScreen extends React.Component  {
     // static navigationOptions = {
@@ -41,6 +53,27 @@ export default class MapScreen extends React.Component  {
       });
 
     }
+    addLikeData = () => {
+
+      Alert.alert(
+        'Liked!',
+        'this item will be added to your like list',
+        [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: true},
+      );
+      // To Do: add item to Like List Array
+      // ......
+      // this.likeArray.push({title : this.state.textInput_Holder});
+      // this.setState({ arrayHolder: [...this.array] })
+
+    }
 
     render() {
       return (
@@ -70,8 +103,68 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={100} offset={8}>
+          <BottomDrawer containerHeight={400} offset={8}>
             <Text>Hi!  i'm a drawer!!!</Text>
+            <View style={styles.r_container}>
+                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <View style={styles.r_container_text}>
+                    <Text style={styles.r_title}>
+                        @theUser
+                    </Text>
+                    <Text style={styles.r_description}>
+                        this is my tweet, tweet tweet tweet
+                    </Text>
+                    <Text style={styles.r_location}>
+                        location
+                    </Text>
+                </View>
+                <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+
+                  <Image source={likeimg} style={styles.r_photo} />
+
+                </TouchableOpacity>
+
+            </View>
+            <View style={styles.r_container}>
+                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <View style={styles.r_container_text}>
+                    <Text style={styles.r_title}>
+                        @theUser
+                    </Text>
+                    <Text style={styles.r_description}>
+                        this is my tweet, tweet tweet tweet
+                    </Text>
+                    <Text style={styles.r_location}>
+                        location
+                    </Text>
+                </View>
+                <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+
+                  <Image source={likeimg} style={styles.r_photo} />
+
+                </TouchableOpacity>
+
+            </View>
+            <View style={styles.r_container}>
+                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <View style={styles.r_container_text}>
+                    <Text style={styles.r_title}>
+                        @theUser
+                    </Text>
+                    <Text style={styles.r_description}>
+                        this is my tweet, tweet tweet tweet
+                    </Text>
+                    <Text style={styles.r_location}>
+                        location
+                    </Text>
+                </View>
+                <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+
+                  <Image source={likeimg} style={styles.r_photo} />
+
+                </TouchableOpacity>
+
+            </View>
           </BottomDrawer>
 
         </View>

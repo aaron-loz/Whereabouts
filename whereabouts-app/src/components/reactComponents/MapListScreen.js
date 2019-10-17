@@ -1,9 +1,15 @@
 import React from 'react';
-import { Alert, FlatList, Image, Text, TextInput, TouchableHighlight, View } from 'react-native';
+import { Alert, FlatList, Image, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 //import CustomRow from './CustomRow';
 import styles from './styles';
 import likeimg from '../images/like.png';
+
+//To Do:
+//  complete page style - spacing at top
+//  get data directly from map
+//  write function addlikedata to add likes
+//  move addLikeData to separate file and import
 
 export default class MapListScreen extends React.Component  {
     static navigationOptions = {
@@ -94,7 +100,29 @@ export default class MapListScreen extends React.Component  {
       ]
     }
 
-    
+    addLikeData = () => {
+
+      Alert.alert(
+        'Liked!',
+        'this item will be added to your like list',
+        [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: true},
+      );
+      // Must add item to Like List Array
+      //
+      // this.array.push({title : this.state.textInput_Holder});
+      //
+      // this.setState({ arrayHolder: [...this.array] })
+
+    }
+
     render() {
       return (
         <View style={styles.list_container}>
@@ -114,7 +142,11 @@ export default class MapListScreen extends React.Component  {
                           {item.location}
                       </Text>
                   </View>
-                  <Image source={likeimg} style={styles.r_photo} />
+                  <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+
+                    <Image source={likeimg} style={styles.r_photo} />
+
+                  </TouchableOpacity>
 
               </View>
             }

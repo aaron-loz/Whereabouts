@@ -42,6 +42,7 @@ export default class TwitterLogin extends React.Component {
     // }
     // state = {twitdetails: ''}
 
+
     render() {
         return(
         <View style= {styles.container}>

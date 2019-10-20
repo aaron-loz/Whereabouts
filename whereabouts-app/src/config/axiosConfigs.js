@@ -40,6 +40,7 @@ function generate_nonce(){
 }
 
 
+
 export function getToken(){
 }
 
@@ -62,7 +63,6 @@ export function temp_search(){
             console.log(error);
         });
     
-}
 
 //! Currently, THIS DOES NOT WORK. 
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658

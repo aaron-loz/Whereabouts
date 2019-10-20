@@ -21,10 +21,8 @@ export default class TwitterLogin extends React.Component {
 
     async searchTweets(twitname){
         this.state.twitname = twitname
-        this.state.following = JSON.stringify(await get_friends(twitname))
-        console.log("following:\n")
-        console.log(this.state.following)
-
+        friends = await get_friends(twitname)
+        this.state.following = JSON.stringify(friends)
         this.setState(previousState => ({
             following : previousState.following
         }))

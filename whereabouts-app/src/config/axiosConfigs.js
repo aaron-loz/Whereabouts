@@ -2,6 +2,7 @@ import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import config from '../../config';
 import CryptoJS from 'crypto-js';
+//Todo: remove Oauth-1.0a and oauth-signature
 import oauthSignature from 'oauth-signature';
 import OAuth from 'oauth-1.0a';
 
@@ -45,13 +46,8 @@ export function getToken(){
 //! Currently, THIS DOES NOT WORK. 
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658
 //https://stackoverflow.com/questions/51363339/react-native-app-transport-security-has-blocked
-
 export function get_friends(twitname){
-    var NetworkInfo = require('react-native-network-info');
-    url = NetworkInfo.getIPAddress(ip => {
-            return ip.toString();
-          });
-    url += ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
+    url = config.LOCAL_IP + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
     return fetch(url)
     .then((response)=>{
         console.log(response)

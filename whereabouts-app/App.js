@@ -13,27 +13,27 @@ import MapListScreen from './src/components/reactComponents/MapListScreen';
 import LikesListScreen from './src/components/reactComponents/LikesListScreen';
 import AddAccount from './src/components/reactComponents/AddAccount';
 
-const AppNavigator = createStackNavigator({
-
-  Login: LoginScreen,
-  Home: HomeScreen,
-  Map: MapScreen,
-  MapList: MapListScreen,
-  Likes: LikesListScreen,
-  Tweet: TwitterLogin,
-},
-  {
-    initialRouteName: 'Login',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: '#191E80',
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    },
-});
+// const AppNavigator = createStackNavigator({
+//
+//   Login: LoginScreen,
+//   Home: HomeScreen,
+//   Map: MapScreen,
+//   MapList: MapListScreen,
+//   Likes: LikesListScreen,
+//   Tweet: TwitterLogin,
+// },
+//   {
+//     initialRouteName: 'Login',
+//     defaultNavigationOptions: {
+//       headerStyle: {
+//         backgroundColor: '#191E80',
+//       },
+//       headerTintColor: '#fff',
+//       headerTitleStyle: {
+//         fontWeight: 'bold',
+//       },
+//     },
+// });
 
 
 const TabNavigation =  createBottomTabNavigator(
@@ -76,7 +76,7 @@ const TabNavigation =  createBottomTabNavigator(
         backgroundColor: '#191E80',
       },
       tabStyle: {
-        height: 49
+        height: 39
       },
     },
   }

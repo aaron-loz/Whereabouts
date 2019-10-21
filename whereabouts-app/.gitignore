@@ -3,6 +3,7 @@ node_modules/**/*
 npm-debug.*
 .env
 config.js
+AddList.js
 *.jks
 *.p8
 *.p12

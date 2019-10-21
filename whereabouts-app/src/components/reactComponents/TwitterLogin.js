@@ -1,55 +1,47 @@
-import {init, getTokeno2,test_search, temp_search} from '../../config/axiosConfigs';
+import {init, getTokeno2, get_friends, temp_search} from '../../config/axiosConfigs';
 import React from 'react';
 import { Text, View, Button } from 'react-native';
+import { TextInput } from 'react-native-paper';
+
+var httpBridge = require('react-native-http-bridge');
 
 export default class TwitterLogin extends React.Component {
-    state = {
-        values: []
-      };
-    // async componentDidMount(){
-    //     await init();
-    //     this.twitter =  await getTokeno2();
-    //     this.state.twittoken = await this.twitter.access_token;
-    // }
-    async tt_search() {
-        // const accessToken = "await this.props.auth.getAccessToken()";    //Not sure what kind of token we will need
-        // this.apiClient = new APIClient(accessToken);
-        // this.apiClient.get().then((data) => {
-        //     console.log(data);
-        //     this.setState({...this.state, values: data})
-        // });
 
-        t = await(temp_search());
+    async componentDidMount(){
+          // initalize the server (now accessible via localhost:1234)
+        await init();
+        this.twitter =  await getTokeno2();
+        this.state.twittoken = await this.twitter.access_token;
     }
 
-    // async testSearch(oauthtoken){
-    //     t = await(test_search(oauthtoken));
-    //     this.state.twittwits = t;
-    //     this.setState(previousState =>({
-    //         twittwits : previousState.twittwits
-    //     }))
-    // }
+    //implement geocodes requests to testSearch
+    async testSearch(geocodes){
 
-    // async searchTweets(lat, long){
-    // }
+    }
 
-    // async SSOlogin(oauthtoken){
-    // //! TODO: Finish setting up axios nonces.
-    //     console.log(oauthtoken);
-    //     t = await twitsignin(oauthtoken)
-    //     console.log(t)
-    // }
-    // state = {twitdetails: ''}
-
+    async searchTweets(twitname){
+        this.state.twitname = twitname
+        friends = await get_friends(twitname)
+        this.state.following = JSON.stringify(friends)
+        this.setState(previousState => ({
+            following : previousState.following
+        }))
+    }
+    state = {twitdetails: '',
+            twitname : '',
+            following : ''}
 
     render() {
         return(
         <View style= {styles.container}>
-
-            <Text>See console</Text>
-            <Button
-            title="Twitter Login Button" onPress={() => this.tt_search()}
+            <Button title="hi there" onPress={()=> temp_search()}></Button>
+            <Text>Enter your twitter name to continue!</Text>
+            <TextInput
+              style= {{height: 60}}
+              autoCompleteType = 'username'
+              onSubmitEditing={text => this.searchTweets(text)}
             />
+            <Text>{this.state.following}</Text>
         </View>
         )
     }

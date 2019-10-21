@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Modal, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, Modal, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import BottomDrawer from 'rn-bottom-drawer';
@@ -9,6 +9,7 @@ let friedsIdsRef = db.ref('/friends');
 let likesIdsRef = db.ref('/likes');
 
 import likeimg from '../images/like.png';
+import boilerdata from './boilerdata.js'
 
 // TO DO:
 //  link data from map to map list
@@ -17,7 +18,7 @@ import likeimg from '../images/like.png';
 //  stylize BottomDrawer
 //  create icon for bottom drawer when inactive
 //  only activate bottom drawer when location is clicked
-//  
+//
 
 
 export default class MapScreen extends React.Component  {
@@ -73,6 +74,10 @@ export default class MapScreen extends React.Component  {
       // this.likeArray.push({title : this.state.textInput_Holder});
       // this.setState({ arrayHolder: [...this.array] })
 
+    }
+
+    getData() {
+      return boilerdata
     }
 
     render() {

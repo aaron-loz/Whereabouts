@@ -40,9 +40,11 @@ const TabNavigation =  createBottomTabNavigator(
   {
     Map: MapScreen,
     MapList: MapListScreen,
+
     Likes: LikesListScreen,
     AddAccount: AddAccount,
     Tweet: TwitterLogin,
+
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

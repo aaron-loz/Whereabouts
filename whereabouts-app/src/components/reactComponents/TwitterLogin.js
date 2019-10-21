@@ -1,4 +1,4 @@
-import {init, getTokeno2, get_friends} from '../../config/axiosConfigs';
+import {init, getTokeno2, get_friends, temp_search} from '../../config/axiosConfigs';
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { TextInput } from 'react-native-paper';
@@ -34,6 +34,7 @@ export default class TwitterLogin extends React.Component {
     render() {
         return(
         <View style= {styles.container}>
+            <Button title="hi there" onPress={()=> temp_search()}></Button>
             <Text>Enter your twitter name to continue!</Text>
             <TextInput
               style= {{height: 60}}

@@ -59,4 +59,20 @@ export function get_friends(twitname){
     })
 }
 
+export function temp_search(){
+    console.log("Hi there")
+    axios.get('http://146.95.186.59:5000/', {
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        }})
+    // Succes :
+        .then((response) => {
+            console.log(response);
+        })
+        // Echec :
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
 //implement query construction and request to server

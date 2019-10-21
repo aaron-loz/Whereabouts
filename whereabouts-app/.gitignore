@@ -11,3 +11,4 @@ config.js
 *.orig.*
 web-build/
 web-report/
+../flask-server/__pycache__

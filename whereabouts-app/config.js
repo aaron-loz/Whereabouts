@@ -13,6 +13,9 @@ export config = {
   const FB_APP_ID="1:903899891718:web:00f28ce648d0580cd75b875";
   const TW_CUSTOMER_KEY = "9YI7BfOoNqussSahkRjbdbWyu";
   const TW_CUSTOMER_SECRET_KEY = "umOJG3JYaNX1EnMSWAbUTc8bh4fXwjU3vB2D41tCgWsfoByL5o";
+  const TW_ACCESS_TOKEN = "339015432-RXCAs8eqYLtAL6RacFS5BgwtLXw2obwDkP5lynC5"
+  const TW_ACCESS_SECRET_TOKEN = "cexidIZAtAqx6im89LtfKACGIuofY5ekPyffRdbpXCE2Q"
+  
   export default {
      FB_KEY,
      FB_AUTH_DOMAIN,
@@ -21,5 +24,7 @@ export config = {
      FB_SENDER_ID,
      FB_APP_ID,
      TW_CUSTOMER_KEY,
-     TW_CUSTOMER_SECRET_KEY
+     TW_CUSTOMER_SECRET_KEY,
+     TW_ACCESS_TOKEN,
+     TW_ACCESS_SECRET_TOKEN
   };

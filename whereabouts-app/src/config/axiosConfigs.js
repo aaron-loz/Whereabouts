@@ -40,8 +40,29 @@ function generate_nonce(){
 }
 
 
+
 export function getToken(){
 }
+
+export function temp_search(){
+    console.log("Hi there")
+    axios.get('http://your_ip_address:5000/get_tweets/q=twitter%20&result_type=recent&since=2014-07-19&count=100', {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "consumer-key": config.TW_CUSTOMER_KEY, 
+          "consumer-secret-key": config.TW_CUSTOMER_SECRET_KEY,
+          "access-token": config.TW_ACCESS_TOKEN,
+          "access-secret-token": config.TW_ACCESS_SECRET_TOKEN
+        }})
+    // Succes :
+        .then((response) => {
+            console.log(response.data);
+        })
+        // Echec :
+        .catch((error) => {
+            console.log(error);
+        });
+    
 
 //! Currently, THIS DOES NOT WORK. 
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658

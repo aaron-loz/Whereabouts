@@ -63,7 +63,7 @@ export function temp_search(){
             console.log(error);
         });
     
-
+}
 //! Currently, THIS DOES NOT WORK. 
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658
 //https://stackoverflow.com/questions/51363339/react-native-app-transport-security-has-blocked
@@ -79,5 +79,3 @@ export function get_friends(twitname){
         return error
     })
 }
-
-//implement query construction and request to server

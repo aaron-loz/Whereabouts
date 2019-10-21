@@ -1,7 +1,6 @@
 import {init, getTokeno2,test_search, temp_search} from '../../config/axiosConfigs';
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import APIClient from '../../client/apiClient';
 
 export default class TwitterLogin extends React.Component {
     state = {

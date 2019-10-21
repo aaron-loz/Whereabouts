@@ -13,7 +13,8 @@ export default styles = StyleSheet.create({
     },
     list_container: {
       flex: 1,
-      backgroundColor: '#8EC9FB'
+      backgroundColor: '#8EC9FB',
+      marginTop: 41,
     },
     //This is a temporary stuff:
     main: {

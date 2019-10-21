@@ -108,10 +108,9 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={400} offset={8}>
-            <Text>Hi!  i'm a drawer!!!</Text>
+          <BottomDrawer containerHeight={400} offset={8} backgroundColor={'#8EC9FB'}>
             <View style={styles.r_container}>
-                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
                         @theUser
@@ -131,7 +130,7 @@ export default class MapScreen extends React.Component  {
 
             </View>
             <View style={styles.r_container}>
-                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
                         @theUser
@@ -151,7 +150,7 @@ export default class MapScreen extends React.Component  {
 
             </View>
             <View style={styles.r_container}>
-                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+              <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
                         @theUser
@@ -191,7 +190,7 @@ var mapStyle = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#8ec3b9"
+        "color": "#8EC9FB"
       }
     ]
   },
@@ -262,7 +261,7 @@ var mapStyle = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#6f9ba5"
+        "color": "#3BA3F8"
       }
     ]
   },
@@ -424,7 +423,7 @@ var mapStyle = [
     "elementType": "geometry.fill",
     "stylers": [
       {
-        "color": "#3fb0aa"
+        "color": "#8EC9FB"
       }
     ]
   },

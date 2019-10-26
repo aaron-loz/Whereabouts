@@ -3,9 +3,6 @@ import React from 'react';
 import { Text, View, Button, TouchableHighlight } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import styles from './styles';
-import config from '../../../config'
-
-var httpBridge = require('react-native-http-bridge');
 
 export default class TwitterLogin extends React.Component {
 

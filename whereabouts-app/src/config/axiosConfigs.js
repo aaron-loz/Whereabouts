@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js';
 //Todo: remove Oauth-1.0a and oauth-signature
 import oauthSignature from 'oauth-signature';
 import OAuth from 'oauth-1.0a';
-import {addAccountIds, addFriends} from '../components/firebase/firebaseApi'
+import {checkHasAccountId, addAccountIds, checkHasUserIdAndFriendId, addFriends} from '../components/firebase/firebaseApi'
 
     //! Separate axios configs from twitter requests.
 
@@ -68,8 +68,9 @@ export function temp_searchWithIP(){
 //! Currently, THIS DOES NOT WORK. 
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658
 //https://stackoverflow.com/questions/51363339/react-native-app-transport-security-has-blocked
+
+
 export function get_friends(twitname, twitid){
-    console.log("in get_friends");
     url = 'http://' + config.LOCAL_IP + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
     axios.get(url, {
         headers: {
@@ -80,10 +81,19 @@ export function get_friends(twitname, twitid){
           "access-secret-token": config.TW_ACCESS_SECRET_TOKEN
         }})
     .then((response)=>{
-        console.log(response.data)
-        addAccountIds(twitid);
+        let hasAccountId = checkHasAccountId(twitid);
+        if (!hasAccountId){
+            addAccountIds(twitid);
+        } else {
+            console.log("Account already exists");
+        }
         response.data.map((obj) => {
-            addFriends(twitid, obj);
+            let hasUserIdAndFriendId = checkHasUserIdAndFriendId(twitid, obj);
+            if (!hasUserIdAndFriendId){
+                addFriends(twitid, obj);                
+            } else {
+                console.log("Pair of UserIdAndFriendId already exists");
+            }
         })
         return response.data
     })

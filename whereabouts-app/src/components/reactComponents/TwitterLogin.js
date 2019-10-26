@@ -35,7 +35,7 @@ export default class TwitterLogin extends React.Component {
     //implement geocodes requests to testSearch
     async buildQuery(friends){
         console.log(friends)
-        s = '' 
+        s = '?q=' 
         for (let i = 0; i<friends.length; i++){
             console.log(friends[i])
             s += '%40'+friends[i].screen_name

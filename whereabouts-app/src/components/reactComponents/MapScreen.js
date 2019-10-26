@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Modal, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, Modal, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import BottomDrawer from 'rn-bottom-drawer';
@@ -9,6 +9,7 @@ let friedsIdsRef = db.ref('/friends');
 let likesIdsRef = db.ref('/likes');
 
 import likeimg from '../images/like.png';
+import boilerdata from './boilerdata.js'
 
 // TO DO:
 //  link data from map to map list
@@ -17,7 +18,7 @@ import likeimg from '../images/like.png';
 //  stylize BottomDrawer
 //  create icon for bottom drawer when inactive
 //  only activate bottom drawer when location is clicked
-//  
+//
 
 
 export default class MapScreen extends React.Component  {
@@ -75,6 +76,10 @@ export default class MapScreen extends React.Component  {
 
     }
 
+    getData() {
+      return boilerdata
+    }
+
     render() {
       return (
         <View style= {{flex:1}}>
@@ -103,10 +108,9 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={400} offset={8}>
-            <Text>Hi!  i'm a drawer!!!</Text>
+          <BottomDrawer containerHeight={400} offset={8} backgroundColor={'#8EC9FB'}>
             <View style={styles.r_container}>
-                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
                         @theUser
@@ -126,7 +130,7 @@ export default class MapScreen extends React.Component  {
 
             </View>
             <View style={styles.r_container}>
-                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+                <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
                         @theUser
@@ -146,7 +150,7 @@ export default class MapScreen extends React.Component  {
 
             </View>
             <View style={styles.r_container}>
-                <Image source={'../images/twitter_pin-02.png'} style={styles.r_photo} />
+              <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
                         @theUser
@@ -267,24 +271,6 @@ var mapStyle = [
     "stylers": [
       {
         "color": "#1d2c4d"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.business",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#b08155"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.business",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "color": "#b0489d"
       }
     ]
   },
@@ -411,15 +397,6 @@ var mapStyle = [
     "stylers": [
       {
         "color": "#0e1626"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#3fb0aa"
       }
     ]
   },

@@ -65,7 +65,8 @@ export function temp_searchWithIP(){
         });
     
 }
-//! Currently, THIS DOES NOT WORK. 
+
+//! Currently, THIS DOES NOT WORK.
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658
 //https://stackoverflow.com/questions/51363339/react-native-app-transport-security-has-blocked
 
@@ -103,6 +104,7 @@ export function get_friends(twitname, twitid){
     })
 }
 
+
 export function temp_search(){
     console.log("Hi there")
     const url = 'http://' + config.LOCAL_IP + ':5000/get_tweets/q=twitter%20&result_type=recent&since=2014-07-19&count=100'
@@ -125,4 +127,3 @@ export function temp_search(){
 }
 
 //implement query construction and request to server
-

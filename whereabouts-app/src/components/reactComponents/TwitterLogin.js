@@ -3,6 +3,8 @@ import React from 'react';
 import { Text, View, Button, TouchableHighlight } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import styles from './styles';
+import * as Location from 'expo-location';
+
 
 export default class TwitterLogin extends React.Component {
 
@@ -13,9 +15,23 @@ export default class TwitterLogin extends React.Component {
         this.state.twittoken = await this.twitter.access_token;
     }
 
-    //implement geocodes requests to testSearch
-    async testSearch(geocodes){
+    async getgeocodes(){
+        if(Location.hasServicesEnabledAsync()){
+            return getCurrentPositionAsync(options= {
+                accuracy: 3,
+                maximumAge : 60000
+            })
+        }else{
+            //ask permission
+            return Location.geocodeAsync("695 Park Ave New York NY 10065")
+        }
 
+    }
+    //implement geocodes requests to testSearch
+    async buildQuery(){
+        currloc = getgeocodes()
+        this.state.currloc = currloc
+        s = "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
     }
 
     async searchTweets(twitname, twitid){

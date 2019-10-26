@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Dimensions from 'Dimensions';
 import {
-  StyleSheet,
   TouchableOpacity,
   Text,
   Animated,
@@ -12,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import {Actions, ActionConst} from 'react-native-router-flux';
+import styles from './styles';
 
 import spinner from '../images/loading.gif';
 
@@ -73,16 +73,16 @@ export default class ButtonSubmit extends Component {
     });
 
     return (
-      <View style={styles.container}>
+      <View style={styles.L_button_container}>
         <Animated.View style={{width: changeWidth}}>
           <TouchableOpacity
-            style={styles.button}
+            style={styles.L_button}
             onPress={() => this.props.navigation.navigate('Map')}
             activeOpacity={1}>
             {this.state.isLoading ? (
-              <Image source={spinner} style={styles.image} />
+              <Image source={spinner} style={styles.L_image} />
             ) : (
-              <Text style={styles.text}>LOGIN</Text>
+              <Text style={styles.L_text}>LOGIN</Text>
             )}
           </TouchableOpacity>
           <Animated.View
@@ -93,39 +93,3 @@ export default class ButtonSubmit extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    top: -95,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#3BA3F8',
-    height: MARGIN,
-    borderRadius: 20,
-    zIndex: 100,
-  },
-  circle: {
-    height: MARGIN,
-    width: MARGIN,
-    marginTop: -MARGIN,
-    borderWidth: 1,
-    borderColor: '#F035E0',
-    borderRadius: 100,
-    alignSelf: 'center',
-    zIndex: 99,
-    backgroundColor: '#3BA3F8',
-  },
-  text: {
-    color: 'white',
-    backgroundColor: 'transparent',
-  },
-  image: {
-    width: 24,
-    height: 24,
-  },
-});

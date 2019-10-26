@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import styles from './styles';
 
 export default class SplashScreen extends React.Component  {
@@ -18,6 +18,3 @@ export default class SplashScreen extends React.Component  {
       );
     }
 };
-
-  
-

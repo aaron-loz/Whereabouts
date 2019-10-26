@@ -1,114 +1,158 @@
 import React from 'react';
-import { Text, TextInput, View, TouchableHighlight, Alert } from 'react-native';
+import { Alert, FlatList, Image, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
+//import CustomRow from './CustomRow';
 import styles from './styles';
+import likeimg from '../images/like.png';
 
-let addAccountIds = item => {
-  db.ref('/accountIds').push({
-    id: item
-  });
-};
+//To Do:
+//  complete page style - spacing at top
+//  get data directly from map
+//  write function addlikedata to add likes
+//  move addLikeData to separate file and import
 
 export default class MapListScreen extends React.Component  {
     static navigationOptions = {
-      title: 'Map List Screen',
-    };
-    
-
-    state = {
-      addAccountId: 'id1',
-      addFriendsUserId: '',
-      addFriendsFriendId: '',
-      addLikesUserId: '',
-      addLikesLocationId: ''
+      title: 'Map List',
     };
 
-    //AddAccounts
-    handleChangeAddAccounts = e => {
-      this.setState({
-        addAccountId: e.nativeEvent.text
-      });
-    };
+    //boilerplate data
+    getData() {
+      return [
+        {
+          key: 1, title: '@joetheguy',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 2,
+          title: '@janethejane',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 3, title: '@benjiiiii',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 4,
+          title: '@ali123456',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 5, title: '@markuslarkus',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 6,
+          title: '@fridafrido',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 7, title: '@joetheguy',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 8,
+          title: '@janethejane',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 9, title: '@benjiiiii',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 10,
+          title: '@ali123456',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 11, title: '@markuslarkus',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+          location: 'tagged location'
+        },
+        {
+          key: 12,
+          title: '@fridafrido',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+          location: 'tagged location'
+        },
+      ]
+    }
 
-    handleSubmitAddAccounts = () => {
-      addAccountIds(this.state.addAccountId);
-      Alert.alert(`Account ${this.state.addAccountId} saved successfully`);
-    };
+    addLikeData = () => {
 
-    //AddFriends
-    handleChangeAddFriendsUserId = e => {
-      this.setState({
-        addFriendsUserId: e.nativeEvent.text
-      });
-    };
+      Alert.alert(
+        'Liked!',
+        'this item will be added to your like list',
+        [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: true},
+      );
+      // Must add item to Like List Array
+      //
+      // this.array.push({title : this.state.textInput_Holder});
+      //
+      // this.setState({ arrayHolder: [...this.array] })
 
-    handleChangeAddFriendsFriendId = e => {
-      this.setState({
-        addFriendsFriendId: e.nativeEvent.text
-      });
-    };
-
-    handleSubmitAddFriends = () => {
-      db.ref(`/friends/${this.state.addFriendsUserId}`).push({
-        friendId: this.state.addFriendsFriendId
-      });
-      Alert.alert(`Friend ${this.state.addFriendsFriendId} saved successfully`);
-    };
-
-    //AddLikes
-    handleChangeAddLikesUserId = e => {
-      this.setState({
-        addLikesUserId: e.nativeEvent.text
-      });
-    };
-
-    handleChangeAddLikesLocationId = e => {
-      this.setState({
-        addLikesLocationId: e.nativeEvent.text
-      });
-    };
-
-    handleSubmitAddLikes = () => {
-      db.ref(`/likes/${this.state.addLikesUserId}`).push({
-        locationId: this.state.addLikesLocationId
-      });
-      Alert.alert(`Like ${this.state.addLikesLocationId} saved successfully`);
-    };
+    }
 
     render() {
       return (
-        <View style= {styles.main}>
-          <Text style={styles.title}>List of Map Pin Data</Text>
-          
-          <Text>--------------------</Text>
+        <View style={styles.list_container}>
+          <FlatList
+            data={this.getData()}
+            renderItem={({ item }) =>
+              <View style={styles.r_container}>
+                  <Image source={{ uri: item.image_url }} style={styles.r_photo} />
+                  <View style={styles.r_container_text}>
+                      <Text style={styles.r_title}>
+                          {item.title}
+                      </Text>
+                      <Text style={styles.r_description}>
+                          {item.description}
+                      </Text>
+                      <Text style={styles.r_location}>
+                          {item.location}
+                      </Text>
+                  </View>
+                  <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
 
-          <Text style={styles.title}>Add Account</Text>
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddAccounts} placeholder='UserId' />
-          <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddAccounts} >
-            <Text style={styles.buttonText}>Add</Text>
-          </TouchableHighlight>
+                    <Image source={likeimg} style={styles.r_photo} />
 
-          <Text>--------------------</Text>
+                  </TouchableOpacity>
 
-          <Text style={styles.title}>Add Friends</Text>
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddFriendsUserId} placeholder='UserId' />
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddFriendsFriendId} placeholder='His FriendId' />
-          <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddFriends} >
-            <Text style={styles.buttonText}>Add</Text>
-          </TouchableHighlight>
+              </View>
+            }
+          />
+      </View>
 
-          <Text>--------------------</Text>
-
-          <Text style={styles.title}>Add Likes</Text>
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesUserId} placeholder='UserId' />
-          <TextInput style={styles.itemInput} onChange={this.handleChangeAddLikesLocationId} placeholder='Liked LocationId' />
-          <TouchableHighlight style={styles.button} underlayColor="white" onPress={this.handleSubmitAddLikes} >
-            <Text style={styles.buttonText}>Add</Text>
-          </TouchableHighlight>
-
-          <Text>--------------------</Text>
-  
-        </View>
       );
     }
   };

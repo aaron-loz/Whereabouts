@@ -3,6 +3,7 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 
 var httpBridge = require('react-native-http-bridge');
 
@@ -16,22 +17,42 @@ export default class TwitterLogin extends React.Component {
     }
 
     async getgeocodes(){
-        if(Location.hasServicesEnabledAsync()){
-            return getCurrentPositionAsync(options= {
-                accuracy: 3,
-                maximumAge : 60000
-            })
-        }else{
-            //ask permission
-            return Location.geocodeAsync("695 Park Ave New York NY 10065")
-        }
+        const { status, permissions } = await Permissions.askAsync(Permissions.LOCATION);
+        if (status == "granted"){
 
+            
+            if(Location.hasServicesEnabledAsync()){
+                return Location.getCurrentPositionAsync(options= {
+                    accuracy: 3,
+                    maximumAge : 60000
+                })
+            }else{
+                //TODO: ask permission for location
+                return Location.geocodeAsync("695 Park Ave New York NY 10065")
+            }
+        }
+        else{
+            throw new Error("Location Permission Not Granted")
+        }
     }
     //implement geocodes requests to testSearch
-    async buildQuery(){
-        currloc = getgeocodes()
+    async buildQuery(friends){
+        console.log(friends)
+        s = '' 
+        if (typeof friends == 'object'){
+            for (var key in friends){
+                s += key
+            }
+        }
+        else{
+            s += friends.toString();
+        }
+        currloc = await this.getgeocodes()
+        console.log("currloc")
+        console.log(currloc)
         this.state.currloc = currloc
-        s = "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
+        s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
+        return s
     }
 
     async searchTweets(twitname){
@@ -41,6 +62,9 @@ export default class TwitterLogin extends React.Component {
         this.setState(previousState => ({
             following : previousState.following
         }))
+        console.log(this.state.following)
+
+        this.buildQuery(friends)
     }
     state = {twitdetails: '',
             twitname : '',
@@ -49,7 +73,7 @@ export default class TwitterLogin extends React.Component {
     render() {
         return(
         <View style= {styles.container}>
-            <Button title="hi there" onPress={()=> temp_search()}></Button>
+            <Button title="hi there" onPress={()=> this.buildQuery("hi")}></Button>
             <Text>Enter your twitter name to continue!</Text>
             <TextInput
               style= {{height: 60}}

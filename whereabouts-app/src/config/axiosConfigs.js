@@ -36,16 +36,12 @@ export function getTokeno2(){
 
 function parse_json(json_stack){
     //creates twitter objects that hold id, username, and geolocation
-    return Twitter(
 }
 
 
 export function getToken(){
 }
 
-//! Currently, THIS DOES NOT WORK. 
-//TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658
-//https://stackoverflow.com/questions/51363339/react-native-app-transport-security-has-blocked
 export function get_friends(twitname){
     url = config.LOCAL_IP + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
     return fetch(url)
@@ -74,6 +70,3 @@ export function temp_search(){
             console.log(error);
         });
 }
-
-//implement query construction and request to server
-

@@ -13,3 +13,4 @@ AddList.js
 web-build/
 web-report/
 ../flask-server/__pycache__
+../.expo/*

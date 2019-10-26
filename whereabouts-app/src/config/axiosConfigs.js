@@ -38,12 +38,8 @@ function parse_json(json_stack){
     //creates twitter objects that hold id, username, and geolocation
 }
 
-
-export function getToken(){
-}
-
 export function get_friends(twitname){
-    url = config.LOCAL_IP + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
+    url = config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
     return fetch(url)
     .then((response)=>{
         console.log(response)
@@ -55,18 +51,23 @@ export function get_friends(twitname){
     })
 }
 
-export function temp_search(){
-    console.log("Hi there")
-    axios.get('http://146.95.186.59:5000/', {
-        headers: {
-          "Access-Control-Allow-Origin": "*"
+export function search_tweets(query){
+    console.log("searching tweets using : " + query)
+    url = "http://"+ config.IP_ADDR +"/get_tweets/"+query
+    return fetch(url,{
+        headers:{
+            "Access-Control-Allow-Origin":"*",
+            "consumer-key": config.TW_CONSUMER_KEY,
+            "consumer-secret-key": config.TW_CONSUMER_SECRET_KEY,
+            "access-token": config.TW_ACCESS_TOKEN,
+            "access-secret-token": config.TW_ACCESS_SECRET_TOKEN,
         }})
-    // Succes :
-        .then((response) => {
-            console.log(response);
+        .then((response) =>{
+            console.log(response)
+            return response
         })
-        // Echec :
-        .catch((error) => {
-            console.log(error);
-        });
+        .catch((error)=> {
+            console.log(error)
+            return error
+        })
 }

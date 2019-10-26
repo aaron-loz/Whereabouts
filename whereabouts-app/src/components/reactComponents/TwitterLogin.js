@@ -1,4 +1,4 @@
-import {init, getTokeno2, get_friends, temp_search} from '../../config/axiosConfigs';
+import {init, get_friends, search_tweets} from '../../config/axiosConfigs';
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { TextInput } from 'react-native-paper';
@@ -12,8 +12,6 @@ export default class TwitterLogin extends React.Component {
     async componentDidMount(){
           // initalize the server (now accessible via localhost:1234)
         await init();
-        this.twitter =  await getTokeno2();
-        this.state.twittoken = await this.twitter.access_token;
     }
 
     async getgeocodes(){
@@ -27,7 +25,6 @@ export default class TwitterLogin extends React.Component {
                     maximumAge : 60000
                 })
             }else{
-                //TODO: ask permission for location
                 return Location.geocodeAsync("695 Park Ave New York NY 10065")
             }
         }
@@ -35,6 +32,7 @@ export default class TwitterLogin extends React.Component {
             throw new Error("Location Permission Not Granted")
         }
     }
+
     //implement geocodes requests to testSearch
     async buildQuery(friends){
         console.log(friends)
@@ -56,15 +54,19 @@ export default class TwitterLogin extends React.Component {
     }
 
     async searchTweets(twitname){
+        console.log("Search tweets")
         this.state.twitname = twitname
         friends = await get_friends(twitname)
+        console.log("friends")
+        console.log(friends)
         this.state.following = JSON.stringify(friends)
         this.setState(previousState => ({
             following : previousState.following
         }))
         console.log(this.state.following)
 
-        this.buildQuery(friends)
+        q = this.buildQuery(friends)
+        results = await search_tweets(q)
     }
     state = {twitdetails: '',
             twitname : '',

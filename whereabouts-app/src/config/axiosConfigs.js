@@ -2,9 +2,8 @@ import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import config from '../../config';
 import CryptoJS from 'crypto-js';
-//Todo: remove Oauth-1.0a and oauth-signature
-import oauthSignature from 'oauth-signature';
-import OAuth from 'oauth-1.0a';
+//Todo: remove oauth-1.0a and oauth-signature
+import { Twitter } from '../components/twitter/twitterClass';
 
     //! Separate axios configs from twitter requests.
 
@@ -34,11 +33,11 @@ export function getTokeno2(){
     )
 }
 
-function generate_nonce(){
-    nonce = CryptoJS.lib.WordArray.random(16);
-    return nonce;
-}
 
+function parse_json(json_stack){
+    //creates twitter objects that hold id, username, and geolocation
+    return Twitter(
+}
 
 
 export function getToken(){

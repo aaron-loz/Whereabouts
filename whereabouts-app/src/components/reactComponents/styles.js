@@ -103,6 +103,7 @@ export default styles = StyleSheet.create({
     //___________________________ Logo styles ________________________//
     logo_container: {
       flex: 3,
+      marginTop: 170,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -118,7 +119,7 @@ export default styles = StyleSheet.create({
       marginTop: 20,
     },
     L_button_container: {
-        flex: 2,
+        flex: 3,
         top: -95,
         alignItems: 'center',
         justifyContent: 'flex-start',
@@ -128,6 +129,7 @@ export default styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#159CDC',
       height: 40, //WIDTH
+      width: 370,
       borderRadius: 20,
       zIndex: 100,
     },

@@ -68,6 +68,7 @@ export default class TwitterLogin extends React.Component {
         q = this.buildQuery(friends)
         results = await search_tweets(q)
     }
+    
     state = {twitdetails: '',
             twitname : '',
             following : ''}

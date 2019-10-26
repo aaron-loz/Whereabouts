@@ -44,7 +44,7 @@ function generate_nonce(){
 export function getToken(){
 }
 
-//! Currently, THIS DOES NOT WORK. 
+//! Currently, THIS DOES NOT WORK.
 //TODO: Follow these tickets : https://stackoverflow.com/questions/58468888/react-native-not-fetching-content-from-externally-visible-flask-server-networ/58472658#58472658
 //https://stackoverflow.com/questions/51363339/react-native-app-transport-security-has-blocked
 export function get_friends(twitname){
@@ -60,21 +60,20 @@ export function get_friends(twitname){
     })
 }
 
-export function temp_search(){
-    console.log("Hi there")
-    axios.get('http://146.95.186.59:5000/', {
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        }})
-    // Succes :
-        .then((response) => {
-            console.log(response);
-        })
-        // Echec :
-        .catch((error) => {
-            console.log(error);
-        });
-}
+// export function temp_search(){
+//     console.log("Hi there")
+//     axios.get('http://146.95.186.59:5000/', {
+//         headers: {
+//           "Access-Control-Allow-Origin": "*"
+//         }})
+//     // Succes :
+//         .then((response) => {
+//             console.log(response);
+//         })
+//         // Echec :
+//         .catch((error) => {
+//             console.log(error);
+//         });
+// }
 
 //implement query construction and request to server
-

@@ -47,10 +47,10 @@ def get_friends(twitname):
                       consumer_secret = auth[1],
                       access_token_key = auth[2],
                       access_token_secret = auth[3])
-    results = api.GetFriends(screen_name = twitname, skip_status = True, include_user_entities = False)
+    results = api.GetFriends(screen_name = twitname)
     fids = []
     for x in results:
-        fids.append(x._json["screen_name"])
+        fids.append({"id_str" : x._json["id_str"], "screen_name" : x._json["screen_name"]})
     return jsonify(fids), 200
 
 

@@ -1,11 +1,11 @@
 import {init, get_friends, search_tweets} from '../../config/axiosConfigs';
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, TouchableHighlight } from 'react-native';
 import { TextInput } from 'react-native-paper';
+import styles from './styles';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 
-var httpBridge = require('react-native-http-bridge');
 
 export default class TwitterLogin extends React.Component {
 
@@ -59,6 +59,7 @@ export default class TwitterLogin extends React.Component {
         friends = await get_friends(twitname)
         console.log("friends")
         console.log(friends)
+
         this.state.following = JSON.stringify(friends)
         this.setState(previousState => ({
             following : previousState.following
@@ -68,21 +69,39 @@ export default class TwitterLogin extends React.Component {
         q = this.buildQuery(friends)
         results = await search_tweets(q)
     }
-    
-    state = {twitdetails: '',
+    state = {
+            twitdetails: '',
             twitname : '',
-            following : ''}
+            following : '',
+            typedUsername: '',
+            typedUserId: ''
+        }
 
+    handleChangeUsername = e => {
+        this.setState({
+            typedUsername: e.nativeEvent.text
+        });
+    };
+    handleChangeUserId = e => {
+        this.setState({
+            typedUserId: e.nativeEvent.text
+        });
+    };
+    handleSubmit = () => {
+        this.searchTweets(this.state.typedUsername, this.state.typedUserId);
+    };
     render() {
         return(
         <View style= {styles.container}>
             <Button title="hi there" onPress={()=> this.buildQuery("hi")}></Button>
+            <Button title="Click here to try temp_search" onPress={()=> temp_search()}></Button>
+            <Text>====================================</Text>
             <Text>Enter your twitter name to continue!</Text>
-            <TextInput
-              style= {{height: 60}}
-              autoCompleteType = 'username'
-              onSubmitEditing={text => this.searchTweets(text)}
-            />
+            <TextInput style={{height:100, width:100}} onChange={this.handleChangeUsername} placeholder='UserName' />
+            <TextInput style={{height:100, width:100}} onChange={this.handleChangeUserId} placeholder='UserId' />
+            <TouchableHighlight style={{height:100, width:200}} underlayColor="white" onPress={this.handleSubmit} >
+                <Text style={{height:100, width:100}}>Click here: Add</Text>
+            </TouchableHighlight>
             <Text>{this.state.following}</Text>
         </View>
         )

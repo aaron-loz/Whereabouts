@@ -4,6 +4,8 @@ import { db } from '../../config/firebaseConfig';
 //import CustomRow from './CustomRow';
 import styles from './styles';
 import likeimg from '../images/like.png';
+import boilerdata from './boilerdata.js'
+
 
 //To Do:
 //  complete page style - spacing at top

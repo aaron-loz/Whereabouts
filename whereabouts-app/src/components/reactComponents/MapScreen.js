@@ -190,7 +190,7 @@ var mapStyle = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#8EC9FB"
+        "color": "#8ec3b9"
       }
     ]
   },
@@ -261,7 +261,7 @@ var mapStyle = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#3BA3F8"
+        "color": "#6f9ba5"
       }
     ]
   },
@@ -271,24 +271,6 @@ var mapStyle = [
     "stylers": [
       {
         "color": "#1d2c4d"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.business",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#b08155"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.business",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "color": "#b0489d"
       }
     ]
   },
@@ -415,15 +397,6 @@ var mapStyle = [
     "stylers": [
       {
         "color": "#0e1626"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#8EC9FB"
       }
     ]
   },

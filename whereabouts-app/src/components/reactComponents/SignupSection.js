@@ -9,7 +9,6 @@ export default class SignupSection extends Component {
     return (
       <View style={styles.signUp_container}>
         <Text style={styles.signUp_text}>Create Account</Text>
-        <Text style={styles.signUp_text}>Forgot Password?</Text>
       </View>
     );
   }

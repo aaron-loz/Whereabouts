@@ -17,6 +17,8 @@ export default class LoginScreen extends React.Component  {
   static navigationOptions = {
     title: 'Login Screen',
   };
+
+
   render() {
     return(
       <Wallpaper>

@@ -31,8 +31,7 @@ export default class TwitterLogin extends React.Component {
             throw new Error("Location Permission Not Granted")
         }
     }
-
-    //implement geocodes requests to testSearch
+    
     async buildQuery(friends){
         console.log(friends)
         s = '?q=' 

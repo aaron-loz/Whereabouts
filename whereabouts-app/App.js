@@ -38,12 +38,13 @@ import AddAccount from './src/components/reactComponents/AddAccount';
 
 const TabNavigation =  createBottomTabNavigator(
   {
+    Login: LoginScreen,
     Map: MapScreen,
     MapList: MapListScreen,
 
     Likes: LikesListScreen,
     //AddAccount: AddAccount,
-    Tweet: TwitterLogin,
+    //Tweet: TwitterLogin,
 
   },
   {
@@ -59,7 +60,7 @@ const TabNavigation =  createBottomTabNavigator(
         } else if (routeName === 'LikesListScreen') {
           iconName = 'ion-md-heart';
         }
-        else if(routeName === 'TwitterLogin'){
+        else if(routeName === 'LoginScreen'){
           iconName = 'ion-md-heart';
         }
         //You can return any component that you like here!

@@ -35,16 +35,14 @@ export function getTokeno2(){
     )
 }
 
-function generate_nonce(){
-    nonce = CryptoJS.lib.WordArray.random(16);
-    return nonce;
+
+function parse_json(json_stack){
+    //creates twitter objects that hold id, username, and geolocation
 }
 
-
-
-export function getToken(){
-}
-
+export function get_friends(twitname){
+    url = config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
+    return fetch(url)
 export function temp_searchWithIP(){
     console.log("Hi there")
     axios.get('http://your_ip_address:5000/get_tweets/q=twitter%20&result_type=recent&since=2014-07-19&count=100', {
@@ -72,7 +70,7 @@ export function temp_searchWithIP(){
 
 
 export function get_friends(twitname, twitid){
-    url = 'http://' + config.LOCAL_IP + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
+    url = 'http://' + config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
     axios.get(url, {
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -104,26 +102,24 @@ export function get_friends(twitname, twitid){
     })
 }
 
-
-export function temp_search(){
-    console.log("Hi there")
-    const url = 'http://' + config.LOCAL_IP + ':5000/get_tweets/q=twitter%20&result_type=recent&since=2014-07-19&count=100'
-    axios.get(url, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "consumer-key": config.TW_CUSTOMER_KEY, 
-          "consumer-secret-key": config.TW_CUSTOMER_SECRET_KEY,
-          "access-token": config.TW_ACCESS_TOKEN,
-          "access-secret-token": config.TW_ACCESS_SECRET_TOKEN
+export function search_tweets(query){
+    console.log("searching tweets using : " + query)
+    url = "http://"+ config.IP_ADDR +"/get_tweets/"+query
+    return fetch(url,{
+        headers:{
+            "Access-Control-Allow-Origin":"*",
+            "consumer-key": config.TW_CONSUMER_KEY,
+            "consumer-secret-key": config.TW_CONSUMER_SECRET_KEY,
+            "access-token": config.TW_ACCESS_TOKEN,
+            "access-secret-token": config.TW_ACCESS_SECRET_TOKEN,
         }})
-    // Succes :
-        .then((response) => {
-            //console.log(response.data);
+        .then((response) =>{
+            console.log(response)
+            return response
         })
-        // Echec :
-        .catch((error) => {
-            console.log(error);
-        });
+        .catch((error)=> {
+            console.log(error)
+            return error        
+    })
 }
 
-//implement query construction and request to server

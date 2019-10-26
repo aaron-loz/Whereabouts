@@ -5,7 +5,8 @@ import CryptoJS from 'crypto-js';
 //Todo: remove Oauth-1.0a and oauth-signature
 import oauthSignature from 'oauth-signature';
 import OAuth from 'oauth-1.0a';
-import {checkHasAccountId, addAccountIds, checkHasUserIdAndFriendId, addFriends} from '../components/firebase/firebaseApi'
+import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
+    getFriendsTable, checkHasUserIdAndFriendId, addFriends} from '../components/firebase/firebaseApi'
 
     //! Separate axios configs from twitter requests.
 
@@ -40,6 +41,10 @@ function parse_json(json_stack){
     //creates twitter objects that hold id, username, and geolocation
 }
 
+export function get_friends_using_fetch(twitname){
+    url = config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
+    return fetch(url)
+}
 export function temp_searchWithIP(){
     console.log("Hi there")
     axios.get('http://your_ip_address:5000/get_tweets/q=twitter%20&result_type=recent&since=2014-07-19&count=100', {
@@ -58,12 +63,11 @@ export function temp_searchWithIP(){
         .catch((error) => {
             console.log(error);
         });
-    
 }
 
 export function get_friends(twitname, twitid){
     url = 'http://' + config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
-    axios.get(url, {
+    return axios.get(url, {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "consumer-key": config.TW_CUSTOMER_KEY, 
@@ -72,21 +76,7 @@ export function get_friends(twitname, twitid){
           "access-secret-token": config.TW_ACCESS_SECRET_TOKEN
         }})
     .then((response)=>{
-        let hasAccountId = checkHasAccountId(twitid);
-        if (!hasAccountId){
-            addAccountIds(twitid);
-        } else {
-            console.log("Account already exists");
-        }
-        response.data.map((obj) => {
-            let hasUserIdAndFriendId = checkHasUserIdAndFriendId(twitid, obj);
-            if (!hasUserIdAndFriendId){
-                addFriends(twitid, obj);                
-            } else {
-                console.log("Pair of UserIdAndFriendId already exists");
-            }
-        })
-        return response.data
+        return response
     })
     .catch((error) =>{
         console.log(error)

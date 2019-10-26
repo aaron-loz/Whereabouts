@@ -1,10 +1,11 @@
 import {init, get_friends, search_tweets} from '../../config/axiosConfigs';
 import React from 'react';
-import { Text, View, Button, TouchableHighlight } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { Text, TextInput, View, Button, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
+    getFriendsTable, checkHasUserIdAndFriendId, addFriends} from '../firebase/firebaseApi'
 
 
 export default class TwitterLogin extends React.Component {
@@ -17,14 +18,12 @@ export default class TwitterLogin extends React.Component {
     async getgeocodes(){
         const { status, permissions } = await Permissions.askAsync(Permissions.LOCATION);
         if (status == "granted"){
-
-            
             if(Location.hasServicesEnabledAsync()){
                 return Location.getCurrentPositionAsync(options= {
                     accuracy: 3,
                     maximumAge : 60000
                 })
-            }else{
+            } else {
                 return Location.geocodeAsync("695 Park Ave New York NY 10065")
             }
         }
@@ -35,29 +34,44 @@ export default class TwitterLogin extends React.Component {
     
     async buildQuery(friends){
         console.log(friends)
-        s = '' 
-        if (typeof friends == 'object'){
-            for (var key in friends){
-                s += key
-            }
-        }
-        else{
-            s += friends.toString();
+        s = '?q=' 
+        for (let i = 0; i<friends.length; i++){
+            console.log(friends[i])
+            s += '%40'+friends[i].screen_name
         }
         currloc = await this.getgeocodes()
         console.log("currloc")
         console.log(currloc)
         this.state.currloc = currloc
-        s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
+        s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",100mi" 
+        console.log(s)
         return s
     }
 
-    async searchTweets(twitname){
+    async searchTweets(twitname, twitid){
         console.log("Search tweets")
         this.state.twitname = twitname
-        friends = await get_friends(twitname)
-        console.log("friends")
-        console.log(friends)
+        let response = await get_friends(twitname, twitid)
+        let tableAccountId = await getAccountIdsTable();
+        let hasAccountId = checkHasAccountId(tableAccountId, twitid)
+        if (!hasAccountId){
+            addAccountIds(twitid);
+            console.log("Account was added");
+        } else {
+            console.log("Account already exists");
+        }
+        let tableFriends = await getFriendsTable();
+        response.data.map((obj) => {
+            let hasUserIdAndFriendId = checkHasUserIdAndFriendId(tableFriends, twitid, obj);
+            if (!hasUserIdAndFriendId){
+                addFriends(twitid, obj);   
+                console.log("Pair of UserIdAndFriendId was added");
+            } else {
+                console.log("Pair of UserIdAndFriendId already exists");
+            }
+        })
+
+        let friends = response.data
 
         this.state.following = JSON.stringify(friends)
         this.setState(previousState => ({
@@ -93,11 +107,10 @@ export default class TwitterLogin extends React.Component {
         return(
         <View style= {styles.container}>
             <Button title="hi there" onPress={()=> this.buildQuery("hi")}></Button>
-            <Button title="Click here to try temp_search" onPress={()=> temp_search()}></Button>
             <Text>====================================</Text>
             <Text>Enter your twitter name to continue!</Text>
-            <TextInput style={{height:100, width:100}} onChange={this.handleChangeUsername} placeholder='UserName' />
-            <TextInput style={{height:100, width:100}} onChange={this.handleChangeUserId} placeholder='UserId' />
+            <TextInput style={{height:100, width:300}} onChange={this.handleChangeUsername} placeholder='UserName' />
+            <TextInput style={{height:100, width:300}} onChange={this.handleChangeUserId} placeholder='UserId' />
             <TouchableHighlight style={{height:100, width:200}} underlayColor="white" onPress={this.handleSubmit} >
                 <Text style={{height:100, width:100}}>Click here: Add</Text>
             </TouchableHighlight>

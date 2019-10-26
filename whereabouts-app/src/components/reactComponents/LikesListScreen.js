@@ -1,8 +1,10 @@
 import React from 'react';
-import { Alert, FlatList, Image, Text, TextInput, TouchableHighlight, View } from 'react-native';
+import { Alert, FlatList, Image, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 import styles from './styles';
 let likesIdsRef = db.ref('/likes');
+import likeimg from '../images/like.png';
+
 
 
 export default class LikesListScreen extends React.Component {
@@ -130,6 +132,29 @@ export default class LikesListScreen extends React.Component {
     Alert.alert(`Like ${this.state.addLikesLocationId} saved successfully`);
   };
 
+  removeLikeData = () => {
+
+    Alert.alert(
+      'Unliked!',
+      'this item will be removed from your like list',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      {cancelable: true},
+    );
+    // Must add item to Like List Array
+    //
+    // this.array.push({title : this.state.textInput_Holder});
+    //
+    // this.setState({ arrayHolder: [...this.array] })
+
+  }
+
   render() {
     return (
       <View style={styles.list_container}>
@@ -148,6 +173,11 @@ export default class LikesListScreen extends React.Component {
                     <Text style={styles.r_location}>
                         {item.location}
                     </Text>
+                    <TouchableOpacity onPress={this.removeLikeData} activeOpacity={0.7} >
+
+                      <Image source={likeimg} style={styles.r_photo} />
+
+                    </TouchableOpacity>
                 </View>
 
             </View>
@@ -191,3 +221,11 @@ export default class LikesListScreen extends React.Component {
     );
   }
 };
+
+const sstyles = StyleSheet.create({
+  statusBar_BG: {
+    height: 18, //this is just to test if the platform is iOS to give it a height of 18, else, no height (Android apps have their own status bar)
+    backgroundColor: '#8EC9FB',
+  }
+
+})

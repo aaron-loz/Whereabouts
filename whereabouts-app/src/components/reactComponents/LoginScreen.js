@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, Image, Text, Button} from 'react-native';
+import {StyleSheet, Image, Text, Button, UIManager} from 'react-native';
 
 
 import { createAppContainer } from 'react-navigation';

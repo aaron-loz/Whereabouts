@@ -1,6 +1,6 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, UIManager } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 

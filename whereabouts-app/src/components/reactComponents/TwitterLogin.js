@@ -5,7 +5,8 @@ import styles from './styles';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
-    getFriendsTable, checkHasUserIdAndFriendId, addFriends} from '../firebase/firebaseApi'
+    getFriendsTable, checkHasUserIdAndFriendId, addFriends,
+    getLikesTable, checkHasLikes, addLike} from '../firebase/firebaseApi'
 
 
 export default class TwitterLogin extends React.Component {
@@ -34,19 +35,18 @@ export default class TwitterLogin extends React.Component {
 
     //implement geocodes requests to testSearch
     async buildQuery(friends){
-        console.log(friends)
-        s = '?q=' 
-        for (let i = 0; i<friends.length; i++){
-            console.log(friends[i])
-            s += '%40'+friends[i].screen_name
+        s = 'q=' 
+        for (let i = 0; i<friends.length-1; i++){
+            s +=friends[i].screen_name+'%20OR%20'
         }
+        s += friends[friends.length-1].screen_name
         currloc = await this.getgeocodes()
-        console.log("currloc")
-        console.log(currloc)
         this.state.currloc = currloc
-        s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",100mi" 
-        console.log(s)
-        return s
+        //s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
+        return {
+            "raw_query": s,
+            "geo" : currloc.coords.latitude +","+currloc.coords.longitude+",100mi"
+        }
     }
 
     async searchTweets(twitname, twitid){
@@ -78,11 +78,22 @@ export default class TwitterLogin extends React.Component {
         this.setState(previousState => ({
             following : previousState.following
         }))
-        console.log(this.state.following)
-
-        q = this.buildQuery(friends)
-        results = await search_tweets(q)
+        
+        q = await this.buildQuery(friends)
+        results = await search_tweets(q.raw_query, q.geo)
+        tableLikes = await getLikesTable();
+        results.data.entities.map((obj) => {
+            let hasLike = checkHasLikes(tableLikes, obj);
+            if (!hasLike){
+                addLike(obj);   
+                console.log("Like was added");
+            } else {
+                console.log("Like already exists");
+            }
+        })
     }
+
+
     state = {
             twitdetails: '',
             twitname : '',

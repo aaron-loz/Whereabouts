@@ -27,7 +27,7 @@ export default class MapScreen extends React.Component  {
     // };
 
     state = {
-      currentUserId: "007",
+      currentUserId: "1186364677254795270",
       friends: [],
       likes: []
     };
@@ -49,11 +49,11 @@ export default class MapScreen extends React.Component  {
         let data = snapshot.val();
         let allLikes = Object.values(data);
         //Filters likes that belong to the user's friends
-        let likes = allLikes.filter(like => this.state.friends.includes(like.userId));
+        let likes = allLikes.filter(like => this.state.friends.includes(like.user_id_str));
         this.setState({ likes });
       });
-
     }
+    
     addLikeData = () => {
 
       Alert.alert(
@@ -99,8 +99,9 @@ export default class MapScreen extends React.Component  {
               return (
                 <MapView.Marker
                   key = {index}
-                  coordinate={obj.location.coordinates}
-                  title={obj.userId}
+                  coordinate={{latitude: obj.place.bounding_box.coordinates[0][0][1],
+                    longitude: obj.place.bounding_box.coordinates[0][0][0]}}
+                  title={obj.user_screen_name}
                   //description=should be tagged location
                   pinColor="#EC1561"
                 />
@@ -109,7 +110,22 @@ export default class MapScreen extends React.Component  {
           </MapView>
 
           <BottomDrawer containerHeight={400} offset={8} backgroundColor={'#8EC9FB'}>
-            <View style={styles.r_container}>
+              {this.state.likes.map((obj, index) => {
+                  return (
+                      <View style={styles.r_container} key = {index}>
+                        <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
+                        <View style={styles.r_container_text}>
+                          <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
+                          <Text style={styles.r_description}>{obj.text}</Text>
+                          <Text style={styles.r_location}>{obj.place.name}</Text>
+                        </View>
+                      <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+                        <Image source={likeimg} style={styles.r_photo} />
+                      </TouchableOpacity>
+                      </View>
+                  )
+                })}
+            {/* <View style={styles.r_container}>
                 <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
                 <View style={styles.r_container_text}>
                     <Text style={styles.r_title}>
@@ -128,47 +144,7 @@ export default class MapScreen extends React.Component  {
 
                 </TouchableOpacity>
 
-            </View>
-            <View style={styles.r_container}>
-                <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
-                <View style={styles.r_container_text}>
-                    <Text style={styles.r_title}>
-                        @theUser
-                    </Text>
-                    <Text style={styles.r_description}>
-                        this is my tweet, tweet tweet tweet
-                    </Text>
-                    <Text style={styles.r_location}>
-                        location
-                    </Text>
-                </View>
-                <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
-
-                  <Image source={likeimg} style={styles.r_photo} />
-
-                </TouchableOpacity>
-
-            </View>
-            <View style={styles.r_container}>
-              <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
-                <View style={styles.r_container_text}>
-                    <Text style={styles.r_title}>
-                        @theUser
-                    </Text>
-                    <Text style={styles.r_description}>
-                        this is my tweet, tweet tweet tweet
-                    </Text>
-                    <Text style={styles.r_location}>
-                        location
-                    </Text>
-                </View>
-                <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
-
-                  <Image source={likeimg} style={styles.r_photo} />
-
-                </TouchableOpacity>
-
-            </View>
+            </View> */}
           </BottomDrawer>
 
         </View>

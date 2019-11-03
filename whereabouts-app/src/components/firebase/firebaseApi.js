@@ -1,6 +1,7 @@
 import React from 'react';
 import {  Alert } from 'react-native';
 import { db } from '../../config/firebaseConfig';
+var _ = require('lodash');
 
 //item - string containing user_id
 //Returns snapshot of accountIds
@@ -60,3 +61,70 @@ export function addFriends(userIdp, item){
     });
     Alert.alert(`Friend ${item.screen_name} saved successfully`);
 }
+
+
+export function getLikesTable() {
+  return db.ref('/likes').once('value', snapshot => {});
+}
+
+// "coordinates": null,
+// "created_at": "Mon Oct 21 19:29:34 +0000 2019",
+// "geo": null,
+// "place": Object {
+//   "attributes": Object {},
+//   "bounding_box": Object {
+//     "coordinates": Array [
+//       Array [
+//         Array [
+//           -73.96483915350565,
+//           40.768632486617726,
+//         ],
+//         Array [
+//           -73.96483915350565,
+//           40.768632486617726,
+//         ],
+//         Array [
+//           -73.96483915350565,
+//           40.768632486617726,
+//         ],
+//         Array [
+//           -73.96483915350565,
+//           40.768632486617726,
+//         ],
+//       ],
+//     ],
+//     "type": "Polygon",
+//   },
+//   "contained_within": Array [],
+//   "country": "United States",
+//   "country_code": "US",
+//   "full_name": "Hunter College North Building",
+//   "id": "07d9e44f94485000",
+//   "name": "Hunter College North Building",
+//   "place_type": "poi",
+//   "url": "https://api.twitter.com/1.1/geo/id/07d9e44f94485000.json",
+// },
+// "text": "First tweet with location",
+// "twit_id_str": "1",
+// "user_id_str": "12",
+// "user_profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+// "user_screen_name": "name",
+// },
+//Returns true if like is in firebase
+export function checkHasLikes(snapshot, item) {
+    let data = snapshot.val();
+    let allLikes = Object.values(data);
+    for (let i=0; i<allLikes.length; i++) {
+      if (allLikes[i].twit_id_str == item.twit_id_str) {
+        return true;
+      }
+    }
+    return false;
+}
+//item - see above
+//Pushes item to firebase
+export function addLike(item){
+    db.ref("/likes/").push(item);
+    Alert.alert(`Like saved successfully`);
+}
+

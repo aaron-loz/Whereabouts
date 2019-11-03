@@ -5,6 +5,12 @@ import { db } from '../../config/firebaseConfig';
 import styles from './styles';
 import likeimg from '../images/like.png';
 import boilerdata from './boilerdata.js'
+let accountIdsRef = db.ref('/accountIds');
+let friedsIdsRef = db.ref('/friends');
+let likesIdsRef = db.ref('/likes');
+import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
+  getFriendsTable, checkHasUserIdAndFriendId, addFriends,
+  getLikesTable, checkHasLikes, addLike} from '../firebase/firebaseApi'
 
 
 //To Do:
@@ -14,93 +20,60 @@ import boilerdata from './boilerdata.js'
 //  move addLikeData to separate file and import
 
 export default class MapListScreen extends React.Component  {
-    static navigationOptions = {
-      title: 'Map List',
+    // static navigationOptions = {
+    //   title: 'Map List',
+    // };
+
+    state = {
+      currentUserId: "1186364677254795270",
+      friends: [],
+      likes: []
     };
 
-    //boilerplate data
-    getData() {
-      return [
-        {
-          key: 1, title: '@joetheguy',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 2,
-          title: '@janethejane',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 3, title: '@benjiiiii',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 4,
-          title: '@ali123456',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 5, title: '@markuslarkus',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 6,
-          title: '@fridafrido',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 7, title: '@joetheguy',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 8,
-          title: '@janethejane',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 9, title: '@benjiiiii',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 10,
-          title: '@ali123456',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 11, title: '@markuslarkus',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-          location: 'tagged location'
-        },
-        {
-          key: 12,
-          title: '@fridafrido',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-          image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-          location: 'tagged location'
-        },
-      ]
+    async componentDidMount() {
+      let tableFriends = await getFriendsTable();
+      let data = tableFriends.val();
+      let allFriends = Object.values(data);
+      let friends = [];
+      allFriends.forEach(pair => {
+        if (pair.userId == this.state.currentUserId){
+          friends.push(pair.friendId);
+        }
+      })
+      this.setState({ friends });
+      likesIdsRef.once('value', snapshot => {
+        let data = snapshot.val();
+        let allLikes = Object.values(data);
+        //Filters likes that belong to the user's friends
+        let likes = allLikes.filter(like => this.state.friends.includes(like.user_id_str));
+        this.setState({ likes });
+      });
     }
+
+    //boilerplate data
+    // getData() {
+    //   return [
+    //     {
+    //       key: 1, title: '@joetheguy',
+    //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+    //       image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+    //       location: 'tagged location'
+    //     },
+    //     {
+    //       key: 2,
+    //       title: '@janethejane',
+    //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+    //       image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
+    //       location: 'tagged location'
+    //     },
+    //     {
+    //       key: 3, title: '@benjiiiii',
+    //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+    //       image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
+    //       location: 'tagged location'
+    //     },
+    //   ]
+    // }
 
     addLikeData = () => {
 
@@ -126,35 +99,35 @@ export default class MapListScreen extends React.Component  {
     }
 
     render() {
-      return (
-        <View style={styles.list_container}>
-          <FlatList
-            data={this.getData()}
-            renderItem={({ item }) =>
-              <View style={styles.r_container}>
-                  <Image source={{ uri: item.image_url }} style={styles.r_photo} />
-                  <View style={styles.r_container_text}>
-                      <Text style={styles.r_title}>
-                          {item.title}
-                      </Text>
-                      <Text style={styles.r_description}>
-                          {item.description}
-                      </Text>
-                      <Text style={styles.r_location}>
-                          {item.location}
-                      </Text>
-                  </View>
-                  <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+      if (this.state.likes.length > 0){
+        return (
+          <View style={styles.list_container}>
+            <FlatList
+              data={this.state.likes}
+              renderItem={({ item }) => (
+                <View style={styles.r_container} key={item.twit_id_str}>
+                    <Image source={{ uri:  item.user_profile_image_url_https }} style={styles.r_photo} />
+                    <View style={styles.r_container_text}>
+                        <Text style={styles.r_title}>@{item.user_screen_name}</Text>
+                        <Text style={styles.r_description}>{item.text}</Text>
+                        <Text style={styles.r_location}>{item.place.name}</Text>
+                    </View>
+                    <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+                      <Image source={likeimg} style={styles.r_photo} />
+                    </TouchableOpacity>
+                </View>
+              )}
+              keyExtractor={(item, index) => index.toString()}
+            />
+          </View>
+        );
+      } else {
+        return(
+          <View style={styles.list_container}>
+            <Text style={styles.r_location}>Empty List</Text>
+          </View>
+        )
+      }
 
-                    <Image source={likeimg} style={styles.r_photo} />
-
-                  </TouchableOpacity>
-
-              </View>
-            }
-          />
-      </View>
-
-      );
     }
   };

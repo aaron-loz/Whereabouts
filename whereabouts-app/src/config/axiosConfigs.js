@@ -84,19 +84,19 @@ export function get_friends(twitname, twitid){
     })
 }
 
-export function search_tweets(query){
-    console.log("searching tweets using : " + query)
-    url = "http://"+ config.IP_ADDR +"/get_tweets/"+query
-    return fetch(url,{
+export function search_tweets(query, geo){
+    console.log("searching tweets using : " + query + " and "+ geo)
+    url = "http://"+ config.IP_ADDR +":5000/get_tweets/"+query+"/"+geo;
+    return axios.get(url, {
         headers:{
             "Access-Control-Allow-Origin":"*",
-            "consumer-key": config.TW_CONSUMER_KEY,
-            "consumer-secret-key": config.TW_CONSUMER_SECRET_KEY,
+            "consumer-key": config.TW_CUSTOMER_KEY, 
+            "consumer-secret-key": config.TW_CUSTOMER_SECRET_KEY,
             "access-token": config.TW_ACCESS_TOKEN,
-            "access-secret-token": config.TW_ACCESS_SECRET_TOKEN,
+            "access-secret-token": config.TW_ACCESS_SECRET_TOKEN
         }})
         .then((response) =>{
-            console.log(response)
+            console.log(response.data.entities)
             return response
         })
         .catch((error)=> {

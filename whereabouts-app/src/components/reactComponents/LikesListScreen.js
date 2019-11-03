@@ -182,6 +182,7 @@ export default class LikesListScreen extends React.Component {
 
             </View>
           }
+          keyExtractor={(item, index) => index.toString()}
         />
     </View>
       // <View style= {styles.main}>

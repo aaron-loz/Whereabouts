@@ -53,7 +53,7 @@ export default class MapScreen extends React.Component  {
         this.setState({ likes });
       });
     }
-    
+
     addLikeData = () => {
 
       Alert.alert(
@@ -109,14 +109,14 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={400} offset={8} backgroundColor={'#8EC9FB'}>
+          <BottomDrawer containerHeight={800} offset={8} backgroundColor={'#8EC9FB'}>
               {this.state.likes.map((obj, index) => {
                   return (
                       <View style={styles.r_container} key = {index}>
                         <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
                         <View style={styles.r_container_text}>
                           <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
-                          <Text style={styles.r_description}>{obj.text}</Text>
+                        <Text numberOfLines={1} style={styles.r_description}>{obj.text}</Text>
                           <Text style={styles.r_location}>{obj.place.name}</Text>
                         </View>
                       <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >

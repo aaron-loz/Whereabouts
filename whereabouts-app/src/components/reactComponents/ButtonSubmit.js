@@ -14,6 +14,11 @@ import {
 import {Actions, ActionConst} from 'react-native-router-flux';
 import {init, getTokeno2, get_friends, temp_search} from '../../config/axiosConfigs';
 import styles from './styles';
+import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
+  getFriendsTable, checkHasUserIdAndFriendId, addFriends,
+  getLikesTable, checkHasLikes, addLike} from '../firebase/firebaseApi'
+  
+import * as Permissions from 'expo-permissions';
 
 import spinner from '../images/loading.gif';
 
@@ -21,7 +26,7 @@ const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 const MARGIN = 40;
 
-export default class ButtonSubmit extends Component {
+export default class ButtonSubmit extends React.Component {
   // Animation :
 
   constructor() {
@@ -67,38 +72,84 @@ export default class ButtonSubmit extends Component {
   }
 
   async componentDidMount(){
-        // initalize the server (now accessible via localhost:1234)
-      await init();
-      this.twitter =  await getTokeno2();
-      this.state.twittoken = await this.twitter.access_token;
+    // initalize the server (now accessible via localhost:1234)
+  await init();
   }
 
   async getgeocodes(){
-      if(Location.hasServicesEnabledAsync()){
-          return getCurrentPositionAsync(options= {
-              accuracy: 3,
-              maximumAge : 60000
-          })
-      }else{
-          //ask permission
-          return Location.geocodeAsync("695 Park Ave New York NY 10065")
-      }
-
-  }
-  //implement geocodes requests to testSearch
-  async buildQuery(){
-      currloc = getgeocodes()
-      this.state.currloc = currloc
-      s = "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi"
+    const { status, permissions } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status == "granted"){
+        if(Location.hasServicesEnabledAsync()){
+            return Location.getCurrentPositionAsync(options= {
+                accuracy: 3,
+                maximumAge : 60000
+            })
+        } else {
+            return Location.geocodeAsync("695 Park Ave New York NY 10065")
+        }
+    }
+    else{
+        throw new Error("Location Permission Not Granted")
+    }
   }
 
-  async searchTweets(twitname){
-      this.state.twitname = twitname
-      friends = await get_friends(twitname)
-      this.state.following = JSON.stringify(friends)
-      this.setState(previousState => ({
-          following : previousState.following
-      }))
+  async buildQuery(friends){
+    s = 'q=' 
+    for (let i = 0; i<friends.length-1; i++){
+        s +=friends[i].screen_name+'%20OR%20'
+    }
+    s += friends[friends.length-1].screen_name
+    currloc = await this.getgeocodes()
+    this.state.currloc = currloc
+    //s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
+    return {
+        "raw_query": s,
+        "geo" : currloc.coords.latitude +","+currloc.coords.longitude+",100mi"
+    }
+  }
+
+  async searchTweets(twitname, twitid){
+    // console.log("Search tweets")
+    // this.state.twitname = twitname
+    // let response = await get_friends(twitname, twitid)
+    // let tableAccountId = await getAccountIdsTable();
+    // let hasAccountId = checkHasAccountId(tableAccountId, twitid)
+    // if (!hasAccountId){
+    //     addAccountIds(twitid);
+    //     console.log("Account was added");
+    // } else {
+    //     console.log("Account already exists");
+    // }
+    // let tableFriends = await getFriendsTable();
+    // response.data.map((obj) => {
+    //     let hasUserIdAndFriendId = checkHasUserIdAndFriendId(tableFriends, twitid, obj);
+    //     if (!hasUserIdAndFriendId){
+    //         addFriends(twitid, obj);   
+    //         console.log("Pair of UserIdAndFriendId was added");
+    //     } else {
+    //         console.log("Pair of UserIdAndFriendId already exists");
+    //     }
+    // })
+
+    // let friends = response.data
+
+    // this.state.following = JSON.stringify(friends)
+    // this.setState(previousState => ({
+    //     following : previousState.following
+    // }))
+    
+    // q = await this.buildQuery(friends)
+    // results = await search_tweets(q.raw_query, q.geo)
+    // tableLikes = await getLikesTable();
+    // results.data.entities.map((obj) => {
+    //     let hasLike = checkHasLikes(tableLikes, obj);
+    //     if (!hasLike){
+    //         addLike(obj);   
+    //         console.log("Like was added");
+    //     } else {
+    //         console.log("Like already exists");
+    //     }
+    // })
   }
 
   state = {twitdetails: '',
@@ -129,7 +180,6 @@ export default class ButtonSubmit extends Component {
               <Text style={styles.L_text}>LOGIN</Text>
             )}
           </TouchableOpacity>
-
       </View>
     );
   }

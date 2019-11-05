@@ -1,7 +1,7 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { StyleSheet, View, UIManager } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { StackNavigator, createSwitchNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
@@ -14,19 +14,9 @@ import MapScreen from './src/components/reactComponents/MapScreen';
 import MapListScreen from './src/components/reactComponents/MapListScreen';
 import LikesListScreen from './src/components/reactComponents/LikesListScreen';
 import AddAccount from './src/components/reactComponents/AddAccount';
-import TabBarNavigation from './src/components/reactComponents/TabBarNavigator'
 
-const TabNavigator = createMaterialBottomTabNavigator(
+export const TabNavigator = createMaterialBottomTabNavigator(
     {
-        LoginScreen: { screen: LoginScreen,
-            navigationOptions:{
-                tabBarLabel:'Login',
-                tabBarIcon: ({ tintColor }) => (
-                    <View>
-                        <Icon style={[{color: tintColor}]} size={25} name={'ios-person'}/>
-                    </View>),
-            }
-        },
         MapScreen: { screen: MapScreen,
             navigationOptions:{
                 tabBarLabel:'Map',
@@ -55,22 +45,30 @@ const TabNavigator = createMaterialBottomTabNavigator(
                     </View>),
             }
         },
-    },
-    {
-      initialRouteName: "LoginScreen",
+    },{
+      initialRouteName: "MapScreen",
       activeColor: '#3BA3F8',
       inactiveColor: '#D2EAFF',
       barStyle: { backgroundColor: '#191E80' },
     },
 );
 
-const AppContainer = createAppContainer(TabNavigator);
+const AuthenticationNavigator = createStackNavigator(
+  {
+    LoginScreen: LoginScreen,
+  },{
+    defaultNavigationOptions: {
+      header: null,
+    }
+  },
+);
 
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
-}
+const AppNavigator = createSwitchNavigator({
+  Auth: AuthenticationNavigator,
+  Home: TabNavigator,
+});
+
+export default AppContainer = createAppContainer(AppNavigator);
 
 const styles = StyleSheet.create({
   container: {

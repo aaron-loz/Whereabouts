@@ -4,6 +4,7 @@ import Dimensions from 'Dimensions';
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 
+
 export default styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -103,7 +104,7 @@ export default styles = StyleSheet.create({
     //___________________________ Logo styles ________________________//
     logo_container: {
       flex: 3,
-      marginTop: 170,
+      marginTop: 100,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -121,6 +122,7 @@ export default styles = StyleSheet.create({
     L_button_container: {
         flex: 3,
         top: -95,
+        marginTop: 10,
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
@@ -129,20 +131,9 @@ export default styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#159CDC',
       height: 40, //WIDTH
-      width: 370,
+      width: DEVICE_WIDTH - 40,
       borderRadius: 20,
       zIndex: 100,
-    },
-    circle: {
-      height: 40, //WIDTH
-      width: 40, //WIDTH
-      marginTop: -40, //-WIDTH
-      borderWidth: 1,
-      borderColor: '#F035E0',
-      borderRadius: 100,
-      alignSelf: 'center',
-      zIndex: 99,
-      backgroundColor: '#3BA3F8',
     },
     L_text: {
       color: 'white',

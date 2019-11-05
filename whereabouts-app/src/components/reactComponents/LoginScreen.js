@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, Image, Text, Button, UIManager} from 'react-native';
+import {StyleSheet, Image, Text, Button } from 'react-native';
 
 
 import { createAppContainer } from 'react-navigation';
@@ -14,9 +14,6 @@ import SignupSection from './SignupSection';
 import bgSrc from '../images/wallpaper.png';
 
 export default class LoginScreen extends React.Component  {
-  static navigationOptions = {
-    title: 'Login Screen',
-  };
 
 
   render() {
@@ -25,7 +22,7 @@ export default class LoginScreen extends React.Component  {
         <Logo />
         <Form />
         <SignupSection />
-        <ButtonSubmit />
+        <ButtonSubmit navigation = {this.props.navigation} />
       </Wallpaper>
 
     );

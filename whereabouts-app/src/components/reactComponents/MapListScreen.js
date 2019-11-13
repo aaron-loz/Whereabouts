@@ -7,7 +7,7 @@ import likeimg from '../images/like.png';
 import boilerdata from './boilerdata.js'
 let accountIdsRef = db.ref('/accountIds');
 let friedsIdsRef = db.ref('/friends');
-let likesIdsRef = db.ref('/likes');
+let twitsIdsRef = db.ref('/twits');
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
   getFriendsTable, checkHasUserIdAndFriendId, addFriends,
   getLikesTable, checkHasLikes, addLike} from '../firebase/firebaseApi'
@@ -27,7 +27,7 @@ export default class MapListScreen extends React.Component  {
     state = {
       currentUserId: "1186364677254795270",
       friends: [],
-      likes: []
+      twits: []
     };
 
     async componentDidMount() {
@@ -41,12 +41,12 @@ export default class MapListScreen extends React.Component  {
         }
       })
       this.setState({ friends });
-      likesIdsRef.once('value', snapshot => {
+      twitsIdsRef.once('value', snapshot => {
         let data = snapshot.val();
-        let allLikes = Object.values(data);
-        //Filters likes that belong to the user's friends
-        let likes = allLikes.filter(like => this.state.friends.includes(like.user_id_str));
-        this.setState({ likes });
+        let allTwits = Object.values(data);
+        //Filters twits that belong to the user's friends
+        let twits = allTwits.filter(twit => this.state.friends.includes(twit.user_id_str));
+        this.setState({ twits });
       });
     }
 
@@ -99,11 +99,11 @@ export default class MapListScreen extends React.Component  {
     }
 
     render() {
-      if (this.state.likes.length > 0){
+      if (this.state.twits.length > 0){
         return (
           <View style={styles.list_container}>
             <FlatList
-              data={this.state.likes}
+              data={this.state.twits}
               renderItem={({ item }) => (
                 <View style={styles.r_container} key={item.twit_id_str}>
                     <Image source={{ uri:  item.user_profile_image_url_https }} style={styles.r_photo} />

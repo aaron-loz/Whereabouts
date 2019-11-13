@@ -6,7 +6,7 @@ import BottomDrawer from 'rn-bottom-drawer';
 import styles from './styles';
 let accountIdsRef = db.ref('/accountIds');
 let friedsIdsRef = db.ref('/friends');
-let likesIdsRef = db.ref('/likes');
+let twitsIdsRef = db.ref('/twits');
 
 import likeimg from '../images/like.png';
 import boilerdata from './boilerdata.js'
@@ -26,7 +26,7 @@ export default class MapScreen extends React.Component  {
     state = {
       currentUserId: "1186364677254795270",
       friends: [],
-      likes: []
+      twits: []
     };
 
     componentDidMount() {
@@ -42,12 +42,12 @@ export default class MapScreen extends React.Component  {
         })
         this.setState({ friends });
       });
-      likesIdsRef.on('value', snapshot => {
+      twitsIdsRef.on('value', snapshot => {
         let data = snapshot.val();
-        let allLikes = Object.values(data);
-        //Filters likes that belong to the user's friends
-        let likes = allLikes.filter(like => this.state.friends.includes(like.user_id_str));
-        this.setState({ likes });
+        let allTwits = Object.values(data);
+        //Filters twits that belong to the user's friends
+        let twits = allTwits.filter(twit => this.state.friends.includes(twit.user_id_str));
+        this.setState({ twits });
       });
     }
 
@@ -88,7 +88,9 @@ export default class MapScreen extends React.Component  {
               longitudeDelta: 0.0421
             }}
           >
+
             {this.state.likes.map((obj, index) => { //index is id of tweet
+
               let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
                          obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4;
               let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +
@@ -123,7 +125,7 @@ export default class MapScreen extends React.Component  {
             offset={10}
             backgroundColor={'#8EC9FB'}
             startUp = {false}>
-              {this.state.likes.map((obj, index) => {
+              {this.state.twits.map((obj, index) => {
                   return (
                     <View style={styles.r_container} key = {index}>
                       <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />

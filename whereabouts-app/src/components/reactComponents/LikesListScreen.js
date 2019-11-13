@@ -102,8 +102,6 @@ export default class LikesListScreen extends React.Component {
   };
 
   handleSubmitAddLikes = () => {
-    var lat = parseFloat(this.state.addLikesLat);
-    var long = parseFloat(this.state.addLikesLong);
     db.ref("/likes").push({
       userId: this.state.addLikesUserId,
       twitId: this.state.addTwitId,

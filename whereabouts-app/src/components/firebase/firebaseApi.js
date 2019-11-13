@@ -63,8 +63,8 @@ export function addFriends(userIdp, item){
 }
 
 
-export function getLikesTable() {
-  return db.ref('/likes').once('value', snapshot => {});
+export function getTwitsTable() {
+  return db.ref('/twits').once('value', snapshot => {});
 }
 
 // "coordinates": null,
@@ -111,11 +111,11 @@ export function getLikesTable() {
 // "user_screen_name": "name",
 // },
 //Returns true if like is in firebase
-export function checkHasLikes(snapshot, item) {
+export function checkHasTwits(snapshot, item) {
     let data = snapshot.val();
-    let allLikes = Object.values(data);
-    for (let i=0; i<allLikes.length; i++) {
-      if (allLikes[i].twit_id_str == item.twit_id_str) {
+    let allTwits = Object.values(data);
+    for (let i=0; i<allTwits.length; i++) {
+      if (allTwits[i].twit_id_str == item.twit_id_str) {
         return true;
       }
     }
@@ -123,8 +123,8 @@ export function checkHasLikes(snapshot, item) {
 }
 //item - see above
 //Pushes item to firebase
-export function addLike(item){
-    db.ref("/likes/").push(item);
-    Alert.alert(`Like saved successfully`);
+export function addTwit(item){
+    db.ref("/twits/").push(item);
+    Alert.alert(`Twit saved successfully`);
 }
 

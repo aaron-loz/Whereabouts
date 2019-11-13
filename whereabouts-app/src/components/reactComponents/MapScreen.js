@@ -51,8 +51,7 @@ export default class MapScreen extends React.Component  {
       });
     }
 
-    addLikeData = () => {
-
+    addLikeData = (twit_id_str) => {
       Alert.alert(
         'Liked!',
         'this item will be added to your like list',
@@ -62,10 +61,19 @@ export default class MapScreen extends React.Component  {
             onPress: () => console.log('Cancel Pressed'),
             style: 'cancel',
           },
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
+          {text: 'OK', onPress: () => {
+            //Add liked twit to the table Likes
+            db.ref("/likes").push({
+              userId: this.state.currentUserId,
+              twitId: twit_id_str,
+            });
+            Alert.alert(`Twit ${twit_id_str} saved to Likes successfully`);
+            console.log('OK Pressed')
+          }},
         ],
         {cancelable: true},
       );
+
       // To Do: send item (by twit id) to database
       // ......
 
@@ -131,7 +139,7 @@ export default class MapScreen extends React.Component  {
                         <Text numberOfLines={1} style={styles.r_description}>{obj.text}</Text>
                         <Text style={styles.r_location}>{obj.place.name}</Text>
                       </View>
-                      <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+                      <TouchableOpacity onPress={() => this.addLikeData(obj.twit_id_str)} activeOpacity={0.7} >
                         <Image source={likeimg} style={styles.r_photo} />
                       </TouchableOpacity>
                     </View>

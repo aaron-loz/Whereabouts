@@ -91,7 +91,7 @@ export default class MapScreen extends React.Component  {
               longitudeDelta: 0.0421
             }}
           >
-            {this.state.likes.map((obj, index) => {
+            {this.state.likes.map((obj, index) => { //index is id of tweet
               let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
                          obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4;
               let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +
@@ -101,7 +101,7 @@ export default class MapScreen extends React.Component  {
                   key = {index}
                   coordinate={{latitude: lat, longitude: lon}}
                   title={obj.user_screen_name}
-                  //description=should be tagged location
+                  description= {obj.text}
                   pinColor="#EC1561"
                 />
               )

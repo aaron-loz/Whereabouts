@@ -89,8 +89,7 @@ export default class MapScreen extends React.Component  {
             }}
           >
 
-            {this.state.likes.map((obj, index) => { //index is id of tweet
-
+          {this.state.twits.map((obj, index) => { //index is id of tweet
               let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
                          obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4;
               let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +

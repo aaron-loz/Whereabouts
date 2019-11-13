@@ -76,10 +76,6 @@ export default class MapScreen extends React.Component  {
 
     }
 
-    getData() {
-      return boilerdata
-    }
-
     render() {
       return (
         <View style= {{flex:1}}>
@@ -87,7 +83,7 @@ export default class MapScreen extends React.Component  {
             style={{flex:1} }
             customMapStyle={mapStyle}
             provider={PROVIDER_GOOGLE}
-            showsUserLocation
+            showsUserLocation = {true}
             initialRegion={{
               latitude: 40.763392,
               longitude: -73.970483,
@@ -109,7 +105,10 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={800} offset={8} backgroundColor={'#8EC9FB'}>
+          <BottomDrawer containerHeight={800}
+            offset={10}
+            backgroundColor={'#8EC9FB'}
+            startUp = {false}>
               {this.state.likes.map((obj, index) => {
                   return (
                       <View style={styles.r_container} key = {index}>
@@ -125,26 +124,6 @@ export default class MapScreen extends React.Component  {
                       </View>
                   )
                 })}
-            {/* <View style={styles.r_container}>
-                <Image source={{ uri: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png' }} style={styles.r_photo} />
-                <View style={styles.r_container_text}>
-                    <Text style={styles.r_title}>
-                        @theUser
-                    </Text>
-                    <Text style={styles.r_description}>
-                        this is my tweet, tweet tweet tweet
-                    </Text>
-                    <Text style={styles.r_location}>
-                        location
-                    </Text>
-                </View>
-                <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
-
-                  <Image source={likeimg} style={styles.r_photo} />
-
-                </TouchableOpacity>
-
-            </View> */}
           </BottomDrawer>
 
         </View>

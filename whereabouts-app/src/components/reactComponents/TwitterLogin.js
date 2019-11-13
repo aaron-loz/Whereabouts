@@ -6,7 +6,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
     getFriendsTable, checkHasUserIdAndFriendId, addFriends,
-    getLikesTable, checkHasLikes, addLike} from '../firebase/firebaseApi'
+    getTwitsTable, hasTwit, addTwit} from '../firebase/firebaseApi'
 
 
 export default class TwitterLogin extends React.Component {
@@ -80,14 +80,14 @@ export default class TwitterLogin extends React.Component {
         
         q = await this.buildQuery(friends)
         results = await search_tweets(q.raw_query, q.geo)
-        tableLikes = await getLikesTable();
+        tableLikes = await getTwitsTable();
         results.data.entities.map((obj) => {
-            let hasLike = checkHasLikes(tableLikes, obj);
-            if (!hasLike){
-                addLike(obj);   
-                console.log("Like was added");
+            let hasTwit = hasTwit(tableLikes, obj);
+            if (!hasTwit){
+                addTwit(obj);   
+                console.log("Twit was added");
             } else {
-                console.log("Like already exists");
+                console.log("Twit already exists");
             }
         })
     }

@@ -24,7 +24,7 @@ import boilerdata from './boilerdata.js'
 export default class MapScreen extends React.Component  {
 
     state = {
-      currentUserId: "1186364677254795270",
+      currentUserId: global.UserID,
       friends: [],
       twits: []
     };
@@ -66,10 +66,8 @@ export default class MapScreen extends React.Component  {
         ],
         {cancelable: true},
       );
-      // To Do: add item to Like List Array
+      // To Do: send item (by twit id) to database
       // ......
-      // this.likeArray.push({title : this.state.textInput_Holder});
-      // this.setState({ arrayHolder: [...this.array] })
 
     }
 

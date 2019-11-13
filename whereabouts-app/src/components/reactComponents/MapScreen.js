@@ -92,11 +92,14 @@ export default class MapScreen extends React.Component  {
             }}
           >
             {this.state.likes.map((obj, index) => {
+              let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
+                         obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4;
+              let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +
+                         obj.place.bounding_box.coordinates[0][2][0] + obj.place.bounding_box.coordinates[0][3][0])/4;
               return (
                 <MapView.Marker
                   key = {index}
-                  coordinate={{latitude: obj.place.bounding_box.coordinates[0][0][1],
-                    longitude: obj.place.bounding_box.coordinates[0][0][0]}}
+                  coordinate={{latitude: lat, longitude: lon}}
                   title={obj.user_screen_name}
                   //description=should be tagged location
                   pinColor="#EC1561"

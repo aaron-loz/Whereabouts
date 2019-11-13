@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert, Image, Modal, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { db } from '../../config/firebaseConfig';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import BottomDrawer from 'rn-bottom-drawer';
 import styles from './styles';
 let accountIdsRef = db.ref('/accountIds');
@@ -22,9 +22,6 @@ import boilerdata from './boilerdata.js'
 
 
 export default class MapScreen extends React.Component  {
-    // static navigationOptions = {
-    //   title: 'Map'
-    // };
 
     state = {
       currentUserId: "1186364677254795270",
@@ -91,7 +88,9 @@ export default class MapScreen extends React.Component  {
               longitudeDelta: 0.0421
             }}
           >
-            {this.state.twits.map((obj, index) => {
+
+            {this.state.likes.map((obj, index) => { //index is id of tweet
+
               let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
                          obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4;
               let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +
@@ -101,9 +100,23 @@ export default class MapScreen extends React.Component  {
                   key = {index}
                   coordinate={{latitude: lat, longitude: lon}}
                   title={obj.user_screen_name}
-                  //description=should be tagged location
-                  pinColor="#EC1561"
-                />
+                  description= {obj.text}
+                  pinColor={"#EC1561"}
+                  backgroundColor = {'#8EC9FB'}
+                  tracksViewChanges = {false}
+                >
+                  <Callout tooltip={true} >
+                    <View style={styles.r_container} key = {index}>
+
+                      <View style={styles.r_container_text}>
+                        <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
+                        <Text numberOfLines={1} style={styles.r_description}>{obj.text}</Text>
+
+                      </View>
+
+                    </View>
+                  </Callout>
+                </MapView.Marker>
               )
             })}
           </MapView>
@@ -114,17 +127,17 @@ export default class MapScreen extends React.Component  {
             startUp = {false}>
               {this.state.twits.map((obj, index) => {
                   return (
-                      <View style={styles.r_container} key = {index}>
-                        <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
-                        <View style={styles.r_container_text}>
-                          <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
+                    <View style={styles.r_container} key = {index}>
+                      <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
+                      <View style={styles.r_container_text}>
+                        <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
                         <Text numberOfLines={1} style={styles.r_description}>{obj.text}</Text>
-                          <Text style={styles.r_location}>{obj.place.name}</Text>
-                        </View>
+                        <Text style={styles.r_location}>{obj.place.name}</Text>
+                      </View>
                       <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
                         <Image source={likeimg} style={styles.r_photo} />
                       </TouchableOpacity>
-                      </View>
+                    </View>
                   )
                 })}
           </BottomDrawer>

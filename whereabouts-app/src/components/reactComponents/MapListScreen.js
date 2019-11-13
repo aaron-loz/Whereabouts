@@ -10,7 +10,7 @@ let friedsIdsRef = db.ref('/friends');
 let twitsIdsRef = db.ref('/twits');
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
   getFriendsTable, checkHasUserIdAndFriendId, addFriends,
-  getLikesTable, checkHasLikes, addLike} from '../firebase/firebaseApi'
+  getLikesTable, checkHasTwits, addLike} from '../firebase/firebaseApi'
 
 
 //To Do:
@@ -75,8 +75,7 @@ export default class MapListScreen extends React.Component  {
     //   ]
     // }
 
-    addLikeData = () => {
-
+    addLikeData = (twit_id_str) => {
       Alert.alert(
         'Liked!',
         'this item will be added to your like list',
@@ -86,17 +85,20 @@ export default class MapListScreen extends React.Component  {
             onPress: () => console.log('Cancel Pressed'),
             style: 'cancel',
           },
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
+          {text: 'OK', onPress: () => {
+            //Add liked twit to the table Likes
+            db.ref("/likes").push({
+              userId: this.state.currentUserId,
+              twitId: twit_id_str,
+            });
+            Alert.alert(`Twit ${twit_id_str} saved to Likes successfully`);
+            console.log('OK Pressed')
+          }},
         ],
         {cancelable: true},
       );
-      // Must add item to Like List Array
-      //
-      // this.array.push({title : this.state.textInput_Holder});
-      //
-      // this.setState({ arrayHolder: [...this.array] })
-
     }
+
 
     render() {
       if (this.state.twits.length > 0){
@@ -112,7 +114,7 @@ export default class MapListScreen extends React.Component  {
                         <Text style={styles.r_description}>{item.text}</Text>
                         <Text style={styles.r_location}>{item.place.name}</Text>
                     </View>
-                    <TouchableOpacity onPress={this.addLikeData} activeOpacity={0.7} >
+                    <TouchableOpacity onPress={() => this.addLikeData(item.twit_id_str)} activeOpacity={0.7} >
                       <Image source={likeimg} style={styles.r_photo} />
                     </TouchableOpacity>
                 </View>

@@ -1,10 +1,7 @@
 import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import config from '../../config';
-import CryptoJS from 'crypto-js';
 //Todo: remove Oauth-1.0a and oauth-signature
-import oauthSignature from 'oauth-signature';
-import OAuth from 'oauth-1.0a';
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
     getFriendsTable, checkHasUserIdAndFriendId, addFriends} from '../components/firebase/firebaseApi'
 
@@ -36,10 +33,6 @@ export function getTokeno2(){
     )
 }
 
-
-function parse_json(json_stack){
-    //creates twitter objects that hold id, username, and geolocation
-}
 
 export function get_friends_using_fetch(twitname){
     url = config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port

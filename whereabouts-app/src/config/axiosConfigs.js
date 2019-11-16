@@ -37,10 +37,6 @@ export function getTokeno2(){
 }
 
 
-function parse_json(json_stack){
-    //creates twitter objects that hold id, username, and geolocation
-}
-
 export function get_friends_using_fetch(twitname){
     url = config.IP_ADDR + ':5000/get_friends/'+twitname // would need to be changed if flask has a different specified port
     return fetch(url)

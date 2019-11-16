@@ -1,10 +1,7 @@
 import axios from 'react-native-axios'
 import {encode as btoa} from 'base-64'
 import config from '../../config';
-import CryptoJS from 'crypto-js';
 //Todo: remove Oauth-1.0a and oauth-signature
-import oauthSignature from 'oauth-signature';
-import OAuth from 'oauth-1.0a';
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
     getFriendsTable, checkHasUserIdAndFriendId, addFriends} from '../components/firebase/firebaseApi'
 

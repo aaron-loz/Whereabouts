@@ -110,6 +110,7 @@ export function getTwitsTable() {
 // "user_profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
 // "user_screen_name": "name",
 // },
+
 //Returns true if like is in firebase
 export function checkHasTwits(snapshot, item) {
     let data = snapshot.val();
@@ -128,3 +129,17 @@ export function addTwit(item){
     Alert.alert(`Twit saved successfully`);
 }
 
+export function getLikesTable() {
+  return db.ref('/likes').once('value', snapshot => {});
+}
+
+export function checkHasUserIdAndTwitId(snapshot, userId, twit_id_str) {
+  let data = snapshot.val();
+  let allLikes = Object.values(data);
+  for (let i=0; i<allLikes.length; i++) {
+    if ((allLikes[i].twitId == twit_id_str)  && (allLikes[i].userId == userId)){
+      return true;
+    }
+  }
+  return false;
+}

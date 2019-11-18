@@ -8,9 +8,7 @@ import boilerdata from './boilerdata.js'
 let accountIdsRef = db.ref('/accountIds');
 let friedsIdsRef = db.ref('/friends');
 let twitsIdsRef = db.ref('/twits');
-import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
-  getFriendsTable, checkHasUserIdAndFriendId, addFriends,
-  getLikesTable, checkHasTwits, addLike} from '../firebase/firebaseApi'
+import {getFriendsTable, getLikesTable, checkHasUserIdAndTwitId} from '../firebase/firebaseApi'
 
 
 //To Do:
@@ -75,9 +73,9 @@ export default class MapListScreen extends React.Component  {
     //   ]
     // }
 
-    addLikeData = (twit_id_str) => {
+    addLikeData(twit_id_str){
       Alert.alert(
-        'Liked!',
+        'Want to like?',
         'this item will be added to your like list',
         [
           {
@@ -85,14 +83,21 @@ export default class MapListScreen extends React.Component  {
             onPress: () => console.log('Cancel Pressed'),
             style: 'cancel',
           },
-          {text: 'OK', onPress: () => {
+          {text: 'OK', onPress: async () => {
+            let tableLikes = await getLikesTable();
+            let hasUserIdAndTwitId = checkHasUserIdAndTwitId(tableLikes, this.state.currentUserId, twit_id_str);
             //Add liked twit to the table Likes
-            db.ref("/likes").push({
-              userId: this.state.currentUserId,
-              twitId: twit_id_str,
-            });
-            Alert.alert(`Twit ${twit_id_str} saved to Likes successfully`);
-            console.log('OK Pressed')
+            if (!hasUserIdAndTwitId) {
+                db.ref("/likes").push({
+                  userId: this.state.currentUserId,
+                  twitId: twit_id_str,
+                });
+                Alert.alert(`Twit ${twit_id_str} saved to Likes successfully`);
+                console.log('OK Pressed. Like saved')
+            } else {
+              Alert.alert(`Twit ${twit_id_str} was already in Likes`);
+              console.log('OK Pressed. Like was there')
+            }
           }},
         ],
         {cancelable: true},

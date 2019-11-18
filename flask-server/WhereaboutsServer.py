@@ -55,7 +55,10 @@ def get_tweets(query, geo):
     else:
         print("Here2")
         print(geo)
-        results = api.GetSearch(raw_query = 'q=CurbedNY%20OR%20NYCRobyn%20OR%20NYCGuitarSchool', geocode=geo, return_json=True, count=5)
+        #TODO: REMOVE TEMP_QUERY
+        temp_query = 'q=CurbedNY%20OR%20NYCRobyn%20OR%20NYCGuitarSchool'
+        results = api.GetSearch(raw_query = query, geocode=geo, return_json=True, count=5)
+        print(results)
     res = {'entities': []}
     for item in results['statuses']:
         my_dict={}

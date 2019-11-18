@@ -35,13 +35,25 @@ export default class TwitterLogin extends React.Component {
     
     async buildQuery(friends){
         s = 'q=' 
-        for (let i = 0; i<friends.length-1; i++){
-            s +=friends[i].screen_name+'%20OR%20'
+        i = 0;
+        for (i; i<friends.length-1; i++){
+            t = friends[i].screen_name+ 's%20OR%20'
+            if ((s.length() + t.length() ) > 256){
+                break;
+            }
+            else{
+                s +=t
+            }
         }
-        s += friends[friends.length-1].screen_name
+        if (i == friends.length-1 ){
+            t = friends[friends.length-1].screen_name
+            if((s.length() + t.length()) <= 256){
+                s +=t
+            }
+        }
+
         currloc = await this.getgeocodes()
         this.state.currloc = currloc
-        //s += "&geocode=" + currloc.coords.latitude +","+currloc.coords.longitude,+",10mi" 
         return {
             "raw_query": s,
             "geo" : currloc.coords.latitude +","+currloc.coords.longitude+",100mi"

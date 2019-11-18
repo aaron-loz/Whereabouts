@@ -34,24 +34,18 @@ export default class TwitterLogin extends React.Component {
     }
     
     async buildQuery(friends){
-        s = 'q=' 
+        s = []
+        s.push('q=') 
         i = 0;
+        j = 0;
         for (i; i<friends.length-1; i++){
-            t = friends[i].screen_name+ 's%20OR%20'
-            if ((s.length() + t.length() ) > 256){
-                break;
-            }
-            else{
-                s +=t
-            }
+                t = friends[i].screen_name+ 's%20OR%20'
+                if ((s[j].length() + t.length() ) > 256){
+                    s.push('q=')
+                    j++
+                }
+                s[j] +=t
         }
-        if (i == friends.length-1 ){
-            t = friends[friends.length-1].screen_name
-            if((s.length() + t.length()) <= 256){
-                s +=t
-            }
-        }
-
         currloc = await this.getgeocodes()
         this.state.currloc = currloc
         return {

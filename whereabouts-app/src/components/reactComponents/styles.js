@@ -6,6 +6,14 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 
 export default styles = StyleSheet.create({
+    refresh_button: {
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: 20,
+      height: 10,
+      width: 10,
+    },
     container: {
       flex: 1,
       backgroundColor: '#fff',
@@ -183,5 +191,9 @@ export default styles = StyleSheet.create({
     r_like:{
       height: 50,
       width: 50,
+    },
+    r_refresh:{
+      height: 20,
+      width: 20,
     }
   });

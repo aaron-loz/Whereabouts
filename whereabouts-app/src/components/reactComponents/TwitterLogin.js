@@ -83,19 +83,26 @@ export default class TwitterLogin extends React.Component {
         this.setState(previousState => ({
             following : previousState.following
         }))
-        
+
+        results = []
         q = await this.buildQuery(friends)
-        results = await search_tweets(q.raw_query, q.geo)
+        for(let i = 0; i<q.raw_query.length();i++){
+
+            results.push(await search_tweets(q.raw_query[i], q.geo))
+        }
+
         tableLikes = await getTwitsTable();
-        results.data.entities.map((obj) => {
-            let hasTwit = hasTwit(tableLikes, obj);
-            if (!hasTwit){
-                addTwit(obj);   
-                console.log("Twit was added");
-            } else {
-                console.log("Twit already exists");
-            }
-        })
+        for(let j = 0; j<results.length();j++){
+            results[j].data.entities.map((obj) => {
+                let hasTwit = hasTwit(tableLikes, obj);
+                if (!hasTwit){
+                    addTwit(obj);   
+                    console.log("Twit was added");
+                } else {
+                    console.log("Twit already exists");
+                }
+            })
+        }
     }
 
 

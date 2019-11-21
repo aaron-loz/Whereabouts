@@ -6,7 +6,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
     getFriendsTable, checkHasUserIdAndFriendId, addFriends,
-    getTwitsTable, hasTwit, addTwit} from '../firebase/firebaseApi'
+    getTwitsTable, checkHasTwits, addTwit} from '../firebase/firebaseApi'
 
 
 export default class TwitterLogin extends React.Component {
@@ -39,8 +39,8 @@ export default class TwitterLogin extends React.Component {
         i = 0;
         j = 0;
         for (i; i<friends.length-1; i++){
-                t = friends[i].screen_name+ 's%20OR%20'
-                if ((s[j].length() + t.length() ) > 256){
+                t = 'from%3A' + friends[i].screen_name + '%20OR%20'
+                if ((s[j].length + t.length ) > 256){
                     s.push('q=')
                     j++
                 }
@@ -55,7 +55,6 @@ export default class TwitterLogin extends React.Component {
     }
 
     async searchTweets(twitname, twitid){
-        console.log("Search tweets")
         this.state.twitname = twitname
         let response = await get_friends(twitname, twitid)
         let tableAccountId = await getAccountIdsTable();
@@ -86,15 +85,17 @@ export default class TwitterLogin extends React.Component {
 
         results = []
         q = await this.buildQuery(friends)
-        for(let i = 0; i<q.raw_query.length();i++){
+        for(let i = 0; i<q.raw_query.length;i++){
 
             results.push(await search_tweets(q.raw_query[i], q.geo))
         }
+        //TODO: remove
 
         tableLikes = await getTwitsTable();
-        for(let j = 0; j<results.length();j++){
+        for(let j = 0; j<results.length;j++){
+            console.log("results["+j+"]:\t"+results[j]+"\n\n")
             results[j].data.entities.map((obj) => {
-                let hasTwit = hasTwit(tableLikes, obj);
+                let hasTwit = checkHasTwits(tableLikes, obj);
                 if (!hasTwit){
                     addTwit(obj);   
                     console.log("Twit was added");
@@ -138,7 +139,7 @@ export default class TwitterLogin extends React.Component {
             <TouchableHighlight style={{height:100, width:200}} underlayColor="white" onPress={this.handleSubmit} >
                 <Text style={{height:100, width:100}}>Click here: Add</Text>
             </TouchableHighlight>
-            <Text>{this.state.following}</Text>
+            <Text>{this.state.tweets}</Text>
         </View>
         )
     }

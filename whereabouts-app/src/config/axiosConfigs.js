@@ -89,7 +89,8 @@ export function search_tweets(query, geo){
             "access-secret-token": config.TW_ACCESS_SECRET_TOKEN
         }})
         .then((response) =>{
-            console.log(response.data.entities)
+            console.log("response:")
+            console.log(response)
             return response
         })
         .catch((error)=> {

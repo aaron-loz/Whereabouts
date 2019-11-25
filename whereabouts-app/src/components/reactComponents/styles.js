@@ -175,6 +175,7 @@ export default styles = StyleSheet.create({
     r_photo: {
         height: 50,
         width: 50,
+        borderRadius: 50,
     },
     r_location: {
       fontSize: 16,

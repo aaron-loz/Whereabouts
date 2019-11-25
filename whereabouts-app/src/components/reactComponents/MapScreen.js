@@ -132,23 +132,23 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={800}
+          <BottomDrawer containerHeight={950}
             offset={10}
             backgroundColor={'#8EC9FB'}
             startUp = {false}>
               {this.state.twits.map((obj, index) => {
                   return (
-                    <View style={styles.r_container} key = {index}>
-                      <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
-                      <View style={styles.r_container_text}>
-                        <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
-                        <Text numberOfLines={1} style={styles.r_description}>{obj.text}</Text>
-                        <Text style={styles.r_location}>{obj.place.name}</Text>
-                      </View>
-                      <TouchableOpacity onPress={() => this.addLikeData(obj.twit_id_str)} activeOpacity={0.7} >
-                        <Image source={likeimg} style={styles.r_photo} />
-                      </TouchableOpacity>
-                    </View>
+                        <View style={styles.r_container} key = {index}>
+                          <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
+                          <View style={styles.r_container_text}>
+                            <Text style={styles.r_title}>@{obj.user_screen_name}</Text>
+                            <Text numberOfLines={1} style={styles.r_description}>{obj.text}</Text>
+                            <Text style={styles.r_location}>{obj.place.name}</Text>
+                          </View>
+                          <TouchableOpacity onPress={() => this.addLikeData(obj.twit_id_str)} activeOpacity={0.7} >
+                            <Image source={likeimg} style={styles.r_photo} />
+                          </TouchableOpacity>
+                        </View>
                   )
                 })}
           </BottomDrawer>

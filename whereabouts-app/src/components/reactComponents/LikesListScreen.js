@@ -1,41 +1,25 @@
 import React from 'react';
-import { Alert, FlatList, Image, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { Alert,
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+  ScrollView,
+  RefreshControl } from 'react-native';
 import { db } from '../../config/firebaseConfig';
 import styles from './styles';
 let likesRef = db.ref('/likes');
 let twitsIdsRef = db.ref('/twits');
 import likeimg from '../images/like.png';
 import {getLikesTable} from '../firebase/firebaseApi'
+import refreshb from '../images/refresh.png';
 
 
 export default class LikesListScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Likes',
-  };
-
-  // getData() {
-  //   return [
-  //     {
-  //       key: 1, title: '@joetheguy',
-  //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-  //       image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-  //       location: 'tagged location'
-  //     },
-  //     {
-  //       key: 2,
-  //       title: '@janethejane',
-  //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-  //       image_url: 'http://3.bp.blogspot.com/-jd5x3rFRLJc/VngrSWSHcjI/AAAAAAAAGJ4/ORPqZNDpQoY/s1600/Profile%2Bcircle.png',
-  //       location: 'tagged location'
-  //     },
-  //     {
-  //       key: 3, title: '@benjiiiii',
-  //       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
-  //       image_url: 'http://vivirtupasion.com/wp-content/uploads/2016/05/DANI_PERFILzoomCircle.png',
-  //       location: 'tagged location'
-  //     },
-  //   ]
-  // }
 
   state = {
     currentUserId: "1186364677254795270",
@@ -67,7 +51,6 @@ export default class LikesListScreen extends React.Component {
     this.updateData();
   }
 
-
   removeLikeData(twit_id_str){
     Alert.alert(
       'Want to unlike?',
@@ -78,7 +61,9 @@ export default class LikesListScreen extends React.Component {
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
-        {text: 'OK', onPress: async () => {
+        {
+          text: 'OK',
+          onPress: async () => {
           let tableLikes = await getLikesTable();
           let data = tableLikes.val();
           let allKeys = Object.keys(data);
@@ -89,14 +74,14 @@ export default class LikesListScreen extends React.Component {
               res = i;
               break;
             }
-          } 
+          }
           console.log(res);
           console.log(allKeys[res]);
           likesRef.child(allKeys[res]).remove();
           this.updateData();
         }},
       ],
-      {cancelable: true},
+      { cancelable: true },
     );
   }
 
@@ -105,28 +90,28 @@ export default class LikesListScreen extends React.Component {
   };
   render() {
     return (
-      <View style={styles.list_container}>
-            <TouchableHighlight style={{height:100, width:200}} underlayColor="black" onPress={this.handleRefresh} >
-                <Text style={{height:100, width:100}}>Click here: Refresh</Text>
-            </TouchableHighlight>
-        <FlatList
-          data={this.state.twits}
-          renderItem={({ item }) =>
-            <View style={styles.r_container}>
-                <Image source={{ uri: item.user_profile_image_url_https }} style={styles.r_photo} />
-                <View style={styles.r_container_text}>
-                        <Text style={styles.r_title}>@{item.user_screen_name}</Text>
-                        <Text style={styles.r_description}>{item.text}</Text>
-                        <Text style={styles.r_location}>{item.place.name}</Text>
-                </View>
-                <TouchableOpacity onPress={() => this.removeLikeData(item.twit_id_str)} activeOpacity={0.7} >
-                  <Image source={likeimg} style={styles.r_photo} />
-                </TouchableOpacity>
-            </View>
-          }
-          keyExtractor={(item, index) => index.toString()}
-        />
-    </View>
+        <View style={styles.list_container}>
+          <TouchableOpacity style = { styles.refresh_button } onPress={this.handleRefresh} activeOpacity={0.7} >
+            <Image source={refreshb} style={styles.r_refresh} />
+          </TouchableOpacity>
+          <FlatList
+            data={this.state.twits}
+            renderItem={({ item }) =>
+              <View style={styles.r_container}>
+                  <Image source={{ uri: item.user_profile_image_url_https }} style={styles.r_photo} />
+                  <View style={styles.r_container_text}>
+                          <Text style={styles.r_title}>@{item.user_screen_name}</Text>
+                          <Text style={styles.r_description}>{item.text}</Text>
+                          <Text style={styles.r_location}>{item.place.name}</Text>
+                  </View>
+                  <TouchableOpacity onPress={() => this.removeLikeData(item.twit_id_str)} activeOpacity={0.7} >
+                    <Image source={likeimg} style={styles.r_photo} />
+                  </TouchableOpacity>
+              </View>
+            }
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </View>
     );
   }
 };

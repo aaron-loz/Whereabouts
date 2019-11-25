@@ -23,7 +23,7 @@ let twitsIdsRef = db.ref('/twits');
 export default class MapScreen extends React.Component  {
 
     state = {
-      currentUserId: "1186364677254795270",
+      currentUserId: global.UserID,
       friends: [],
       twits: []
     };
@@ -79,6 +79,10 @@ export default class MapScreen extends React.Component  {
         ],
         {cancelable: true},
       );
+
+      // To Do: send item (by twit id) to database
+      // ......
+
     }
 
     render() {

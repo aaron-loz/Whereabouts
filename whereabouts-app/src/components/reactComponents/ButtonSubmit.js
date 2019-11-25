@@ -23,9 +23,11 @@ export default class ButtonSubmit extends Component {
   constructor() {
     super();
 
+    global.UserID = "1186364677254795270",
     this.state = {
       isLoading: false,
     };
+
   }
 
   async componentDidMount(){

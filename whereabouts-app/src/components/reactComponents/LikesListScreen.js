@@ -38,7 +38,7 @@ export default class LikesListScreen extends React.Component {
   // }
 
   state = {
-    currentUserId: "1186364677254795270",
+    currentUserId: global.UserID,
     likes: [],
     twits: []
   };

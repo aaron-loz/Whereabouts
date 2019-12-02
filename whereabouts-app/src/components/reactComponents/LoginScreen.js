@@ -126,7 +126,7 @@ async searchTweets(twitname, twitid){
 
     tableLikes = await getTwitsTable();
     for(let j = 0; j<results.length;j++){
-        console.log("results["+j+"]:\t"+results[j]+"\n\n")
+        //console.log("results["+j+"]:\t"+results[j]+"\n\n")
         results[j].data.entities.map((obj) => {
             let hasTwit = checkHasTwits(tableLikes, obj);
             if (!hasTwit){
@@ -149,8 +149,8 @@ async searchTweets(twitname, twitid){
         typedPassword: e.nativeEvent.text
     });
   };
-  handleSubmit = () => {
-    this.searchTweets(this.state.typedUsername, this.state.typedPassword);
+  async handleSubmit(){
+    await this.searchTweets(this.state.typedUsername, this.state.typedPassword);
     global.UserID = this.state.typedPassword;
     this.props.navigation.navigate("Home");
   };
@@ -201,7 +201,7 @@ async searchTweets(twitname, twitid){
         <View style={styles.L_button_container}>
           <TouchableOpacity
             style={styles.L_button}
-            onPress={this.handleSubmit}
+            onPress={() => this.handleSubmit()}
             //onPress={() =>  this.props.navigation.navigate("Home") }
             activeOpacity={1}>
               <Text style={styles.L_text}>LOGIN</Text>

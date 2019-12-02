@@ -101,9 +101,10 @@ export default class MapScreen extends React.Component  {
             }}
           >
 
-          {this.state.twits.map((obj, index) => { //index is id of tweet
+          {this.state.twits.map((obj, index) => { //index is 0, 1, ....n
               let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
-                         obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4;
+                         obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4 
+                         + index/10000; //make a little offset so that pins with the same coordinate woiuld be distinct
               let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +
                          obj.place.bounding_box.coordinates[0][2][0] + obj.place.bounding_box.coordinates[0][3][0])/4;
               return (

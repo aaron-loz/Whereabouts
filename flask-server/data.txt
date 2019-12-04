@@ -1,12 +1,12 @@
 {
     "search_metadata": {
-        "completed_in": 0.019,
+        "completed_in": 0.067,
         "count": 15,
-        "max_id": 1201624462090747904,
-        "max_id_str": "1201624462090747904",
-        "next_results": "?max_id=1201624462090747903&q=from%3Awhereab08898254%20OR&include_entities=1",
-        "query": "from%3Awhereab08898254+OR",
-        "refresh_url": "?since_id=1201624462090747904&q=from%3Awhereab08898254%20OR&include_entities=1",
+        "max_id": 1202316858046722049,
+        "max_id_str": "1202316858046722049",
+        "next_results": "?max_id=1201971853499273215&q=from%3ANYCGuitarSchool%20OR%20from%3ANY_Conservatory%20OR%20from%3AServproEastSide%20OR%20from%3ALiudmilaZyrian1%20OR%20from%3ANASA%20OR&include_entities=1",
+        "query": "from%3ANYCGuitarSchool+OR+from%3ANY_Conservatory+OR+from%3AServproEastSide+OR+from%3ALiudmilaZyrian1+OR+from%3ANASA+OR",
+        "refresh_url": "?since_id=1202316858046722049&q=from%3ANYCGuitarSchool%20OR%20from%3ANY_Conservatory%20OR%20from%3AServproEastSide%20OR%20from%3ALiudmilaZyrian1%20OR%20from%3ANASA%20OR&include_entities=1",
         "since_id": 0,
         "since_id_str": "0"
     },
@@ -14,122 +14,2522 @@
         {
             "contributors": null,
             "coordinates": null,
-            "created_at": "Mon Dec 02 22:09:31 +0000 2019",
+            "created_at": "Wed Dec 04 20:00:51 +0000 2019",
             "entities": {
                 "hashtags": [
                     {
                         "indices": [
-                            0,
-                            14
+                            43,
+                            60
                         ],
-                        "text": "freemyhobbies"
+                        "text": "ParkerSolarProbe"
                     }
                 ],
                 "symbols": [],
-                "urls": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202316858046722049",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/xp2g9XYlZj"
+                    }
+                ],
                 "user_mentions": []
             },
-            "favorite_count": 0,
+            "favorite_count": 761,
             "favorited": false,
             "geo": null,
-            "id": 1201624462090747904,
-            "id_str": "1201624462090747904",
+            "id": 1202316858046722049,
+            "id_str": "1202316858046722049",
             "in_reply_to_screen_name": null,
             "in_reply_to_status_id": null,
             "in_reply_to_status_id_str": null,
             "in_reply_to_user_id": null,
             "in_reply_to_user_id_str": null,
             "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 282,
+            "retweeted": false,
+            "source": "<a href=\"https://studio.twitter.com\" rel=\"nofollow\">Twitter Media Studio</a>",
+            "text": "LIVE NOW: What mysteries about our star is #ParkerSolarProbe uncovering as it journeys closer to the Sun than any h\u2026 https://t.co/xp2g9XYlZj",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 19:27:36 +0000 2019",
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            114,
+                            126
+                        ],
+                        "text": "NASAScience"
+                    }
+                ],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 15102849,
+                        "id_str": "15102849",
+                        "indices": [
+                            3,
+                            11
+                        ],
+                        "name": "NASA Sun & Space",
+                        "screen_name": "NASASun"
+                    }
+                ]
+            },
+            "favorite_count": 0,
+            "favorited": false,
+            "geo": null,
+            "id": 1202308491555344386,
+            "id_str": "1202308491555344386",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": true,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "quoted_status_id": 1202288533224009729,
+            "quoted_status_id_str": "1202288533224009729",
+            "retweet_count": 78,
+            "retweeted": false,
+            "retweeted_status": {
+                "contributors": null,
+                "coordinates": null,
+                "created_at": "Wed Dec 04 18:31:47 +0000 2019",
+                "entities": {
+                    "hashtags": [
+                        {
+                            "indices": [
+                                101,
+                                113
+                            ],
+                            "text": "NASAScience"
+                        }
+                    ],
+                    "symbols": [],
+                    "urls": [
+                        {
+                            "display_url": "twitter.com/i/web/status/1\u2026",
+                            "expanded_url": "https://twitter.com/i/web/status/1202294443652665351",
+                            "indices": [
+                                117,
+                                140
+                            ],
+                            "url": "https://t.co/yHauD09mD9"
+                        }
+                    ],
+                    "user_mentions": []
+                },
+                "favorite_count": 360,
+                "favorited": false,
+                "geo": null,
+                "id": 1202294443652665351,
+                "id_str": "1202294443652665351",
+                "in_reply_to_screen_name": null,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "is_quote_status": true,
+                "lang": "en",
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "place": null,
+                "possibly_sensitive": false,
+                "quoted_status": {
+                    "contributors": null,
+                    "coordinates": null,
+                    "created_at": "Wed Dec 04 18:08:18 +0000 2019",
+                    "entities": {
+                        "hashtags": [
+                            {
+                                "indices": [
+                                    58,
+                                    75
+                                ],
+                                "text": "ParkerSolarProbe"
+                            }
+                        ],
+                        "symbols": [],
+                        "urls": [
+                            {
+                                "display_url": "twitter.com/i/web/status/1\u2026",
+                                "expanded_url": "https://twitter.com/i/web/status/1202288533224009729",
+                                "indices": [
+                                    117,
+                                    140
+                                ],
+                                "url": "https://t.co/lpsu829uGK"
+                            }
+                        ],
+                        "user_mentions": []
+                    },
+                    "favorite_count": 2193,
+                    "favorited": false,
+                    "geo": null,
+                    "id": 1202288533224009729,
+                    "id_str": "1202288533224009729",
+                    "in_reply_to_screen_name": null,
+                    "in_reply_to_status_id": null,
+                    "in_reply_to_status_id_str": null,
+                    "in_reply_to_user_id": null,
+                    "in_reply_to_user_id_str": null,
+                    "is_quote_status": false,
+                    "lang": "en",
+                    "metadata": {
+                        "iso_language_code": "en",
+                        "result_type": "recent"
+                    },
+                    "place": null,
+                    "possibly_sensitive": false,
+                    "retweet_count": 700,
+                    "retweeted": false,
+                    "source": "<a href=\"https://studio.twitter.com\" rel=\"nofollow\">Twitter Media Studio</a>",
+                    "text": "Scientists have just announced the first discoveries from #ParkerSolarProbe\u2019s daring mission to the Sun. What they\u2019\u2026 https://t.co/lpsu829uGK",
+                    "truncated": true,
+                    "user": {
+                        "contributors_enabled": false,
+                        "created_at": "Fri Jun 13 00:31:37 +0000 2008",
+                        "default_profile": false,
+                        "default_profile_image": false,
+                        "description": "We study the Sun and how it affects space around Earth and other worlds, producing key knowledge to protect astronauts, satellites and robotic missions.",
+                        "entities": {
+                            "description": {
+                                "urls": []
+                            },
+                            "url": {
+                                "urls": [
+                                    {
+                                        "display_url": "nasa.gov/sunearth",
+                                        "expanded_url": "http://www.nasa.gov/sunearth",
+                                        "indices": [
+                                            0,
+                                            22
+                                        ],
+                                        "url": "http://t.co/9c59rlgaBM"
+                                    }
+                                ]
+                            }
+                        },
+                        "favourites_count": 1607,
+                        "follow_request_sent": false,
+                        "followers_count": 227816,
+                        "following": false,
+                        "friends_count": 1616,
+                        "geo_enabled": false,
+                        "has_extended_profile": false,
+                        "id": 15102849,
+                        "id_str": "15102849",
+                        "is_translation_enabled": false,
+                        "is_translator": false,
+                        "lang": null,
+                        "listed_count": 3401,
+                        "location": "NASA Goddard, Greenbelt, MD",
+                        "name": "NASA Sun & Space",
+                        "notifications": false,
+                        "profile_background_color": "0099B9",
+                        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                        "profile_background_tile": true,
+                        "profile_banner_url": "https://pbs.twimg.com/profile_banners/15102849/1572616234",
+                        "profile_image_url": "http://pbs.twimg.com/profile_images/1190264868315836417/cxzk3p52_normal.jpg",
+                        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1190264868315836417/cxzk3p52_normal.jpg",
+                        "profile_link_color": "4A7AB7",
+                        "profile_sidebar_border_color": "CCCCCC",
+                        "profile_sidebar_fill_color": "EEEEEE",
+                        "profile_text_color": "222222",
+                        "profile_use_background_image": true,
+                        "protected": false,
+                        "screen_name": "NASASun",
+                        "statuses_count": 11329,
+                        "time_zone": null,
+                        "translator_type": "none",
+                        "url": "http://t.co/9c59rlgaBM",
+                        "utc_offset": null,
+                        "verified": true
+                    }
+                },
+                "quoted_status_id": 1202288533224009729,
+                "quoted_status_id_str": "1202288533224009729",
+                "retweet_count": 78,
+                "retweeted": false,
+                "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+                "text": "Experts will be live today at 3pm ET / 12pm PT to talk about these brand-new findings! \n\nTune in for #NASAScience L\u2026 https://t.co/yHauD09mD9",
+                "truncated": true,
+                "user": {
+                    "contributors_enabled": false,
+                    "created_at": "Fri Jun 13 00:31:37 +0000 2008",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "description": "We study the Sun and how it affects space around Earth and other worlds, producing key knowledge to protect astronauts, satellites and robotic missions.",
+                    "entities": {
+                        "description": {
+                            "urls": []
+                        },
+                        "url": {
+                            "urls": [
+                                {
+                                    "display_url": "nasa.gov/sunearth",
+                                    "expanded_url": "http://www.nasa.gov/sunearth",
+                                    "indices": [
+                                        0,
+                                        22
+                                    ],
+                                    "url": "http://t.co/9c59rlgaBM"
+                                }
+                            ]
+                        }
+                    },
+                    "favourites_count": 1607,
+                    "follow_request_sent": false,
+                    "followers_count": 227816,
+                    "following": false,
+                    "friends_count": 1616,
+                    "geo_enabled": false,
+                    "has_extended_profile": false,
+                    "id": 15102849,
+                    "id_str": "15102849",
+                    "is_translation_enabled": false,
+                    "is_translator": false,
+                    "lang": null,
+                    "listed_count": 3401,
+                    "location": "NASA Goddard, Greenbelt, MD",
+                    "name": "NASA Sun & Space",
+                    "notifications": false,
+                    "profile_background_color": "0099B9",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": true,
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/15102849/1572616234",
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1190264868315836417/cxzk3p52_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1190264868315836417/cxzk3p52_normal.jpg",
+                    "profile_link_color": "4A7AB7",
+                    "profile_sidebar_border_color": "CCCCCC",
+                    "profile_sidebar_fill_color": "EEEEEE",
+                    "profile_text_color": "222222",
+                    "profile_use_background_image": true,
+                    "protected": false,
+                    "screen_name": "NASASun",
+                    "statuses_count": 11329,
+                    "time_zone": null,
+                    "translator_type": "none",
+                    "url": "http://t.co/9c59rlgaBM",
+                    "utc_offset": null,
+                    "verified": true
+                }
+            },
+            "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+            "text": "RT @NASASun: Experts will be live today at 3pm ET / 12pm PT to talk about these brand-new findings! \n\nTune in for #NASAScience Live: https:\u2026",
+            "truncated": false,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 18:32:06 +0000 2019",
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            70,
+                            87
+                        ],
+                        "text": "ParkerSolarProbe"
+                    }
+                ],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202294524850188288",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/V5pFddVJNm"
+                    }
+                ],
+                "user_mentions": [
+                    {
+                        "id": 15102849,
+                        "id_str": "15102849",
+                        "indices": [
+                            10,
+                            18
+                        ],
+                        "name": "NASA Sun & Space",
+                        "screen_name": "NASASun"
+                    }
+                ]
+            },
+            "favorite_count": 875,
+            "favorited": false,
+            "geo": null,
+            "id": 1202294524850188288,
+            "id_str": "1202294524850188288",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 216,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "LIVE NOW: @NASASun experts reveal the first research results from our #ParkerSolarProbe mission. Hear about the fin\u2026 https://t.co/V5pFddVJNm",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 18:22:56 +0000 2019",
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            71,
+                            88
+                        ],
+                        "text": "ParkerSolarProbe"
+                    }
+                ],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 15102849,
+                        "id_str": "15102849",
+                        "indices": [
+                            3,
+                            11
+                        ],
+                        "name": "NASA Sun & Space",
+                        "screen_name": "NASASun"
+                    }
+                ]
+            },
+            "favorite_count": 0,
+            "favorited": false,
+            "geo": null,
+            "id": 1202292214250033152,
+            "id_str": "1202292214250033152",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "retweet_count": 700,
+            "retweeted": false,
+            "retweeted_status": {
+                "contributors": null,
+                "coordinates": null,
+                "created_at": "Wed Dec 04 18:08:18 +0000 2019",
+                "entities": {
+                    "hashtags": [
+                        {
+                            "indices": [
+                                58,
+                                75
+                            ],
+                            "text": "ParkerSolarProbe"
+                        }
+                    ],
+                    "symbols": [],
+                    "urls": [
+                        {
+                            "display_url": "twitter.com/i/web/status/1\u2026",
+                            "expanded_url": "https://twitter.com/i/web/status/1202288533224009729",
+                            "indices": [
+                                117,
+                                140
+                            ],
+                            "url": "https://t.co/lpsu829uGK"
+                        }
+                    ],
+                    "user_mentions": []
+                },
+                "favorite_count": 2193,
+                "favorited": false,
+                "geo": null,
+                "id": 1202288533224009729,
+                "id_str": "1202288533224009729",
+                "in_reply_to_screen_name": null,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "is_quote_status": false,
+                "lang": "en",
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "place": null,
+                "possibly_sensitive": false,
+                "retweet_count": 700,
+                "retweeted": false,
+                "source": "<a href=\"https://studio.twitter.com\" rel=\"nofollow\">Twitter Media Studio</a>",
+                "text": "Scientists have just announced the first discoveries from #ParkerSolarProbe\u2019s daring mission to the Sun. What they\u2019\u2026 https://t.co/lpsu829uGK",
+                "truncated": true,
+                "user": {
+                    "contributors_enabled": false,
+                    "created_at": "Fri Jun 13 00:31:37 +0000 2008",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "description": "We study the Sun and how it affects space around Earth and other worlds, producing key knowledge to protect astronauts, satellites and robotic missions.",
+                    "entities": {
+                        "description": {
+                            "urls": []
+                        },
+                        "url": {
+                            "urls": [
+                                {
+                                    "display_url": "nasa.gov/sunearth",
+                                    "expanded_url": "http://www.nasa.gov/sunearth",
+                                    "indices": [
+                                        0,
+                                        22
+                                    ],
+                                    "url": "http://t.co/9c59rlgaBM"
+                                }
+                            ]
+                        }
+                    },
+                    "favourites_count": 1607,
+                    "follow_request_sent": false,
+                    "followers_count": 227816,
+                    "following": false,
+                    "friends_count": 1616,
+                    "geo_enabled": false,
+                    "has_extended_profile": false,
+                    "id": 15102849,
+                    "id_str": "15102849",
+                    "is_translation_enabled": false,
+                    "is_translator": false,
+                    "lang": null,
+                    "listed_count": 3401,
+                    "location": "NASA Goddard, Greenbelt, MD",
+                    "name": "NASA Sun & Space",
+                    "notifications": false,
+                    "profile_background_color": "0099B9",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": true,
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/15102849/1572616234",
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1190264868315836417/cxzk3p52_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1190264868315836417/cxzk3p52_normal.jpg",
+                    "profile_link_color": "4A7AB7",
+                    "profile_sidebar_border_color": "CCCCCC",
+                    "profile_sidebar_fill_color": "EEEEEE",
+                    "profile_text_color": "222222",
+                    "profile_use_background_image": true,
+                    "protected": false,
+                    "screen_name": "NASASun",
+                    "statuses_count": 11329,
+                    "time_zone": null,
+                    "translator_type": "none",
+                    "url": "http://t.co/9c59rlgaBM",
+                    "utc_offset": null,
+                    "verified": true
+                }
+            },
+            "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+            "text": "RT @NASASun: Scientists have just announced the first discoveries from #ParkerSolarProbe\u2019s daring mission to the Sun. What they\u2019ve learned\u2026",
+            "truncated": false,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 17:41:44 +0000 2019",
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            30,
+                            37
+                        ],
+                        "text": "Dragon"
+                    }
+                ],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202281848212271109",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/bIlf50xLxh"
+                    }
+                ],
+                "user_mentions": [
+                    {
+                        "id": 34743251,
+                        "id_str": "34743251",
+                        "indices": [
+                            22,
+                            29
+                        ],
+                        "name": "SpaceX",
+                        "screen_name": "SpaceX"
+                    }
+                ]
+            },
+            "favorite_count": 1697,
+            "favorited": false,
+            "geo": null,
+            "id": 1202281848212271109,
+            "id_str": "1202281848212271109",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 271,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "Today's launch of the @SpaceX #Dragon spacecraft was scrubbed due to high winds. Teams are working toward a next la\u2026 https://t.co/bIlf50xLxh",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 16:03:45 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202257189487939584",
+                        "indices": [
+                            108,
+                            131
+                        ],
+                        "url": "https://t.co/D9vvIVo6Lu"
+                    }
+                ],
+                "user_mentions": [
+                    {
+                        "id": 34743251,
+                        "id_str": "34743251",
+                        "indices": [
+                            20,
+                            27
+                        ],
+                        "name": "SpaceX",
+                        "screen_name": "SpaceX"
+                    },
+                    {
+                        "id": 1451773004,
+                        "id_str": "1451773004",
+                        "indices": [
+                            55,
+                            69
+                        ],
+                        "name": "Intl. Space Station",
+                        "screen_name": "Space_Station"
+                    }
+                ]
+            },
+            "favorite_count": 1806,
+            "favorited": false,
+            "geo": null,
+            "id": 1202257189487939584,
+            "id_str": "1202257189487939584",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 396,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "It's launch day for @SpaceX's 19th resupply mission to @Space_Station! Live coverage begins at 12:30pm ET:\u2026 https://t.co/D9vvIVo6Lu",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 03:52:39 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "media": [
+                    {
+                        "display_url": "pic.twitter.com/L8nYlwhfv7",
+                        "expanded_url": "https://twitter.com/NASA/status/1202073201494376448/photo/1",
+                        "id": 1202073194707984385,
+                        "id_str": "1202073194707984385",
+                        "indices": [
+                            35,
+                            58
+                        ],
+                        "media_url": "http://pbs.twimg.com/tweet_video_thumb/EK6fM6SWoAEY7Cn.jpg",
+                        "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/EK6fM6SWoAEY7Cn.jpg",
+                        "sizes": {
+                            "large": {
+                                "h": 270,
+                                "resize": "fit",
+                                "w": 480
+                            },
+                            "medium": {
+                                "h": 270,
+                                "resize": "fit",
+                                "w": 480
+                            },
+                            "small": {
+                                "h": 270,
+                                "resize": "fit",
+                                "w": 480
+                            },
+                            "thumb": {
+                                "h": 150,
+                                "resize": "crop",
+                                "w": 150
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/L8nYlwhfv7"
+                    }
+                ],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 1201615132071256070,
+                        "id_str": "1201615132071256070",
+                        "indices": [
+                            0,
+                            10
+                        ],
+                        "name": "hoy hoy the 1st",
+                        "screen_name": "hoyhoyhi1"
+                    },
+                    {
+                        "id": 43166813,
+                        "id_str": "43166813",
+                        "indices": [
+                            11,
+                            27
+                        ],
+                        "name": "NASA Astronauts",
+                        "screen_name": "NASA_Astronauts"
+                    },
+                    {
+                        "id": 1020383864,
+                        "id_str": "1020383864",
+                        "indices": [
+                            28,
+                            34
+                        ],
+                        "name": "GIPHY",
+                        "screen_name": "GIPHY"
+                    }
+                ]
+            },
+            "extended_entities": {
+                "media": [
+                    {
+                        "display_url": "pic.twitter.com/L8nYlwhfv7",
+                        "expanded_url": "https://twitter.com/NASA/status/1202073201494376448/photo/1",
+                        "id": 1202073194707984385,
+                        "id_str": "1202073194707984385",
+                        "indices": [
+                            35,
+                            58
+                        ],
+                        "media_url": "http://pbs.twimg.com/tweet_video_thumb/EK6fM6SWoAEY7Cn.jpg",
+                        "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/EK6fM6SWoAEY7Cn.jpg",
+                        "sizes": {
+                            "large": {
+                                "h": 270,
+                                "resize": "fit",
+                                "w": 480
+                            },
+                            "medium": {
+                                "h": 270,
+                                "resize": "fit",
+                                "w": 480
+                            },
+                            "small": {
+                                "h": 270,
+                                "resize": "fit",
+                                "w": 480
+                            },
+                            "thumb": {
+                                "h": 150,
+                                "resize": "crop",
+                                "w": 150
+                            }
+                        },
+                        "type": "animated_gif",
+                        "url": "https://t.co/L8nYlwhfv7",
+                        "video_info": {
+                            "aspect_ratio": [
+                                16,
+                                9
+                            ],
+                            "variants": [
+                                {
+                                    "bitrate": 0,
+                                    "content_type": "video/mp4",
+                                    "url": "https://video.twimg.com/tweet_video/EK6fM6SWoAEY7Cn.mp4"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "favorite_count": 13,
+            "favorited": false,
+            "geo": null,
+            "id": 1202073201494376448,
+            "id_str": "1202073201494376448",
+            "in_reply_to_screen_name": "hoyhoyhi1",
+            "in_reply_to_status_id": 1201984935495634944,
+            "in_reply_to_status_id_str": "1201984935495634944",
+            "in_reply_to_user_id": 1201615132071256070,
+            "in_reply_to_user_id_str": "1201615132071256070",
+            "is_quote_status": false,
             "lang": "und",
             "metadata": {
                 "iso_language_code": "und",
                 "result_type": "recent"
             },
-            "place": {
-                "attributes": {},
-                "bounding_box": {
-                    "coordinates": [
-                        [
-                            [
-                                -73.95265417497565,
-                                40.77248401188823
-                            ],
-                            [
-                                -73.95265417497565,
-                                40.77248401188823
-                            ],
-                            [
-                                -73.95265417497565,
-                                40.77248401188823
-                            ],
-                            [
-                                -73.95265417497565,
-                                40.77248401188823
-                            ]
-                        ]
-                    ],
-                    "type": "Polygon"
-                },
-                "contained_within": [],
-                "country": "United States",
-                "country_code": "US",
-                "full_name": "Anneliese's Pastries & Fine Foods",
-                "id": "107bf12621d4c000",
-                "name": "Anneliese's Pastries & Fine Foods",
-                "place_type": "poi",
-                "url": "https://api.twitter.com/1.1/geo/id/107bf12621d4c000.json"
-            },
-            "retweet_count": 0,
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 14,
             "retweeted": false,
-            "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
-            "text": "#freemyhobbies",
+            "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+            "text": "@hoyhoyhi1 @NASA_Astronauts @GIPHY https://t.co/L8nYlwhfv7",
             "truncated": false,
             "user": {
                 "contributors_enabled": false,
-                "created_at": "Sat Sep 14 15:40:46 +0000 2019",
-                "default_profile": true,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
                 "default_profile_image": false,
-                "description": "",
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
                 "entities": {
                     "description": {
                         "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
                     }
                 },
-                "favourites_count": 0,
+                "favourites_count": 7839,
                 "follow_request_sent": false,
-                "followers_count": 1,
+                "followers_count": 34228435,
                 "following": false,
-                "friends_count": 10,
-                "geo_enabled": true,
+                "friends_count": 299,
+                "geo_enabled": false,
                 "has_extended_profile": true,
-                "id": 1172897552938807301,
-                "id_str": "1172897552938807301",
+                "id": 11348282,
+                "id_str": "11348282",
                 "is_translation_enabled": false,
                 "is_translator": false,
                 "lang": null,
-                "listed_count": 0,
+                "listed_count": 94332,
                 "location": "",
-                "name": "whereabouts",
+                "name": "NASA",
                 "notifications": false,
-                "profile_background_color": "F5F8FA",
-                "profile_background_image_url": null,
-                "profile_background_image_url_https": null,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
                 "profile_background_tile": false,
-                "profile_image_url": "http://pbs.twimg.com/profile_images/1191449369200992256/bx2eKyiR_normal.jpg",
-                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1191449369200992256/bx2eKyiR_normal.jpg",
-                "profile_link_color": "1DA1F2",
-                "profile_sidebar_border_color": "C0DEED",
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 01:55:00 +0000 2019",
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            76,
+                            87
+                        ],
+                        "text": "NASASocial"
+                    }
+                ],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 25565646,
+                        "id_str": "25565646",
+                        "indices": [
+                            3,
+                            17
+                        ],
+                        "name": "NASA Armstrong",
+                        "screen_name": "NASAArmstrong"
+                    }
+                ]
+            },
+            "favorite_count": 0,
+            "favorited": false,
+            "geo": null,
+            "id": 1202043593449517057,
+            "id_str": "1202043593449517057",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "retweet_count": 181,
+            "retweeted": false,
+            "retweeted_status": {
+                "contributors": null,
+                "coordinates": null,
+                "created_at": "Tue Dec 03 22:29:33 +0000 2019",
+                "entities": {
+                    "hashtags": [
+                        {
+                            "indices": [
+                                57,
+                                68
+                            ],
+                            "text": "NASASocial"
+                        }
+                    ],
+                    "symbols": [],
+                    "urls": [
+                        {
+                            "display_url": "twitter.com/i/web/status/1\u2026",
+                            "expanded_url": "https://twitter.com/i/web/status/1201991892893753346",
+                            "indices": [
+                                117,
+                                140
+                            ],
+                            "url": "https://t.co/pH0Y1kRiCe"
+                        }
+                    ],
+                    "user_mentions": []
+                },
+                "favorite_count": 1266,
+                "favorited": false,
+                "geo": null,
+                "id": 1201991892893753346,
+                "id_str": "1201991892893753346",
+                "in_reply_to_screen_name": null,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "is_quote_status": false,
+                "lang": "en",
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "place": null,
+                "possibly_sensitive": false,
+                "retweet_count": 181,
+                "retweeted": false,
+                "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+                "text": "\u203c\ufe0f\u203c\ufe0fDec. 5 is the last day to apply to attend our Jan. 7 #NASASocial \u203c\ufe0f\u203c\ufe0f\n\nParticipants will spend a half day behin\u2026 https://t.co/pH0Y1kRiCe",
+                "truncated": true,
+                "user": {
+                    "contributors_enabled": false,
+                    "created_at": "Fri Mar 20 20:04:52 +0000 2009",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "description": "The Armstrong Flight Research Center is NASA's primary center for atmospheric flight research & operations. IG:@NASAArmstrong\nFollows, RTs & links \u2260 endorsement",
+                    "entities": {
+                        "description": {
+                            "urls": []
+                        },
+                        "url": {
+                            "urls": [
+                                {
+                                    "display_url": "nasa.gov/centers/armstr\u2026",
+                                    "expanded_url": "http://www.nasa.gov/centers/armstrong/home/index.html",
+                                    "indices": [
+                                        0,
+                                        22
+                                    ],
+                                    "url": "http://t.co/hsdLtJfyTR"
+                                }
+                            ]
+                        }
+                    },
+                    "favourites_count": 2811,
+                    "follow_request_sent": false,
+                    "followers_count": 264407,
+                    "following": false,
+                    "friends_count": 197,
+                    "geo_enabled": true,
+                    "has_extended_profile": false,
+                    "id": 25565646,
+                    "id_str": "25565646",
+                    "is_translation_enabled": false,
+                    "is_translator": false,
+                    "lang": null,
+                    "listed_count": 3028,
+                    "location": "Edwards, California",
+                    "name": "NASA Armstrong",
+                    "notifications": false,
+                    "profile_background_color": "C0DEED",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": false,
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/25565646/1556837413",
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/591630088384290816/Q7vnhZqL_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/591630088384290816/Q7vnhZqL_normal.jpg",
+                    "profile_link_color": "FF691F",
+                    "profile_sidebar_border_color": "FFFFFF",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "protected": false,
+                    "screen_name": "NASAArmstrong",
+                    "statuses_count": 6761,
+                    "time_zone": null,
+                    "translator_type": "none",
+                    "url": "http://t.co/hsdLtJfyTR",
+                    "utc_offset": null,
+                    "verified": true
+                }
+            },
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "RT @NASAArmstrong: \u203c\ufe0f\u203c\ufe0fDec. 5 is the last day to apply to attend our Jan. 7 #NASASocial \u203c\ufe0f\u203c\ufe0f\n\nParticipants will spend a half day behind the\u2026",
+            "truncated": false,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 01:40:00 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202039821805457408",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/rUxXdvJaoV"
+                    }
+                ],
+                "user_mentions": []
+            },
+            "favorite_count": 2,
+            "favorited": false,
+            "geo": null,
+            "id": 1202039821805457408,
+            "id_str": "1202039821805457408",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 0,
+            "retweeted": false,
+            "source": "<a href=\"http://instagram.com\" rel=\"nofollow\">Instagram</a>",
+            "text": "Check out this incredible performance of Pinball Wizard by officialthewho from Austin's Guitar Ensemble class! This\u2026 https://t.co/rUxXdvJaoV",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Fri Apr 17 15:05:29 +0000 2009",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "-Top rated guitar school in NYC- Coaching personal greatness one lesson at a time! Locations in Midtown, Brooklyn, Upper East Side and Queens #NYCGS \ud83c\udfb8\ud83c\udfb8\ud83c\udfb8",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nycguitarschool.com",
+                                "expanded_url": "http://nycguitarschool.com",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/sisPfjTBaC"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 518,
+                "follow_request_sent": false,
+                "followers_count": 605,
+                "following": false,
+                "friends_count": 26,
+                "geo_enabled": true,
+                "has_extended_profile": false,
+                "id": 32437855,
+                "id_str": "32437855",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 12,
+                "location": "New York, NY",
+                "name": "NYC Guitar School",
+                "notifications": false,
+                "profile_background_color": "0D0E0F",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": true,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/32437855/1556139807",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/884477477858418688/3eeoLhVX_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/884477477858418688/3eeoLhVX_normal.jpg",
+                "profile_link_color": "BF0606",
+                "profile_sidebar_border_color": "000000",
                 "profile_sidebar_fill_color": "DDEEF6",
                 "profile_text_color": "333333",
                 "profile_use_background_image": true,
                 "protected": false,
-                "screen_name": "whereab08898254",
-                "statuses_count": 6,
+                "screen_name": "NYCGuitarSchool",
+                "statuses_count": 2209,
                 "time_zone": null,
                 "translator_type": "none",
-                "url": null,
+                "url": "https://t.co/sisPfjTBaC",
                 "utc_offset": null,
                 "verified": false
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 01:00:01 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202029758567124994",
+                        "indices": [
+                            103,
+                            126
+                        ],
+                        "url": "https://t.co/wWUNChJDxN"
+                    }
+                ],
+                "user_mentions": []
+            },
+            "favorite_count": 3674,
+            "favorited": false,
+            "geo": null,
+            "id": 1202029758567124994,
+            "id_str": "1202029758567124994",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 617,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "Robots need a place to stay in space, too. \ud83e\udd16\n\nNASA is attaching a \u201crobot hotel\u201d to the outside of the\u2026 https://t.co/wWUNChJDxN",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 00:54:14 +0000 2019",
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            52,
+                            59
+                        ],
+                        "text": "Dragon"
+                    }
+                ],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 16580226,
+                        "id_str": "16580226",
+                        "indices": [
+                            3,
+                            15
+                        ],
+                        "name": "NASA's Kennedy Space Center",
+                        "screen_name": "NASAKennedy"
+                    },
+                    {
+                        "id": 34743251,
+                        "id_str": "34743251",
+                        "indices": [
+                            44,
+                            51
+                        ],
+                        "name": "SpaceX",
+                        "screen_name": "SpaceX"
+                    },
+                    {
+                        "id": 1451773004,
+                        "id_str": "1451773004",
+                        "indices": [
+                            89,
+                            103
+                        ],
+                        "name": "Intl. Space Station",
+                        "screen_name": "Space_Station"
+                    }
+                ]
+            },
+            "favorite_count": 0,
+            "favorited": false,
+            "geo": null,
+            "id": 1202028302166302721,
+            "id_str": "1202028302166302721",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "retweet_count": 507,
+            "retweeted": false,
+            "retweeted_status": {
+                "contributors": null,
+                "coordinates": null,
+                "created_at": "Tue Dec 03 23:01:38 +0000 2019",
+                "entities": {
+                    "hashtags": [
+                        {
+                            "indices": [
+                                35,
+                                42
+                            ],
+                            "text": "Dragon"
+                        }
+                    ],
+                    "symbols": [],
+                    "urls": [
+                        {
+                            "display_url": "twitter.com/i/web/status/1\u2026",
+                            "expanded_url": "https://twitter.com/i/web/status/1201999965867909121",
+                            "indices": [
+                                116,
+                                139
+                            ],
+                            "url": "https://t.co/fuQsjbH6ec"
+                        }
+                    ],
+                    "user_mentions": [
+                        {
+                            "id": 34743251,
+                            "id_str": "34743251",
+                            "indices": [
+                                27,
+                                34
+                            ],
+                            "name": "SpaceX",
+                            "screen_name": "SpaceX"
+                        },
+                        {
+                            "id": 1451773004,
+                            "id_str": "1451773004",
+                            "indices": [
+                                72,
+                                86
+                            ],
+                            "name": "Intl. Space Station",
+                            "screen_name": "Space_Station"
+                        }
+                    ]
+                },
+                "favorite_count": 2605,
+                "favorited": false,
+                "geo": null,
+                "id": 1201999965867909121,
+                "id_str": "1201999965867909121",
+                "in_reply_to_screen_name": null,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "is_quote_status": false,
+                "lang": "en",
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "place": null,
+                "possibly_sensitive": false,
+                "retweet_count": 507,
+                "retweeted": false,
+                "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+                "text": "Less than 24 hours until a @SpaceX #Dragon \ud83d\udc09 launches on its way to the @Space_Station to deliver ~5,700 pounds of\u2026 https://t.co/fuQsjbH6ec",
+                "truncated": true,
+                "user": {
+                    "contributors_enabled": false,
+                    "created_at": "Fri Oct 03 16:53:02 +0000 2008",
+                    "default_profile": false,
+                    "default_profile_image": false,
+                    "description": "Official Tweets from NASA's Kennedy Space Center",
+                    "entities": {
+                        "description": {
+                            "urls": []
+                        },
+                        "url": {
+                            "urls": [
+                                {
+                                    "display_url": "nasa.gov/kennedy",
+                                    "expanded_url": "http://www.nasa.gov/kennedy",
+                                    "indices": [
+                                        0,
+                                        23
+                                    ],
+                                    "url": "https://t.co/pFi3CDWVfr"
+                                }
+                            ]
+                        }
+                    },
+                    "favourites_count": 167,
+                    "follow_request_sent": false,
+                    "followers_count": 1557790,
+                    "following": false,
+                    "friends_count": 199,
+                    "geo_enabled": true,
+                    "has_extended_profile": false,
+                    "id": 16580226,
+                    "id_str": "16580226",
+                    "is_translation_enabled": false,
+                    "is_translator": false,
+                    "lang": null,
+                    "listed_count": 12240,
+                    "location": "Florida, USA",
+                    "name": "NASA's Kennedy Space Center",
+                    "notifications": false,
+                    "profile_background_color": "000000",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme4/bg.gif",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme4/bg.gif",
+                    "profile_background_tile": false,
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/16580226/1568132749",
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1113501416558141440/csp6nhvI_normal.png",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1113501416558141440/csp6nhvI_normal.png",
+                    "profile_link_color": "18A3C3",
+                    "profile_sidebar_border_color": "FFFFFF",
+                    "profile_sidebar_fill_color": "133981",
+                    "profile_text_color": "0F0D12",
+                    "profile_use_background_image": true,
+                    "protected": false,
+                    "screen_name": "NASAKennedy",
+                    "statuses_count": 13690,
+                    "time_zone": null,
+                    "translator_type": "none",
+                    "url": "https://t.co/pFi3CDWVfr",
+                    "utc_offset": null,
+                    "verified": true
+                }
+            },
+            "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+            "text": "RT @NASAKennedy: Less than 24 hours until a @SpaceX #Dragon \ud83d\udc09 launches on its way to the @Space_Station to deliver ~5,700 pounds of science\u2026",
+            "truncated": false,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Wed Dec 04 00:01:00 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 243418245,
+                        "id_str": "243418245",
+                        "indices": [
+                            3,
+                            18
+                        ],
+                        "name": "Jim Bridenstine",
+                        "screen_name": "JimBridenstine"
+                    }
+                ]
+            },
+            "favorite_count": 0,
+            "favorited": false,
+            "geo": null,
+            "id": 1202014904695300097,
+            "id_str": "1202014904695300097",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "retweet_count": 230,
+            "retweeted": false,
+            "retweeted_status": {
+                "contributors": null,
+                "coordinates": null,
+                "created_at": "Tue Dec 03 21:09:18 +0000 2019",
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [
+                        {
+                            "display_url": "twitter.com/i/web/status/1\u2026",
+                            "expanded_url": "https://twitter.com/i/web/status/1201971696472928256",
+                            "indices": [
+                                117,
+                                140
+                            ],
+                            "url": "https://t.co/A5TB20XtxQ"
+                        }
+                    ],
+                    "user_mentions": []
+                },
+                "favorite_count": 1031,
+                "favorited": false,
+                "geo": null,
+                "id": 1201971696472928256,
+                "id_str": "1201971696472928256",
+                "in_reply_to_screen_name": null,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "is_quote_status": false,
+                "lang": "en",
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "place": null,
+                "possibly_sensitive": false,
+                "retweet_count": 230,
+                "retweeted": false,
+                "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+                "text": "\u00a1Estamos orgullosos de colaborar con M\u00e9xico! We're proud of our partnership with Mexico!\n \nAzTechSat-1, the first C\u2026 https://t.co/A5TB20XtxQ",
+                "truncated": true,
+                "user": {
+                    "contributors_enabled": false,
+                    "created_at": "Thu Jan 27 00:32:51 +0000 2011",
+                    "default_profile": true,
+                    "default_profile_image": false,
+                    "description": "@NASA Administrator. Husband. Father. Veteran. https://t.co/zjlQuVy4s1",
+                    "entities": {
+                        "description": {
+                            "urls": [
+                                {
+                                    "display_url": "nasa.gov/about/highligh\u2026",
+                                    "expanded_url": "https://www.nasa.gov/about/highlights/bridenstine-biography.html",
+                                    "indices": [
+                                        47,
+                                        70
+                                    ],
+                                    "url": "https://t.co/zjlQuVy4s1"
+                                }
+                            ]
+                        }
+                    },
+                    "favourites_count": 1448,
+                    "follow_request_sent": false,
+                    "followers_count": 82416,
+                    "following": false,
+                    "friends_count": 475,
+                    "geo_enabled": false,
+                    "has_extended_profile": false,
+                    "id": 243418245,
+                    "id_str": "243418245",
+                    "is_translation_enabled": false,
+                    "is_translator": false,
+                    "lang": null,
+                    "listed_count": 680,
+                    "location": "Washington, DC",
+                    "name": "Jim Bridenstine",
+                    "notifications": false,
+                    "profile_background_color": "C0DEED",
+                    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                    "profile_background_tile": false,
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/243418245/1552484485",
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1154488953917104130/qujJzZ6d_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1154488953917104130/qujJzZ6d_normal.jpg",
+                    "profile_link_color": "1DA1F2",
+                    "profile_sidebar_border_color": "C0DEED",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "protected": false,
+                    "screen_name": "JimBridenstine",
+                    "statuses_count": 1522,
+                    "time_zone": null,
+                    "translator_type": "none",
+                    "url": null,
+                    "utc_offset": null,
+                    "verified": true
+                }
+            },
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "RT @JimBridenstine: \u00a1Estamos orgullosos de colaborar con M\u00e9xico! We're proud of our partnership with Mexico!\n \nAzTechSat-1, the first CubeS\u2026",
+            "truncated": false,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Tue Dec 03 23:31:08 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1202007388301221890",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/tr4b1CCizP"
+                    }
+                ],
+                "user_mentions": []
+            },
+            "favorite_count": 5017,
+            "favorited": false,
+            "geo": null,
+            "id": 1202007388301221890,
+            "id_str": "1202007388301221890",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 1057,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "\"I never imagined in my entire life getting to see something that beautiful.\"\n\nHow did seeing Earth from space comp\u2026 https://t.co/tr4b1CCizP",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Tue Dec 03 22:01:01 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1201984710844518400",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/I0sFSiBXJ1"
+                    }
+                ],
+                "user_mentions": [
+                    {
+                        "id": 43166813,
+                        "id_str": "43166813",
+                        "indices": [
+                            9,
+                            25
+                        ],
+                        "name": "NASA Astronauts",
+                        "screen_name": "NASA_Astronauts"
+                    }
+                ]
+            },
+            "favorite_count": 2447,
+            "favorited": false,
+            "geo": null,
+            "id": 1201984710844518400,
+            "id_str": "1201984710844518400",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 447,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "From our @NASA_Astronauts to you, it's the GIF that keeps on GIFing! \ud83c\udf85 \ud83c\udf84 \ud83c\udf81 \u2744\ufe0f Sleigh your social media game and che\u2026 https://t.co/I0sFSiBXJ1",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
+            }
+        },
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Tue Dec 03 21:09:56 +0000 2019",
+            "entities": {
+                "hashtags": [],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "twitter.com/i/web/status/1\u2026",
+                        "expanded_url": "https://twitter.com/i/web/status/1201971853499273216",
+                        "indices": [
+                            117,
+                            140
+                        ],
+                        "url": "https://t.co/2OtEsqnIoc"
+                    }
+                ],
+                "user_mentions": [
+                    {
+                        "id": 34743251,
+                        "id_str": "34743251",
+                        "indices": [
+                            74,
+                            81
+                        ],
+                        "name": "SpaceX",
+                        "screen_name": "SpaceX"
+                    }
+                ]
+            },
+            "favorite_count": 1381,
+            "favorited": false,
+            "geo": null,
+            "id": 1201971853499273216,
+            "id_str": "1201971853499273216",
+            "in_reply_to_screen_name": null,
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": null,
+            "in_reply_to_user_id_str": null,
+            "is_quote_status": false,
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": null,
+            "possibly_sensitive": false,
+            "retweet_count": 214,
+            "retweeted": false,
+            "source": "<a href=\"https://www.sprinklr.com\" rel=\"nofollow\">Sprinklr</a>",
+            "text": "LIVE: Prelaunch news conference for the Dec. 4, 12:51pm ET liftoff of the @SpaceX Falcon 9 \ud83d\ude80 and Dragon \ud83d\udef0\ufe0f on a res\u2026 https://t.co/2OtEsqnIoc",
+            "truncated": true,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Dec 19 20:20:32 +0000 2007",
+                "default_profile": false,
+                "default_profile_image": false,
+                "description": "Explore the universe and discover our home planet with @NASA. We usually post in EST (UTC-4)",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {
+                        "urls": [
+                            {
+                                "display_url": "nasa.gov",
+                                "expanded_url": "http://www.nasa.gov",
+                                "indices": [
+                                    0,
+                                    23
+                                ],
+                                "url": "https://t.co/TcEE6NS8nD"
+                            }
+                        ]
+                    }
+                },
+                "favourites_count": 7839,
+                "follow_request_sent": false,
+                "followers_count": 34228435,
+                "following": false,
+                "friends_count": 299,
+                "geo_enabled": false,
+                "has_extended_profile": true,
+                "id": 11348282,
+                "id_str": "11348282",
+                "is_translation_enabled": false,
+                "is_translator": false,
+                "lang": null,
+                "listed_count": 94332,
+                "location": "",
+                "name": "NASA",
+                "notifications": false,
+                "profile_background_color": "000000",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/11348282/1573750666",
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1091070803184177153/TI2qItoi_normal.jpg",
+                "profile_link_color": "205BA7",
+                "profile_sidebar_border_color": "000000",
+                "profile_sidebar_fill_color": "F3F2F2",
+                "profile_text_color": "000000",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "NASA",
+                "statuses_count": 58261,
+                "time_zone": null,
+                "translator_type": "regular",
+                "url": "https://t.co/TcEE6NS8nD",
+                "utc_offset": null,
+                "verified": true
             }
         }
     ]

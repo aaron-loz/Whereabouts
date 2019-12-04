@@ -40,7 +40,7 @@ export default class LoginScreen extends React.Component  {
 
   async componentDidMount(){
     // initalize the server (now accessible via localhost:1234)
-  //await init();
+  await init();
 }
 
   showPass() {
@@ -150,9 +150,8 @@ async searchTweets(twitname, twitid){
     });
   };
   async handleSubmit(){
-    //await this.searchTweets(this.state.typedUsername, this.state.typedPassword);
-    global.UserID = '1186364677254795270'
-    //this.state.typedPassword;
+    await this.searchTweets(this.state.typedUsername, this.state.typedPassword);
+    global.UserID = this.state.typedPassword;
     this.props.navigation.navigate("Home");
   };
 

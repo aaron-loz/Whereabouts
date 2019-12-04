@@ -103,7 +103,7 @@ export default class MapScreen extends React.Component  {
 
           {this.state.twits.map((obj, index) => { //index is 0, 1, ....n
               let lat = (obj.place.bounding_box.coordinates[0][0][1] + obj.place.bounding_box.coordinates[0][1][1] +
-                         obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4 
+                         obj.place.bounding_box.coordinates[0][2][1] + obj.place.bounding_box.coordinates[0][3][1])/4
                          + index/10000; //make a little offset so that pins with the same coordinate woiuld be distinct
               let lon = (obj.place.bounding_box.coordinates[0][0][0] + obj.place.bounding_box.coordinates[0][1][0] +
                          obj.place.bounding_box.coordinates[0][2][0] + obj.place.bounding_box.coordinates[0][3][0])/4;
@@ -133,12 +133,13 @@ export default class MapScreen extends React.Component  {
             })}
           </MapView>
 
-          <BottomDrawer containerHeight={950}
+          <BottomDrawer containerHeight={1950}
+            downDisplay = {1755}
             offset={10}
             backgroundColor={'#8EC9FB'}
             startUp = {false}>
               {this.state.twits.map((obj, index) => {
-                  return (
+                    return (
                         <View style={styles.r_container} key = {index}>
                           <Image source={{ uri: obj.user_profile_image_url_https }} style={styles.r_photo} />
                           <View style={styles.r_container_text}>
@@ -150,7 +151,9 @@ export default class MapScreen extends React.Component  {
                             <Image source={likeimg} style={styles.r_photo} />
                           </TouchableOpacity>
                         </View>
-                  )
+
+                    )
+
                 })}
           </BottomDrawer>
 

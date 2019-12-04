@@ -19,7 +19,7 @@ import eyeImg from '../images/eye_black.png';
 
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
-import {getAccountIdsTable, checkHasAccountId, addAccountIds, 
+import {getAccountIdsTable, checkHasAccountId, addAccountIds,
     getFriendsTable, checkHasUserIdAndFriendId, addFriends,
     getTwitsTable, checkHasTwits, addTwit} from '../firebase/firebaseApi'
 import {init, get_friends, search_tweets} from '../../config/axiosConfigs';
@@ -40,7 +40,7 @@ export default class LoginScreen extends React.Component  {
 
   async componentDidMount(){
     // initalize the server (now accessible via localhost:1234)
-  await init();
+  //await init();
 }
 
   showPass() {
@@ -68,7 +68,7 @@ export default class LoginScreen extends React.Component  {
 
 async buildQuery(friends){
     s = []
-    s.push('q=') 
+    s.push('q=')
     i = 0;
     j = 0;
     for (i; i<friends.length-1; i++){
@@ -102,7 +102,7 @@ async searchTweets(twitname, twitid){
     response.data.map((obj) => {
         let hasUserIdAndFriendId = checkHasUserIdAndFriendId(tableFriends, twitid, obj);
         if (!hasUserIdAndFriendId){
-            addFriends(twitid, obj);   
+            addFriends(twitid, obj);
             console.log("Pair of UserIdAndFriendId was added");
         } else {
             console.log("Pair of UserIdAndFriendId already exists");
@@ -130,7 +130,7 @@ async searchTweets(twitname, twitid){
         results[j].data.entities.map((obj) => {
             let hasTwit = checkHasTwits(tableLikes, obj);
             if (!hasTwit){
-                addTwit(obj);   
+                addTwit(obj);
                 console.log("Twit was added");
             } else {
                 console.log("Twit already exists");
@@ -150,8 +150,9 @@ async searchTweets(twitname, twitid){
     });
   };
   async handleSubmit(){
-    await this.searchTweets(this.state.typedUsername, this.state.typedPassword);
-    global.UserID = this.state.typedPassword;
+    //await this.searchTweets(this.state.typedUsername, this.state.typedPassword);
+    global.UserID = '1186364677254795270'
+    //this.state.typedPassword;
     this.props.navigation.navigate("Home");
   };
 

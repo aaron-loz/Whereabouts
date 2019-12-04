@@ -45,16 +45,16 @@ export const TabNavigator = createMaterialBottomTabNavigator(
                     </View>),
             }
         },
-        TwitterLogin: {
-          screen: TwitterLogin,
-          navigationOptions:{
-              tabBarLabel:'login',
-              tabBarIcon: ({ tintColor }) => (
-                  <View>
-                      <Icon style={[{color: tintColor}]} size={25} name={'ios-list'}/>
-                  </View>),
-          }
-      },
+      //   TwitterLogin: {
+      //     screen: TwitterLogin,
+      //     navigationOptions:{
+      //         tabBarLabel:'login',
+      //         tabBarIcon: ({ tintColor }) => (
+      //             <View>
+      //                 <Icon style={[{color: tintColor}]} size={25} name={'ios-list'}/>
+      //             </View>),
+      //     }
+      // },
     },{
       initialRouteName: "MapScreen",
       activeColor: '#3BA3F8',

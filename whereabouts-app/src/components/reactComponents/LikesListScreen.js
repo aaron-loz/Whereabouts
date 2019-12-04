@@ -38,11 +38,13 @@ export default class LikesListScreen extends React.Component {
   // }
 
   state = {
-    currentUserId: "1186364677254795270",
+    currentUserId: global.UserID,
     likes: [],
-    twits: []
+    twits: [],
+    isFetching: false,
   };
 
+  
   async updateData() {
     let tableLikes = await getLikesTable();
     let data = tableLikes.val();
@@ -61,6 +63,11 @@ export default class LikesListScreen extends React.Component {
       let twits = allTwits.filter(twit => this.state.likes.includes(twit.twit_id_str));
       this.setState({ twits });
     });
+    this.setState({ isFetching: false })
+  }
+
+  onRefresh() {
+    this.setState({ isFetching: true }, function() { this.updateData() });
   }
 
   componentDidMount() {
@@ -100,15 +107,10 @@ export default class LikesListScreen extends React.Component {
     );
   }
 
-  handleRefresh = () => {
-    this.updateData();
-  };
+
   render() {
     return (
       <View style={styles.list_container}>
-            <TouchableHighlight style={{height:100, width:200}} underlayColor="black" onPress={this.handleRefresh} >
-                <Text style={{height:100, width:100}}>Click here: Refresh</Text>
-            </TouchableHighlight>
         <FlatList
           data={this.state.twits}
           renderItem={({ item }) =>
@@ -125,6 +127,8 @@ export default class LikesListScreen extends React.Component {
             </View>
           }
           keyExtractor={(item, index) => index.toString()}
+          onRefresh={() => this.onRefresh()}
+          refreshing={this.state.isFetching}
         />
     </View>
     );

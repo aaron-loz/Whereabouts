@@ -23,12 +23,13 @@ export default class MapListScreen extends React.Component  {
     // };
 
     state = {
-      currentUserId: "1186364677254795270",
+      currentUserId: global.UserID,
       friends: [],
-      twits: []
+      twits: [],
+      isFetching: false
     };
 
-    async componentDidMount() {
+    async updateData() {
       let tableFriends = await getFriendsTable();
       let data = tableFriends.val();
       let allFriends = Object.values(data);
@@ -46,6 +47,15 @@ export default class MapListScreen extends React.Component  {
         let twits = allTwits.filter(twit => this.state.friends.includes(twit.user_id_str));
         this.setState({ twits });
       });
+      this.setState({ isFetching: false })
+    }
+
+    componentDidMount() {
+      this.updateData();
+    }
+
+    onRefresh() {
+      this.setState({ isFetching: true }, function() { this.updateData() });
     }
 
     //boilerplate data
@@ -125,6 +135,8 @@ export default class MapListScreen extends React.Component  {
                 </View>
               )}
               keyExtractor={(item, index) => index.toString()}
+              onRefresh={() => this.onRefresh()}
+              refreshing={this.state.isFetching}
             />
           </View>
         );

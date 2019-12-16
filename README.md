@@ -10,6 +10,7 @@ Flasks receives requests from React to fetch the data, then it makes requests to
 Firebase stores the data and allow to CRUD them from React.
 
 To start the app, you should have npm cli, expo, react-native, python, and flask installed.
+For the flask instruction, you should follow these [steps](https://github.com/aaron-loz/Whereabouts/blob/master/flask-server/README.txt).
 After installing tools, build the app using `npm install` and `npm start`, then scan QR code from the mobile app Expo.
 
  
